@@ -1,0 +1,119 @@
+;;;; -*- Mode: LISP; Syntax: Common-lisp; Package: USER; Base: 10 -*-
+;;;; Name:  Kevin Barroga                   Date: 2014 Sep 10
+;;;; Course: ICS361                   Assignment: Assignment 2   
+;;;; File name: kbarroga2OUTA.txt
+
+;;;; Breadth-first-search output
+
+; SLIME 2012-02-12
+CL-USER> (load "d:/Dropbox/FALL2014/ICS361/assignment_2/assignment_2/fwgc.lisp")
+;; Loading file D:\Dropbox\FALL2014\ICS361\assignment_2\assignment_2\fwgc.lisp ...
+;; Loaded file D:\Dropbox\FALL2014\ICS361\assignment_2\assignment_2\fwgc.lisp
+T
+CL-USER> (load "d:/Dropbox/FALL2014/ICS361/assignment_2/assignment_2/fwgc_bfs.lisp")
+;; Loading file D:\Dropbox\FALL2014\ICS361\assignment_2\assignment_2\fwgc_bfs.lisp ...
+;; Loaded file D:\Dropbox\FALL2014\ICS361\assignment_2\assignment_2\fwgc_bfs.lisp
+T
+CL-USER> *start*
+(E E E E)
+CL-USER> *goal*
+(W W W W)
+CL-USER> *moves*
+(FARMER-TAKES-SELF FARMER-TAKES-WOLF FARMER-TAKES-GOAT FARMER-TAKES-CABBAGE)
+CL-USER> (run-breadth *start* *goal* *moves*)
+
+"open = " 
+(((E E E E) NIL 0)) 
+"closed = " 
+NIL 
+"open = " 
+(((W E W E) (E E E E) 1)) 
+"closed = " 
+(((E E E E) NIL 0)) 
+"open = " 
+(((E E W E) (W E W E) 2)) 
+"closed = " 
+(((W E W E) (E E E E) 1) ((E E E E) NIL 0)) 
+"open = " 
+(((W W W E) (E E W E) 3) ((W E W W) (E E W E) 3)) 
+"closed = " 
+(((E E W E) (W E W E) 2) ((W E W E) (E E E E) 1) ((E E E E) NIL 0)) 
+"open = " 
+(((W E W W) (E E W E) 3) ((E W E E) (W W W E) 4)) 
+"closed = " 
+(((W W W E) (E E W E) 3) ((E E W E) (W E W E) 2) ((W E W E) (E E E E) 1) ((E E E E) NIL 0)) 
+"open = " 
+(((E W E E) (W W W E) 4) ((E E E W) (W E W W) 4)) 
+"closed = " 
+(((W E W W) (E E W E) 3) ((W W W E) (E E W E) 3) ((E E W E) (W E W E) 2) ((W E W E) (E E E E) 1) ((E E E E) NIL 0)) 
+"open = " 
+(((E E E W) (W E W W) 4) ((W W E W) (E W E E) 5)) 
+"closed = " 
+(((E W E E) (W W W E) 4) ((W E W W) (E E W E) 3) ((W W W E) (E E W E) 3) ((E E W E) (W E W E) 2) ((W E W E) (E E E E) 1) ((E E E E) NIL 0)) 
+"open = " 
+(((W W E W) (E W E E) 5)) 
+"closed = " 
+(((E E E W) (W E W W) 4) ((E W E E) (W W W E) 4) ((W E W W) (E E W E) 3) ((W W W E) (E E W E) 3) ((E E W E) (W E W E) 2)
+ ((W E W E) (E E E E) 1) ((E E E E) NIL 0)) 
+"open = " 
+(((E W E W) (W W E W) 6)) 
+"closed = " 
+(((W W E W) (E W E E) 5) ((E E E W) (W E W W) 4) ((E W E E) (W W W E) 4) ((W E W W) (E E W E) 3) ((W W W E) (E E W E) 3)
+ ((E E W E) (W E W E) 2) ((W E W E) (E E E E) 1) ((E E E E) NIL 0)) 
+"open = " 
+(((W W W W) (E W E W) 7)) 
+"closed = " 
+(((E W E W) (W W E W) 6) ((W W E W) (E W E E) 5) ((E E E W) (W E W W) 4) ((E W E E) (W W W E) 4) ((W E W W) (E E W E) 3)
+ ((W W W E) (E E W E) 3) ((E E W E) (W E W E) 2) ((W E W E) (E E E E) 1) ((E E E E) NIL 0)) 
+((E E E E) (W E W E) (E E W E) (W W W E) (E W E E) (W W E W) (E W E W) (W W W W))
+CL-USER> 
+
+
+*******************************************************************************
+
+
+;;;; Depth-first-search output
+
+; SLIME 2012-02-12
+CL-USER> (load "d:/Dropbox/FALL2014/ICS361/assignment_2/assignment_2/fwgc.lisp")
+;; Loading file D:\Dropbox\FALL2014\ICS361\assignment_2\assignment_2\fwgc.lisp ...
+;; Loaded file D:\Dropbox\FALL2014\ICS361\assignment_2\assignment_2\fwgc.lisp
+T
+CL-USER> (load "d:/Dropbox/FALL2014/ICS361/assignment_2/assignment_2/fwgc_dfs.lisp")
+;; Loading file D:\Dropbox\FALL2014\ICS361\assignment_2\assignment_2\fwgc_dfs.lisp ...
+;; Loaded file D:\Dropbox\FALL2014\ICS361\assignment_2\assignment_2\fwgc_dfs.lisp
+T
+CL-USER> *start*
+(E E E E)
+CL-USER> *goal*
+(W W W W)
+CL-USER> *moves*
+(FARMER-TAKES-SELF FARMER-TAKES-WOLF FARMER-TAKES-GOAT FARMER-TAKES-CABBAGE)
+CL-USER> (run-depth *start* *goal* *moves*)
+
+"open = " 
+NIL 
+"open = " 
+((E E E E)) 
+"open = " 
+((W E W E) (E E E E)) 
+"open = " 
+((E E W E) (W E W E) (E E E E)) 
+"open = " 
+((E E W E) (W E W E) (E E E E)) 
+"open = " 
+((W W W E) (E E W E) (W E W E) (E E E E)) 
+"open = " 
+((W W W E) (E E W E) (W E W E) (E E E E)) 
+"open = " 
+((E W E E) (W W W E) (E E W E) (W E W E) (E E E E)) 
+"open = " 
+((E W E E) (W W W E) (E E W E) (W E W E) (E E E E)) 
+"open = " 
+((W W E W) (E W E E) (W W W E) (E E W E) (W E W E) (E E E E)) 
+"open = " 
+((E W E W) (W W E W) (E W E E) (W W W E) (E E W E) (W E W E) (E E E E)) 
+"open = " 
+((E W E W) (W W E W) (E W E E) (W W W E) (E E W E) (W E W E) (E E E E)) 
+((E E E E) (W E W E) (E E W E) (W W W E) (E W E E) (W W E W) (E W E W) (W W W W))
+CL-USER> 

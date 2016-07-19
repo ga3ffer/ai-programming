@@ -1,0 +1,263 @@
+% -*- mode: Prolog;   -*-
+% Kevin Barroga, 2014 Nov, 28
+% ICS 361, Assignment #6
+% File: build_rules_transcript.txt
+
+
+Script started on Tue 25 Nov 2014 08:52:53 PM HST
+kevin@kevin-U47A:~/prolog/apes-0.2.0/src$ swipl -f main.pl
+%  engine.pl compiled 0.00 sec, 64 clauses
+%  tokenizer.pl compiled 0.00 sec, 62 clauses
+%  parser.pl compiled 0.00 sec, 32 clauses
+%  knowledge/knowledge.pl compiled 0.00 sec, 17 clauses
+ERROR: /home/kevin/prolog/apes-0.2.0/src/main.pl:10:
+	source_sink `knowledge/groups/*.pl' does not exist
+Warning: /home/kevin/prolog/apes-0.2.0/src/main.pl:10:
+	Goal (directive) failed: user:ensure_loaded(knowledge/groups/*.pl)
+%  helpers.pl compiled 0.00 sec, 24 clauses
+Warning: /home/kevin/prolog/apes-0.2.0/src/processor.pl:53:
+	Singleton variable in branch: X
+%  processor.pl compiled 0.00 sec, 12 clauses
+% main.pl compiled 0.01 sec, 227 clauses
+Welcome to SWI-Prolog (Multi-threaded, 64 bits, Version 6.6.6)
+Copyright (c) 1990-2013 University of Amsterdam, VU Amsterdam
+SWI-Prolog comes with ABSOLUTELY NO WARRANTY. This is free software,
+and you are welcome to redistribute it under certain conditions.
+Please visit http://www.swi-prolog.org for details.
+
+For help, use ?- help(Topic). or ?- apropos(Word).
+
+?- start.
+_____________________________________________________
+
+|: if animal does swim and animal has fins then animal is a fish.
+knowledge/knowledge.pl compiled 0.00 sec, 2 clauses
+ok, added rule: if animal does swim and animal has fins then animal is a fish .
+|: if animal is a fish and animal has hawaiian-name-oopu-nakea and animal has disc-shaped-sucker and animal does climb-waterfalls then animal is a goby.
+% knowledge/knowledge.pl compiled 0.00 sec, 2 clauses
+ok, added rule: if animal is a fish and animal has hawaiian-name-oopu-nakea and animal has disc-shaped-sucker and animal does climb-waterfalls then animal is a goby .
+|: create group hawaiian-fish.
+knowledge/knowledge.pl compiled 0.00 sec, 2 clauses
+ok, added new group: hawaiian-fish
+|: goby is a hawaiian-fish.
+appending to: knowledge/groups/hawaiian-fish.pl
+ok, added item: goby to group: hawaiian-fish
+|: if animal is a fish and animal has hawaiian-name-oopu-alamoo and animal has disc-shaped-sucker and animal does-climb-waterfalls and animal has salmon-like-lifestyle then animal is a freshwater-goby.
+knowledge/knowledge.pl compiled 0.00 sec, 2 clauses
+ok, added rule: if animal is a fish and animal has hawaiian-name-oopu-alamoo and animal has disc-shaped-sucker and animal does climb-waterfalls and animal has salmon-like-lifestyle then animal is a freshwater-goby .
+|: freshwater-goby is a fish.
+appending to: knowledge/groups/fish.pl
+ok, added item: freshwater-goby to group: fish
+|: freshwater-goby is a hawaiian-fish.
+appending to: knowledge/groups/hawaiian-fish.pl
+ok, added item: freshwater-goby to group: hawaiian-fish
+
+WARNING: By typing Control-C twice, you have forced an asynchronous
+WARNING: interrupt.  Your only SAFE operation are: c(ontinue), p(id),
+WARNING: s(stack) and e(xit).  Notably a(abort) often works, but
+WARNING: leaves the system in an UNSTABLE state
+
+Action (h for help) ? exit
+kevin@kevin-U47A: ~/prolog/apes-0.2.0/src
+kevin@kevin-U47A:~/prolog/apes-0.2.0/src$ swipl -f main.pl
+%  engine.pl compiled 0.00 sec, 64 clauses
+%  tokenizer.pl compiled 0.00 sec, 62 clauses
+%  parser.pl compiled 0.00 sec, 32 clauses
+%  knowledge/knowledge.pl compiled 0.00 sec, 21 clauses
+ERROR: /home/kevin/prolog/apes-0.2.0/src/main.pl:10:
+	source_sink `knowledge/groups/*.pl' does not exist
+Warning: /home/kevin/prolog/apes-0.2.0/src/main.pl:10:
+	Goal (directive) failed: user:ensure_loaded(knowledge/groups/*.pl)
+%  helpers.pl compiled 0.00 sec, 24 clauses
+Warning: /home/kevin/prolog/apes-0.2.0/src/processor.pl:53:
+	Singleton variable in branch: X
+%  processor.pl compiled 0.00 sec, 12 clauses
+% main.pl compiled 0.01 sec, 231 clauses
+Welcome to SWI-Prolog (Multi-threaded, 64 bits, Version 6.6.6)
+Copyright (c) 1990-2013 University of Amsterdam, VU Amsterdam
+SWI-Prolog comes with ABSOLUTELY NO WARRANTY. This is free software,
+and you are welcome to redistribute it under certain conditions.
+Please visit http://www.swi-prolog.org for details.
+
+For help, use ?- help(Topic). or ?- apropos(Word).
+
+?- start.
+_____________________________________________________
+
+|: show group hawaiian-fish.
+:-dynamic hawaiian-fish/1
+hawaiian-fish(goby)
+hawaiian-fish(freshwater-goby)
+
+|: if animal is a fish and animal has hawaiian-name-oopu-nopili and animal has disc-shaped-sucker and animal does climb-waterfalls and animal has amphidromous-like-lifestyle then animal is a rockclimbing-goby.
+knowledge/knowledge.pl compiled 0.00 sec, 2 clauses
+ok, added rule: if animal is a fish and animal has hawaiian-name-oopu-nopili and animal has disc-shaped-sucker and animal does climb-waterfalls and animal has amphidromous-lifestyle then animal is a rockclimbing-goby .
+|: rockclimbing-goby is a hawaiian-fish.
+appending to: knowledge/groups/hawaiian-fish.pl
+ok, added item: rockclimbing-goby to group: hawaiian-fish
+|: if animal is a fish and animal has hawaiian-name-oopu-naniha and animal has disc-shaped-sucker and animal does not-climb-waterfalls then animal is a hawaiian-goby.
+knowledge/knowledge.pl compiled 0.00 sec, 2 clauses
+ok, added rule: if animal is a fish and animal has hawaiian-name-oopu-naniha and animal has disc-shaped-sucker and animal does not-climb-waterfalls then animal is a hawaiian-goby .
+|: hawaiian-goby is a hawaiian-fish.
+appending to: knowledge/groups/hawaiian-fish.pl
+ok, added item: hawaiian-goby to group: hawaiian-fish
+|: if animal is a fish and has hawaiian-name-oau and has disc-shaped-sucker and does not-climb-waterfalls then animal is a sleeper-goby.
+knowledge/knowledge.pl compiled 0.00 sec, 2 clauses
+ok, added rule: if animal is a fish and animal has hawaiian-name-oau and animal has disc-shaped-sucker and animal does not-climb-waterfalls then animal is a sleeper-goby .
+|: sleeper-goby is a hawaiian-fish.
+appending to: knowledge/groups/hawaiian-fish.pl
+ok, added item: sleeper-goby to group: hawaiian-fish
+|: if animal is a fish and animal has large-eyes and animal has straight-dorsal-heald and animal has olive-bronze-color then animal is a strange-tail-flagtail.
+knowledge/knowledge.pl compiled 0.00 sec, 2 clauses
+ok, added rule: if animal is a fish and animal has large-eyes and animal has straight-dorsal-head and animal has olive-bronze-color then animal is a strange-tail-flagtail .
+|: strange-tail-flagtail is a hawaiian-fish.
+appending to: knowledge/groups/hawaiian-fish.pl
+ok, added item: strange-tail-flagtail to group: hawaiian-fish
+|: if animal is a fish and has olive-green-color and has silvery-white-sides and animal has thin-lips and animal has lateral-horizonal-lines then animal is a mullet.
+knowledge/knowledge.pl compiled 0.00 sec, 2 clauses
+ok, added rule: if animal is a fish and animal has olive-green-color and animal has silvery-white-sides and animal has thin-lips and animal has lateral-horizonal-lines then animal is a mullet .
+|: mullet is a fish.
+appending to: knowledge/groups/fish.pl
+ok, added item: mullet to group: fish
+|: if animal is a fish and animal does live-near-coral-reefs and animal has samall-mouth and animal has black-head-and-tail and animal has silver-body then animal is a masked-angelfish.
+knowledge/knowledge.pl compiled 0.00 sec, 2 clauses
+ok, added rule: if animal is a fish and animal does live-near-coral-reefs and animal has small-mouth and animal has black-head-and-tail and animal has silver-body then animal is a masked-angelfish .
+|: masked-angelfish is a hawaiian-fish.
+appending to: knowledge/groups/hawaiian-fish.pl
+ok, added item: masked-angelfish to group: hawaiian-fish
+|: if animal is a fish and animal has hawaiian-name-kaku and animal has long-body and animal has black-fin and animal has small-smooth-scales then animal is a blackfin-barracuda.
+knowledge/knowledge.pl compiled 0.00 sec, 2 clauses
+ok, added rule: if animal is a fish and animal has hawaiian-name-kaku and animal has long-body and animal has black-fin and animal has small-smooth-scales then animal is a blackfin-barracuda .
+|: blackfin-barracuda is a hawaiian-fish.
+appending to: knowledge/groups/hawaiian-fish.pl
+ok, added item: blackfin-barracuda to group: hawaiian-fish
+|: if animal is a fish and animal has hawaiian-name-aweoweo and animal has large-eye and animal has bright-red-color then animal is a hawaiian-bigeye.
+knowledge/knowledge.pl compiled 0.00 sec, 2 clauses
+ok, added rule: if animal is a fish and animal has hawaiian-name-aweoweo and animal has large-eye and animal has bright-red-color then animal is a hawaiian-bigeye .
+|: hawaiian-bigeye is a fish.
+appending to: knowledge/groups/fish.pl
+ok, added item: hawaiian-bigeye to group: fish
+|: hawaiianbigeye is a hawaiian-fish.
+appending to: knowledge/groups/hawaiian-fish.pl
+ok, added item: hawaiian-bigeye to group: hawaiian-fish
+|: if animal is a fish and animal has hawaiian-name-ulua and animal has thick-lips and animal has silver-body and animal does swim-fast then animal is a giant-traKevally.
+knowledge/knowledge.pl compiled 0.00 sec, 2 clauses
+ok, added rule: if animal is a fish and animal has hawaiian-name-ulua and animal has thick-lips and animal has silver-body and animal does swim-fast then animal is a giant-trevally .
+|: giant-trevally is a hawaiian-fish.
+appending to: knowledge/groups/hawaiian-fish.pl
+ok, added item: giant-trevally to group: hawaiian-fish
+|: if animal is a fish and animal has hawaiian-name-aliaihi and animal has red-color-and-white-stripses and animal has sharp-gill-spinesand animal has rough-scales then animal is a hawaiian-squirrelfish.
+knowledge/knowledge.pl compiled 0.00 sec, 2 clauses
+ok, added rule: if animal is a fish and animal has hawaiian-name-aliaihi and animal has red-color-and-white-stripes and animal has sharp-gill-spines and animal has rough-scales then animal is a hawaiian-squirrelfish .
+|: hawaiian-squirrelfish is a hawaiian-fish.
+appending to: knowledge/groups/hawaiian-fish.pl
+ok, added item: hawaiian-squirrelfish to group: hawaiian-fish
+|: show group hawaiian-fish.
+:-dynamic hawaiian-fish/1
+hawaiian-fish(goby)
+hawaiian-fish(freshwater-goby)
+hawaiian-fish(rockclimbing-goby)
+hawaiian-fish(hawaiian-goby)
+hawaiian-fish(sleeper-goby)
+hawaiian-fish(strange-tail-flagtail)
+hawaiian-fish(masked-angelfish)
+hawaiian-fish(blackfin-barracuda)
+hawaiian-fish(hawaiian-bigeye)
+hawaiian-fish(giant-trevally)
+hawaiian-fish(hawaiian-squirrelfish)
+
+|: mullet is a hawaiian-fish.
+appending to: knowledge/groups/hawaiian-fish.pl
+ok, added item: mullet to group: hawaiian-fish
+|: show group hawaiian-fish.
+:-dynamic hawaiian-fish/1
+hawaiian-fish(goby)
+hawaiian-fish(freshwater-goby)
+hawaiian-fish(rockclimbing-goby)
+hawaiian-fish(hawaiian-goby)
+hawaiian-fish(sleeper-goby)
+hawaiian-fish(strange-tail-flagtail)
+hawaiian-fish(masked-angelfish)
+hawaiian-fish(blackfin-barracuda)
+hawaiian-fish(hawaiian-bigeye)
+hawaiian-fish(giant-trevally)
+hawaiian-fish(hawaiian-squirrelfish)
+hawaiian-fish(mullet)
+
+|: 
+WARNING: By typing Control-C twice, you have forced an asynchronous
+WARNING: interrupt.  Your only SAFE operation are: c(ontinue), p(id),
+WARNING: s(stack) and e(xit).  Notably a(abort) often works, but
+WARNING: leaves the system in an UNSTABLE state
+
+Action (h for help) ? exit
+kevin@kevin-U47A: ~/prolog/apes-0.2.0/src
+kevin@kevin-U47A:~/prolog/apes-0.2.0/src$ exit
+exit
+
+Script done on Tue 25 Nov 2014 09:38:59 PM HST
+
+Script started on Wed 26 Nov 2014 04:21:07 AM HST
+kevin@kevin-U47A: ~/prolog/apes-0.2.0/src
+kevin@kevin-U47A:~/prolog/apes-0.2.0/src$ swipl -f main.pl 
+%  engine.pl compiled 0.00 sec, 64 clauses
+%  tokenizer.pl compiled 0.00 sec, 62 clauses
+%  parser.pl compiled 0.00 sec, 32 clauses
+%  knowledge/knowledge.pl compiled 0.00 sec, 31 clauses
+ERROR: /home/kevin/prolog/apes-0.2.0/src/main.pl:10:
+	source_sink `knowledge/groups/*.pl' does not exist
+Warning: /home/kevin/prolog/apes-0.2.0/src/main.pl:10:
+	Goal (directive) failed: user:ensure_loaded(knowledge/groups/*.pl)
+%  helpers.pl compiled 0.00 sec, 24 clauses
+Warning: /home/kevin/prolog/apes-0.2.0/src/processor.pl:53:
+	Singleton variable in branch: X
+%  processor.pl compiled 0.00 sec, 12 clauses
+% main.pl compiled 0.01 sec, 241 clauses
+Welcome to SWI-Prolog (Multi-threaded, 64 bits, Version 6.6.6)
+Copyright (c) 1990-2013 University of Amsterdam, VU Amsterdam
+SWI-Prolog comes with ABSOLUTELY NO WARRANTY. This is free software,
+and you are welcome to redistribute it under certain conditions.
+Please visit http://www.swi-prolog.org for details.
+
+For help, use ?- help(Topic). or ?- apropos(Word).
+
+?- start.
+_____________________________________________________
+
+
+|: if animal is a animal has hawaiian-name-hinalea-lauwili and animal has vibrantblue-green color and animal has borwnish-orange-saddle-bar then animal is a saddle-wrasse.
+knowledge/knowledge.pl compiled 0.00 sec, 2 clauses
+ok, added rule: if animal is a fish and animal has hawaiian-name-hinalea-lauwili and animal has vibrant-blue-green-color and animal has brownish-orange-saddle-bar then animal is a saddle-wrasse .
+|: saddle-wrasse is a hawaiian-fish.
+appending to: knowledge/groups/hawaiian-fish.pl
+ok, added item: saddle-wrasse to group: hawaiian-fish
+|: if animal is a fish and animal has brown-color and animal has vivid-yellow-eye and animal has blue-to-yellow-horizontal-stripes then animal is a goldenring-surgeonfish.
+knowledge/knowledge.pl compiled 0.00 sec, 2 clauses
+ok, added rule: if animal is a fish and animal has brown-color and animal has vivid-yellow-eye and animal has blue-to-yellow-horizontal-stripes then animal is a goldenring-surgeonfish .
+|: goldenring-surgeonfish is a hawaiian-fish.
+appending to: knowledge/groups/hawaiian-fish.pl
+ok, added item: goldenring-surgeonfish to group: hawaiian-fish
+|: if animal is a fish and animal does inflate-twice-its-size and animal has poisonous-flesh and animal has reddish-brown-color and animal has white-spots then animal is a hawaiian-whitespotted-toby.
+knowledge/knowledge.pl compiled 0.00 sec, 2 clauses
+ok, added rule: if animal is a fish and animal does inflate-twice-its-size and animal has poisonous-flesh and animal has reddish-brown-color and animal has white-spots then animal is a hawaiian-whitespotted-toby .
+|: hawaiian-whitespotted-toby is a hawaiian-fish.
+appending to: knowledge/groups/hawaiian-fish.pl
+ok, added item: hawaiian-whitespotted-toby to group: hawaiian-fish
+|: if animal is a fish and animal has hawaiian-name-paoo and animal does live-in-tidepools and animal has smart-blue-color or animal has charcoal-color or animal has brownish-gray-color and animal has distinct-bars then animal is a hawaiian-zebra-blenny.
+knowledge/knowledge.pl compiled 0.00 sec, 2 clauses
+ok, added rule: if animal is a fish and animal has hawaiian-name-paoo and animal does live-in-tidepools and animal has smart-blue-color or animal has charcoal-color or animal has brownish-gray-color and animal has distinct-bars then animal is a hawaiian-zebra-blenny .
+|: hawaiian-zebra-blenny is a hawaiian-fish.
+appending to: knowledge/groups/hawaiian-fish.pl
+ok, added item: hawaiian-zebra-blenny to group: hawaiian-fish
+|: 
+WARNING: By typing Control-C twice, you have forced an asynchronous
+WARNING: interrupt.  Your only SAFE operation are: c(ontinue), p(id),
+WARNING: s(stack) and e(xit).  Notably a(abort) often works, but
+WARNING: leaves the system in an UNSTABLE state
+
+Action (h for help) ? exit
+kevin@kevin-U47A: ~/prolog/apes-0.2.0/src
+kevin@kevin-U47A:~/prolog/apes-0.2.0/src$ exit
+exit
+
+Script done on Wed 26 Nov 2014 04:41:05 AM HST

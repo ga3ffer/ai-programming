@@ -1,0 +1,22 @@
+% -*- mode: Prolog;   -*-
+% Kevin Barroga, 2014 Dec, 03
+% ICS 361, Assignment #6
+% File: REPORT_2B.txt
+
+- APES natural language processing
+
+When using the APES package I was impressed in how well it understood the queries I gave it. It managed fairly well when sticking to the constraints of the program. The expert system use a simple grammar that mainly used 'is a', 'has', and 'does', to handle queries given to it. 'is a ' was mainly used to query the knowledge base, returning an answer from a fact or for Hawaiian fish discovery and/or identification. 'has', and 'does' were used as the main grammar to identify the certain fish species.
+The areas in which the it worked well was in simple error checking and correctly parsing the query, traversing the knowledge base to identify the Hawaiian fish species. The simple error checking in this expert system is just a line output of '> >  can't comprehend  < <'. It is found in the processor.pl file. Here are some examples of it:
+
+|: is object-l a hawaiian-spotted-toby?
+> >  can't comprehend  < <
+...
+|: is hawaiian-squirrelfish a hawaiian-fish?
+> >  can't comprehend  < <
+|: is a hawaiian-squirrelfish a hawaiian-fish?
+> >  can't comprehend  < <
+|: is a hawaiian-squirrelfish a hawaiian-fish?
+> >  can't comprehend  < <
+...
+
+An area in which I think the system can improve in is the accepted input from the command line. There was way too many typing error on my part, only because most of the characteristics I tried to enter was long and descriptive or contained spaces. I ran into '> >  can't comprehend  < <' errors when trying to build up knowledge base with characteristics that included spaces. I discovered that the system accepted the strings that are hyphenated so I entered hyphenated characteristics. Making the system accept flexible input such a spaces would improve this simple package altogether. Overall I think the APES package is a good useful tool to understand the structure and logic of expert systems. It offers the basic features of what an expert system should include however not being too complicated to get lost in code.

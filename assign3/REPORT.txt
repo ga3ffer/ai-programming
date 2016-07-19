@@ -1,0 +1,87 @@
+;;;; -*- Mode: LISP; Syntax: Common-lisp; Package: USER; Base: 10 -*-
+;;;; Name:  Kevin Barroga                   Date: 2014 OCT 16
+;;;; Course: ICS361                   Assignment: Assignment 3
+;;;; File name: REPORT.txt
+
+;;;; REPORT
+
+- OUTPUT FILES
+  
+  3OUTA.TXT - Output of 8 puzzle using a* heuristic search, implementing
+              Manhattan distance. Includes short, medium and long solution paths.
+
+  3OUTB.TXT - Transcript of unsolvable states of the 8 puzzle. To discover  
+              first unsolvable state I manually created a state swapping tile 
+              '7' and '8' because we've discovered that that results in an 
+              'unsolvable puzzle'. In 'nxnpuz.lisp' this portion of code tests 
+              if the puzzle is solvable:
+
+(loop for i from 0 to (- puzzle_size 2) do
+  (let((right (+ i 1)) (left (- i 1)) (down (+ i sqrt_size))
+                                                  (up (- i sqrt_size)))
+    (if (and (> right -1) (< right puzzle_size) (/= (1- sqrt_size)
+                                (rem i sqrt_size)) (/= right (1- size_n)))  
+    (add-to-unsolvable *goal_state* i right)
+      )
+    (if (and (> left -1) (< left puzzle_size) (/= left (1- size_n)) 
+                                                  (/= 0(rem i sqrt_size)))  
+    (add-to-unsolvable *goal_state* i left)
+      )
+    (if (and (> down -1) (< down puzzle_size) (/= down (1- size_n)))      
+      (add-to-unsolvable *goal_state* i down)
+      )
+    (if (and (> up -1) (< up puzzle_size) (/= up (1- size_n)))      
+      (add-to-unsolvable *goal_state* i up)
+      )
+    )
+  )
+
+              It basically checks the number of inversions in the puzzle. Here 
+              is the basic logic to it:
+
+              ( (grid width odd) && (#inversions even) )  ||  
+              ( (grid width even) && ((blank on odd row from bottom) == 
+              (#inversions even)) )
+
+              - if the puzzle size is odd and the number of inversion is even 
+              the puzzle is solvable
+              - if the puzzle size is even and the blank space is on an even 
+              row, if the number of inversions is odd the puzzle is solvable
+              - is the puzzle size is even and the blank space is on an odd 
+              row, if the number of inversions is even then the puzzle is 
+              solvable
+
+              To generate other states I used a 'generate-problem' function 
+              that choose a state out of 1000 random states.
+
+  3OUTC.TXT - Output of 3 randomly generated 8 puzzles using iterative 
+              deepening depth-first-search. It includes short(5), medium(10), 
+              and long(30) solution paths.
+
+  3OUTD.TXT - 15 puzzle output(5, 10 ,15 states). This transcript file includes
+              the results of iterative deepening depth-first-search in the 15
+              puzzle. It includes short(5), medium(10), and long(15) solution
+              paths.
+
+REPORT
+
+4.1 
+              The function that checks if a puzzle is solvable is in the 
+              'nxnpuz.lisp' file. A description of the function can be found 
+              in the file's documentation and in the section above.
+
+4.2
+
+              CHARACTERISTICS OF SEARCH STRATEGIES
+
+                    Depth-      Breadth-      Best-  (Iterative Deepening)    
+                     First       First         First 
+
+
+Completeness:         NO           YES          NOT in General
+
+Time Complexity:      b^m          b^d          b^d
+
+Space Complexity:     b*m          b^d          b*d
+
+Optimality:           NO           YES          NOT in General

@@ -1,0 +1,67 @@
+;;;; -*- Mode: LISP; Syntax: Common-lisp; Package: USER; Base: 10 -*-
+;;;; Name:  Kevin Barroga             Date: 2014 Aug 25
+;;;; Course: ICS361                   Assignment: Assignment 1   
+;;;; File name: kbarroga1OUT.txt
+
+;;;; Number of guesses to find 1, 44, 88:
+;;;;
+;;;;    1  - 6 guesses
+;;;;    44 - 6 guesses
+;;;;    88 - 3 guesses
+
+
+; SLIME 2013-06-26
+CL-USER> (defparameter *small* 1)
+(defparameter *big* 100)
+
+(defun guess-my-number ()
+     (ash (+ *small* *big*) -1))
+
+(defun smaller ()
+     (setf *big* (1- (guess-my-number)))
+     (guess-my-number))
+
+(defun bigger ()
+     (setf *small* (1+ (guess-my-number)))
+     (guess-my-number))
+
+(defun start-over ()
+   (defparameter *small* 1)
+   (defparameter *big* 100)
+   (guess-my-number))
+START-OVER
+CL-USER> 
+; No value
+CL-USER> (guess-my-number)
+50
+CL-USER> (smaller)
+25
+CL-USER> (smaller)
+12
+CL-USER> (smaller)
+6
+CL-USER> (smaller)
+3
+CL-USER> (smaller)
+1
+CL-USER> (start-over)
+	  
+50
+CL-USER> (bigger)
+75
+CL-USER> (bigger)
+88
+CL-USER> (start-over)
+	  
+50
+CL-USER> (smaller)
+25
+CL-USER> (bigger)
+37
+CL-USER> (bigger)
+43
+CL-USER> (bigger)
+46
+CL-USER> (smaller)
+44
+CL-USER> 

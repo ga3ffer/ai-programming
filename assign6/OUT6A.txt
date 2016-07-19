@@ -1,0 +1,316 @@
+% -*- mode: Prolog;   -*-
+% Kevin Barroga, 2014 11 24
+% ICS 313, Assignment #6
+% File: OUT6A.txt
+
+b.roge@broge-PC ~
+$ swipl
+Welcome to SWI-Prolog (Multi-threaded, 64 bits, Version 6.6.6)
+Copyright (c) 1990-2013 University of Amsterdam, VU Amsterdam
+SWI-Prolog comes with ABSOLUTELY NO WARRANTY. This is free software,
+and you are welcome to redistribute it under certain conditions.
+Please visit http://www.swi-prolog.org for details.
+
+For help, use ?- help(Topic). or ?- apropos(Word).
+
+?- (['/cygdrive/d/Dropbox/pushbullet/a6.pro']).
+% /cygdrive/d/Dropbox/pushbullet/a6.pro compiled 0.00 sec, 35 clauses
+true.
+
+?- go.
+Does the fish have the following attribute: found_in_freshwater? yes.
+
+Does the fish have the following attribute: found_in_brackish? yes.
+
+Does the fish have the following attribute: found_in_saltwater? no.
+
+Does the fish have the following attribute: has_olive-green_color_on_back? yes.
+
+Does the fish have the following attribute: has_silvery_and_white_sides? yes.
+
+Does the fish have the following attribute: has_thin_lips? yes.
+
+Does the fish have the following attribute: has_distinct_lateral_horizontal_lines? yes.
+
+I guess that the fish is a: mullet
+true.
+
+?- go.
+Does the fish have the following attribute: found_in_freshwater? yes.
+
+Does the fish have the following attribute: found_in_brackish? yes.
+
+Does the fish have the following attribute: found_in_saltwater? yes.
+
+Does the fish have the following attribute: has_hawaiian-name_oopu_nakea? yes.
+
+Does the fish have the following attribute: has_disc-shaped_sucker? yes.
+
+Does the fish have the following attribute: climb_waterfalls? yes.
+
+Does the fish have the following attribute: is_largest_native_Hawaiian_stream_fish? yes.
+
+I guess that the fish is a: goby
+true.
+
+?- go.
+Does the fish have the following attribute: found_in_freshwater? yes.
+
+Does the fish have the following attribute: found_in_brackish? no.
+
+Does the fish have the following attribute: has_olive-green_color_on_back? no.
+
+Does the fish have the following attribute: found_in_saltwater? yes.
+
+Does the fish have the following attribute: found_near_coral_reefs? no.
+
+Does the fish have the following attribute: has_hawaiian-name_kaku? yes.
+
+Does the fish have the following attribute: is_large_and_fearsome? yes.
+
+Does the fish have the following attribute: has_long_body? yes.
+
+Does the fish have the following attribute: has_black_fin? yes.
+
+Does the fish have the following attribute: has_small_smooth_scales? yes.
+
+I guess that the fish is a: blackfin_barracuda
+true.
+
+?- go.
+Does the fish have the following attribute: found_in_freshwater? yes.
+
+Does the fish have the following attribute: found_in_brackish? yes.
+
+Does the fish have the following attribute: found_in_saltwater? yes.
+
+Does the fish have the following attribute: has_hawaiian-name_oopu_nakea? no.
+
+Does the fish have the following attribute: has_hawaiian-name_oopu_alamoo? yes.
+
+Does the fish have the following attribute: has_disc-shaped_sucker? yes.
+
+Does the fish have the following attribute: climb_waterfalls? yes.
+
+Does the fish have the following attribute: has_salmon-like_lifestyle? yes.
+
+I guess that the fish is a: freshwater_goby
+true.
+
+?- go.
+Does the fish have the following attribute: found_in_freshwater? yes.
+
+Does the fish have the following attribute: found_in_brackish? yes.
+
+Does the fish have the following attribute: found_in_saltwater? yes.
+
+Does the fish have the following attribute: has_hawaiian-name_oopu_nakea? no.
+
+Does the fish have the following attribute: has_hawaiian-name_oopu_alamoo? no.
+
+Does the fish have the following attribute: has_hawaiian-name_oopu_nopili? yes.
+
+Does the fish have the following attribute: has_disc-shaped_sucker? yes.
+
+Does the fish have the following attribute: climb_waterfalls? yes.
+
+Does the fish have the following attribute: is_endemic_to_Hawaiian_islands? yes.
+
+Does the fish have the following attribute: is_amphidromous? yes.
+
+I guess that the fish is a: rockclimbing_goby
+true.
+
+?- go.
+Does the fish have the following attribute: found_in_freshwater? no.
+
+Does the fish have the following attribute: found_in_saltwater? yes.
+
+Does the fish have the following attribute: found_near_coral_reefs? no.
+
+Does the fish have the following attribute: has_hawaiian-name_kaku? no.
+
+Does the fish have the following attribute: has_hawaiian-name_aweoweo? yes.
+
+Does the fish have the following attribute: has_large_eye? yes.
+
+Does the fish have the following attribute: has_bright_red_color? yes.
+
+Does the fish have the following attribute: is_carnivorous? yes.
+
+Does the fish have the following attribute: is_nocturnal? yes.
+
+I guess that the fish is a: hawaiian_bigeye
+true.
+
+?- go.
+Does the fish have the following attribute: found_in_freshwater? no.
+
+Does the fish have the following attribute: found_in_saltwater? no.
+
+I guess that the fish is a: unknown
+true.
+
+?- go.
+Does the fish have the following attribute: found_in_freshwater? yes.
+
+Does the fish have the following attribute: found_in_brackish? yes.
+
+Does the fish have the following attribute: found_in_saltwater? yes.
+
+Does the fish have the following attribute: has_hawaiian-name_oopu_nakea? no.
+
+Does the fish have the following attribute: has_hawaiian-name_oopu_alamoo? no.
+
+Does the fish have the following attribute: has_hawaiian-name_oopu_nopili? no.
+
+Does the fish have the following attribute: has_hawaiian-name_oopu_naniha? no.
+
+Does the fish have the following attribute: has_hawaiian-name_oau? yes.
+
+Does the fish have the following attribute: is_used_as_bait? yes.
+
+Does the fish have the following attribute: does_not_climb_waterfalls? yes.
+
+Does the fish have the following attribute: is_endemic_to_Hawaiian_islands? yes.
+
+I guess that the fish is a: sleeper_goby
+true.
+
+?- go.
+Does the fish have the following attribute: found_in_freshwater? yes.
+
+Does the fish have the following attribute: found_in_brackish? yes.
+
+Does the fish have the following attribute: found_in_saltwater? yes.
+
+Does the fish have the following attribute: has_hawaiian-name_oopu_nakea? no.
+
+Does the fish have the following attribute: has_hawaiian-name_oopu_alamoo? no.
+
+Does the fish have the following attribute: has_hawaiian-name_oopu_nopili? no.
+
+Does the fish have the following attribute: has_hawaiian-name_oopu_naniha? no.
+
+Does the fish have the following attribute: has_hawaiian-name_oau? no.
+
+Does the fish have the following attribute: has_large_eye? yes.
+
+Does the fish have the following attribute: has_straight_dorsal_head? yes.
+
+Does the fish have the following attribute: has_olive-bronze_color_on_back? yes.
+
+Does the fish have the following attribute: is_endemic_to_Hawaiian_islands? yes.
+
+I guess that the fish is a: strange_tail_flagtail
+true.
+
+?- go.
+Does the fish have the following attribute: found_in_freshwater? no.
+
+Does the fish have the following attribute: found_in_saltwater? yes.
+
+Does the fish have the following attribute: found_near_coral_reefs? no.
+
+Does the fish have the following attribute: has_hawaiian-name_kaku? no.
+
+Does the fish have the following attribute: has_hawaiian-name_aweoweo? no.
+
+Does the fish have the following attribute: has_hawaiian-name_ulua? no.
+
+Does the fish have the following attribute: has_hawaiian-name_aliaihi? yes.
+
+Does the fish have the following attribute: has_red_color_and_white_stripes? yes.
+
+Does the fish have the following attribute: has_sharp_gill_spines? yes.
+
+Does the fish have the following attribute: has_rough_scales? yes.
+
+Does the fish have the following attribute: is_nocturnal? yes.
+
+I guess that the fish is a: hawaiian_squirrelfish
+true.
+
+?- go.
+Does the fish have the following attribute: found_in_freshwater? yes.
+
+Does the fish have the following attribute: found_in_brackish? yes.
+
+Does the fish have the following attribute: found_in_saltwater? yes.
+
+Does the fish have the following attribute: has_hawaiian-name_oopu_nakea? no.
+
+Does the fish have the following attribute: has_hawaiian-name_oopu_alamoo? no.
+
+Does the fish have the following attribute: has_hawaiian-name_oopu_nopili? no.
+
+Does the fish have the following attribute: has_hawaiian-name_oopu_naniha? yes.
+
+Does the fish have the following attribute: has_disc-shaped_sucker? yes.
+
+Does the fish have the following attribute: does_not_climb_waterfalls? yes.
+
+Does the fish have the following attribute: is_endemic_to_Hawaiian_islands? yes.
+
+I guess that the fish is a: hawaiian_goby
+true.
+
+?- go.
+Does the fish have the following attribute: found_in_freshwater? yes.
+
+Does the fish have the following attribute: found_in_brackish? yes.
+
+Does the fish have the following attribute: found_in_saltwater? yes.
+
+Does the fish have the following attribute: has_hawaiian-name_oopu_nakea? no.
+
+Does the fish have the following attribute: has_hawaiian-name_oopu_alamoo? no.
+
+Does the fish have the following attribute: has_hawaiian-name_oopu_nopili? no.
+
+Does the fish have the following attribute: has_hawaiian-name_oopu_naniha? no.
+
+Does the fish have the following attribute: has_hawaiian-name_oau? no.
+
+Does the fish have the following attribute: has_large_eye? yes.
+
+Does the fish have the following attribute: has_straight_dorsal_head? no.
+
+Does the fish have the following attribute: has_olive-green_color_on_back? no.
+
+Does the fish have the following attribute: found_near_coral_reefs? yes.
+
+Does the fish have the following attribute: has_small_mouth? yes.
+
+Does the fish have the following attribute: has_black_head_and_tail? yes.
+
+Does the fish have the following attribute: has_silver_body? yes.
+
+I guess that the fish is a: masked_angelfish
+true.
+
+?- go.
+Does the fish have the following attribute: found_in_freshwater? no.
+
+Does the fish have the following attribute: found_in_saltwater? yes.
+
+Does the fish have the following attribute: found_near_coral_reefs? no.
+
+Does the fish have the following attribute: has_hawaiian-name_kaku? no.
+
+Does the fish have the following attribute: has_hawaiian-name_aweoweo? no.
+
+Does the fish have the following attribute: has_hawaiian-name_ulua? yes.
+
+Does the fish have the following attribute: has_thick_lips? yes.
+
+Does the fish have the following attribute: has_silver_body? yes.
+
+Does the fish have the following attribute: is_fast_swimming? yes.
+
+Does the fish have the following attribute: is_predatory? yes.
+
+I guess that the fish is a: giant_trevally
+true.
+
+?-

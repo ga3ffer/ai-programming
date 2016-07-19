@@ -1,0 +1,58 @@
+;;;; -*- Mode: LISP; Syntax: Common-lisp; Package: USER; Base: 10 -*-
+;;;; Name:  Kevin Barroga                   Date: 2014 NOV 04
+;;;; Course: ICS361                   Assignment: Assignment 4
+;;;; File name: 4OUTA.txt
+
+;;;; ID3 CREDIT DATA OUTPUT
+
+;;;; This file is the transcript of ID3-luger-orig.lisp, 
+;;;; ID3-credit-data-orig.lisp.
+
+; SLIME 2012-02-12
+CL-USER> (load "d:/Dropbox/FALL2014/ICS361/MachineLearning/ID3-luger-orig.lisp")
+;; Loading file D:\Dropbox\FALL2014\ICS361\MachineLearning\ID3-luger-orig.lisp ...
+;; Loaded file D:\Dropbox\FALL2014\ICS361\MachineLearning\ID3-luger-orig.lisp
+T
+CL-USER> (load "d:/Dropbox/FALL2014/ICS361/MachineLearning/ID3-credit-data-orig.lisp")
+;; Loading file D:\Dropbox\FALL2014\ICS361\MachineLearning\ID3-credit-data-orig.lisp ...
+;; Loaded file D:\Dropbox\FALL2014\ICS361\MachineLearning\ID3-credit-data-orig.lisp
+T
+CL-USER> (setq *tree* (build-tree credit-examples))
+#S(DECISION-TREE :TEST-NAME INCOME
+   :TEST #<FUNCTION INCOME (OBJ) (DECLARE (SYSTEM::IN-DEFUN INCOME)) (BLOCK INCOME (CDR (ASSOC 'INCOME OBJ :TEST #'EQUAL)))>
+   :BRANCHES
+   ((0-TO-15K . #S(LEAF :VALUE HIGH))
+    (15K-TO-35K .
+     #S(DECISION-TREE :TEST-NAME HISTORY
+        :TEST #<FUNCTION HISTORY (OBJ) (DECLARE (SYSTEM::IN-DEFUN HISTORY)) (BLOCK HISTORY (CDR (ASSOC 'HISTORY OBJ :TEST #'EQUAL)))>
+        :BRANCHES
+        ((GOOD . #S(LEAF :VALUE MODERATE)) (BAD . #S(LEAF :VALUE HIGH))
+         (UNKNOWN .
+          #S(DECISION-TREE :TEST-NAME DEBT
+             :TEST #<FUNCTION DEBT (OBJ) (DECLARE (SYSTEM::IN-DEFUN DEBT)) (BLOCK DEBT (CDR (ASSOC 'DEBT OBJ :TEST #'EQUAL)))>
+             :BRANCHES ((HIGH . #S(LEAF :VALUE HIGH)) (LOW . #S(LEAF :VALUE MODERATE))))))))
+    (OVER-35K .
+     #S(DECISION-TREE :TEST-NAME HISTORY
+        :TEST #<FUNCTION HISTORY (OBJ) (DECLARE (SYSTEM::IN-DEFUN HISTORY)) (BLOCK HISTORY (CDR (ASSOC 'HISTORY OBJ :TEST #'EQUAL)))>
+        :BRANCHES ((GOOD . #S(LEAF :VALUE LOW)) (BAD . #S(LEAF :VALUE MODERATE)) (UNKNOWN . #S(LEAF :VALUE LOW)))))))
+CL-USER> (classify '((history . bad) (debt . high) (collateral . none) (income . over-35k)) *tree*)
+MODERATE
+CL-USER> (classify '((history . bad) (debt . low) (collateral . adequate) (income . 0-to-15k)) *tree*)
+HIGH
+CL-USER> (classify '((history . bad) (debt . low) (collateral . none) (income . over-35k)) *tree*)
+MODERATE
+CL-USER> (classify '((history . good) (debt . high) (collateral . adequate) (income . 15k-to-35k)) *tree*)
+MODERATE
+CL-USER> (classify '((history . good) (debt . low) (collateral . adequate) (income . 15k-to-35k)) *tree*)
+MODERATE
+CL-USER> (classify '((history . good) (debt . low) (collateral . none) (income . 0-to-15k)) *tree*)
+HIGH
+CL-USER> (classify '((history . good) (debt . low) (collateral . none) (income . 15k-to-35k)) *tree*)
+MODERATE
+CL-USER> (classify '((history . unknown) (debt . high) (collateral . none) (income . over-35k)) *tree*)
+LOW
+CL-USER> (classify '((history . unknown) (debt . low) (collateral . adequate) (income . 0-to-15k)) *tree*)
+HIGH
+CL-USER> (classify '((history . unknown) (debt . low) (collateral . adequate) (income . 15k-to-35k)) *tree*)
+MODERATE
+CL-USER> 
