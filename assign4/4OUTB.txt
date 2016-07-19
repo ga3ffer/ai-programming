@@ -1,0 +1,792 @@
+;;;; -*- Mode: LISP; Syntax: Common-lisp; Package: USER; Base: 10 -*-
+;;;; Name:  Kevin Barroga                   Date: 2014 NOV 04
+;;;; Course: ICS361                   Assignment: Assignment 4
+;;;; File name: 4OUTB.txt
+
+;;;; COBWEB ANIMAL OUTPUT
+
+;;;; This file is the transcript of cobweb-animal-data.lisp and
+;;;; cobweb-animal2-data.lisp
+
+; SLIME 2012-02-12
+CL-USER> (load "a:/LispCabinet/home/ml-utilities.lisp")
+;; Loading file A:\LispCabinet\home\ml-utilities.lisp ...
+;; Loaded file A:\LispCabinet\home\ml-utilities.lisp
+T
+CL-USER> (load "a:/LispCabinet/home/cobweb.lisp")
+;; Loading file A:\LispCabinet\home\cobweb.lisp ...
+;; Loaded file A:\LispCabinet\home\cobweb.lisp
+T
+CL-USER> (load "a:/LispCabinet/home/cobweb-animal-data.lisp")
+;; Loading file A:\LispCabinet\home\cobweb-animal-data.lisp ...
+;; Loaded file A:\LispCabinet\home\cobweb-animal-data.lisp
+T
+CL-USER> (train-cobweb *raw-examples*)
+
+
+Intializing root category with first instance. 
+C-7494{AMPHIBIAN}
+
+
+Incorporating instance: FISH
+ Level 0: Growing leaf category
+
+ C-7494{FISH AMPHIBIAN}
+   C-7516{FISH}
+   C-7517{AMPHIBIAN}
+
+
+Incorporating instance: MAMMAL
+ Category utility 0.444 when put with C-7516{FISH}
+ Category utility 0.444 when put with C-7517{AMPHIBIAN}
+ Category utility 0.741 when by itself
+ Level 0: putting instance by itself
+
+ C-7494{MAMMAL FISH AMPHIBIAN}
+   C-7518{MAMMAL}
+   C-7516{FISH}
+   C-7517{AMPHIBIAN}
+
+
+Incorporating instance: BIRD
+ Category utility 0.708 when put with C-7518{MAMMAL}
+ Category utility 0.458 when put with C-7516{FISH}
+ Category utility 0.458 when put with C-7517{AMPHIBIAN}
+ Category utility 0.594 when by itself
+ Category utility 0.000 when merge C-7518{MAMMAL} and C-7516{FISH}
+ Level 0: putting instance with C-7518{MAMMAL}
+   Level 1: Growing leaf category
+
+ C-7494{BIRD MAMMAL FISH AMPHIBIAN}
+   C-7518{BIRD MAMMAL}
+     C-7520{BIRD}
+     C-7521{MAMMAL}
+   C-7516{FISH}
+   C-7517{AMPHIBIAN}
+
+
+Incorporating instance: REPTILE
+ Category utility 0.560 when put with C-7516{FISH}
+ Category utility 0.560 when put with C-7517{AMPHIBIAN}
+ Category utility 0.516 when put with C-7518{BIRD MAMMAL}
+ Category utility 0.570 when by itself
+ Level 0: putting instance by itself
+
+ C-7494{REPTILE BIRD MAMMAL FISH AMPHIBIAN}
+   C-7522{REPTILE}
+   C-7518{BIRD MAMMAL}
+     C-7520{BIRD}
+     C-7521{MAMMAL}
+   C-7516{FISH}
+   C-7517{AMPHIBIAN}
+
+
+Incorporating instance: FISH2
+ Category utility 0.569 when put with C-7516{FISH}
+ Category utility 0.486 when put with C-7517{AMPHIBIAN}
+ Category utility 0.444 when put with C-7522{REPTILE}
+ Category utility 0.361 when put with C-7518{BIRD MAMMAL}
+ Category utility 0.456 when by itself
+ Category utility 0.000 when merge C-7516{FISH} and C-7517{AMPHIBIAN}
+ Level 0: putting instance with C-7516{FISH}
+   Level 1: Growing leaf category
+
+ C-7494{FISH2 REPTILE BIRD MAMMAL FISH AMPHIBIAN}
+   C-7522{REPTILE}
+   C-7518{BIRD MAMMAL}
+     C-7520{BIRD}
+     C-7521{MAMMAL}
+   C-7516{FISH2 FISH}
+     C-7524{FISH2}
+     C-7525{FISH}
+   C-7517{AMPHIBIAN}
+
+C-7494{FISH2 REPTILE BIRD MAMMAL FISH AMPHIBIAN}
+CL-USER> (load "a:/LispCabinet/home/cobweb-animal2-data.lisp")
+;; Loading file A:\LispCabinet\home\cobweb-animal2-data.lisp ...
+;; Loaded file A:\LispCabinet\home\cobweb-animal2-data.lisp
+T
+CL-USER> (train-cobweb *raw-examples*)
+
+
+Intializing root category with first instance. 
+C-7526{PENGUIN}
+
+
+Incorporating instance: ROBIN
+ Level 0: Growing leaf category
+
+ C-7526{ROBIN PENGUIN}
+   C-7527{ROBIN}
+   C-7528{PENGUIN}
+
+
+Incorporating instance: PANTHER
+ Category utility 1.056 when put with C-7527{ROBIN}
+ Category utility 0.889 when put with C-7528{PENGUIN}
+ Category utility 1.481 when by itself
+ Level 0: putting instance by itself
+
+ C-7526{PANTHER ROBIN PENGUIN}
+   C-7529{PANTHER}
+   C-7527{ROBIN}
+   C-7528{PENGUIN}
+
+
+Incorporating instance: GRACKLE
+ Category utility 1.208 when put with C-7527{ROBIN}
+ Category utility 0.958 when put with C-7528{PENGUIN}
+ Category utility 0.875 when put with C-7529{PANTHER}
+ Category utility 1.031 when by itself
+ Category utility 0.000 when merge C-7527{ROBIN} and C-7528{PENGUIN}
+ Level 0: putting instance with C-7527{ROBIN}
+   Level 1: Growing leaf category
+
+ C-7526{GRACKLE PANTHER ROBIN PENGUIN}
+   C-7529{PANTHER}
+   C-7527{GRACKLE ROBIN}
+     C-7531{GRACKLE}
+     C-7532{ROBIN}
+   C-7528{PENGUIN}
+
+
+Incorporating instance: LION
+ Category utility 1.293 when put with C-7529{PANTHER}
+ Category utility 0.827 when put with C-7528{PENGUIN}
+ Category utility 0.782 when put with C-7527{GRACKLE ROBIN}
+ Category utility 1.020 when by itself
+ Category utility 0.000 when merge C-7529{PANTHER} and C-7528{PENGUIN}
+ Level 0: putting instance with C-7529{PANTHER}
+   Level 1: Growing leaf category
+
+ C-7526{LION GRACKLE PANTHER ROBIN PENGUIN}
+   C-7529{LION PANTHER}
+     C-7534{LION}
+     C-7535{PANTHER}
+   C-7527{GRACKLE ROBIN}
+     C-7531{GRACKLE}
+     C-7532{ROBIN}
+   C-7528{PENGUIN}
+
+
+Incorporating instance: EAGLE
+ Category utility 1.185 when put with C-7527{GRACKLE ROBIN}
+ Category utility 1.019 when put with C-7528{PENGUIN}
+ Category utility 0.796 when put with C-7529{LION PANTHER}
+ Category utility 0.972 when by itself
+ Category utility 0.000 when merge C-7527{GRACKLE ROBIN} and C-7528{PENGUIN}
+ Category utility 0.000 when split C-7527{GRACKLE ROBIN} and put in NIL
+ Level 0: putting instance with C-7527{GRACKLE ROBIN}
+   Category utility 0.333 when put with C-7531{GRACKLE}
+   Category utility 0.333 when put with C-7532{ROBIN}
+   Category utility 0.444 when by itself
+   Level 1: putting instance by itself
+
+ C-7526{EAGLE LION GRACKLE PANTHER ROBIN PENGUIN}
+   C-7529{LION PANTHER}
+     C-7534{LION}
+     C-7535{PANTHER}
+   C-7527{EAGLE GRACKLE ROBIN}
+     C-7537{EAGLE}
+     C-7531{GRACKLE}
+     C-7532{ROBIN}
+   C-7528{PENGUIN}
+
+
+Incorporating instance: BEAR
+ Category utility 1.166 when put with C-7529{LION PANTHER}
+ Category utility 0.864 when put with C-7528{PENGUIN}
+ Category utility 0.840 when put with C-7527{EAGLE GRACKLE ROBIN}
+ Category utility 0.934 when by itself
+ Category utility 0.000 when merge C-7529{LION PANTHER} and C-7528{PENGUIN}
+ Category utility 0.000 when split C-7529{LION PANTHER} and put in NIL
+ Level 0: putting instance with C-7529{LION PANTHER}
+   Category utility 0.278 when put with C-7535{PANTHER}
+   Category utility 0.111 when put with C-7534{LION}
+   Category utility 0.296 when by itself
+   Level 1: putting instance by itself
+
+ C-7526{BEAR EAGLE LION GRACKLE PANTHER ROBIN PENGUIN}
+   C-7529{BEAR LION PANTHER}
+     C-7539{BEAR}
+     C-7534{LION}
+     C-7535{PANTHER}
+   C-7527{EAGLE GRACKLE ROBIN}
+     C-7537{EAGLE}
+     C-7531{GRACKLE}
+     C-7532{ROBIN}
+   C-7528{PENGUIN}
+
+
+Incorporating instance: DUCK
+ Category utility 1.160 when put with C-7528{PENGUIN}
+ Category utility 1.097 when put with C-7527{EAGLE GRACKLE ROBIN}
+ Category utility 0.750 when put with C-7529{BEAR LION PANTHER}
+ Category utility 0.964 when by itself
+ Category utility 0.000 when merge C-7528{PENGUIN} and C-7527{EAGLE GRACKLE ROBIN}
+ Level 0: putting instance with C-7528{PENGUIN}
+   Level 1: Growing leaf category
+
+ C-7526{DUCK BEAR EAGLE LION GRACKLE PANTHER ROBIN PENGUIN}
+   C-7529{BEAR LION PANTHER}
+     C-7539{BEAR}
+     C-7534{LION}
+     C-7535{PANTHER}
+   C-7527{EAGLE GRACKLE ROBIN}
+     C-7537{EAGLE}
+     C-7531{GRACKLE}
+     C-7532{ROBIN}
+   C-7528{DUCK PENGUIN}
+     C-7541{DUCK}
+     C-7542{PENGUIN}
+
+C-7526{DUCK BEAR EAGLE LION GRACKLE PANTHER ROBIN PENGUIN}
+CL-USER> 
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+CL-USER> (load "d:/Dropbox/FALL2014/ICS361/MachineLearning/cobweb.lisp")
+;; Loading file D:\Dropbox\FALL2014\ICS361\MachineLearning\cobweb.lisp ...
+;; Loaded file D:\Dropbox\FALL2014\ICS361\MachineLearning\cobweb.lisp
+T
+CL-USER> (load "d:/Dropbox/FALL2014/ICS361/MachineLearning/ml-utilities.lisp")
+;; Loading file D:\Dropbox\FALL2014\ICS361\MachineLearning\ml-utilities.lisp ...
+;; Loaded file D:\Dropbox\FALL2014\ICS361\MachineLearning\ml-utilities.lisp
+T
+CL-USER> (load "d:/Dropbox/FALL2014/ICS361/MachineLearning/cobweb-animal2-data.lisp")
+;; Loading file D:\Dropbox\FALL2014\ICS361\MachineLearning\cobweb-animal2-data.lisp ...
+;; Loaded file D:\Dropbox\FALL2014\ICS361\MachineLearning\cobweb-animal2-data.lisp
+T
+CL-USER> (train-cobweb *raw-examples*)
+
+
+Intializing root category with first instance. 
+C-8382{PENGUIN}
+
+
+Incorporating instance: ROBIN
+ Level 0: Growing leaf category
+
+ C-8382{ROBIN PENGUIN}
+   C-8404{ROBIN}
+   C-8405{PENGUIN}
+
+
+Incorporating instance: PANTHER
+ Category utility 1.056 when put with C-8404{ROBIN}
+ Category utility 0.889 when put with C-8405{PENGUIN}
+ Category utility 1.481 when by itself
+ Level 0: putting instance by itself
+
+ C-8382{PANTHER ROBIN PENGUIN}
+   C-8406{PANTHER}
+   C-8404{ROBIN}
+   C-8405{PENGUIN}
+
+
+Incorporating instance: GRACKLE
+ Category utility 1.208 when put with C-8404{ROBIN}
+ Category utility 0.958 when put with C-8405{PENGUIN}
+ Category utility 0.875 when put with C-8406{PANTHER}
+ Category utility 1.031 when by itself
+ Category utility 0.000 when merge C-8404{ROBIN} and C-8405{PENGUIN}
+ Level 0: putting instance with C-8404{ROBIN}
+   Level 1: Growing leaf category
+
+ C-8382{GRACKLE PANTHER ROBIN PENGUIN}
+   C-8406{PANTHER}
+   C-8404{GRACKLE ROBIN}
+     C-8408{GRACKLE}
+     C-8409{ROBIN}
+   C-8405{PENGUIN}
+
+
+Incorporating instance: LION
+ Category utility 1.293 when put with C-8406{PANTHER}
+ Category utility 0.827 when put with C-8405{PENGUIN}
+ Category utility 0.782 when put with C-8404{GRACKLE ROBIN}
+ Category utility 1.020 when by itself
+ Category utility 0.000 when merge C-8406{PANTHER} and C-8405{PENGUIN}
+ Level 0: putting instance with C-8406{PANTHER}
+   Level 1: Growing leaf category
+
+ C-8382{LION GRACKLE PANTHER ROBIN PENGUIN}
+   C-8406{LION PANTHER}
+     C-8411{LION}
+     C-8412{PANTHER}
+   C-8404{GRACKLE ROBIN}
+     C-8408{GRACKLE}
+     C-8409{ROBIN}
+   C-8405{PENGUIN}
+
+
+Incorporating instance: EAGLE
+ Category utility 1.185 when put with C-8404{GRACKLE ROBIN}
+ Category utility 1.019 when put with C-8405{PENGUIN}
+ Category utility 0.796 when put with C-8406{LION PANTHER}
+ Category utility 0.972 when by itself
+ Category utility 0.000 when merge C-8404{GRACKLE ROBIN} and C-8405{PENGUIN}
+ Category utility 0.000 when split C-8404{GRACKLE ROBIN} and put in NIL
+ Level 0: putting instance with C-8404{GRACKLE ROBIN}
+   Category utility 0.333 when put with C-8408{GRACKLE}
+   Category utility 0.333 when put with C-8409{ROBIN}
+   Category utility 0.444 when by itself
+   Level 1: putting instance by itself
+
+ C-8382{EAGLE LION GRACKLE PANTHER ROBIN PENGUIN}
+   C-8406{LION PANTHER}
+     C-8411{LION}
+     C-8412{PANTHER}
+   C-8404{EAGLE GRACKLE ROBIN}
+     C-8414{EAGLE}
+     C-8408{GRACKLE}
+     C-8409{ROBIN}
+   C-8405{PENGUIN}
+
+
+Incorporating instance: BEAR
+ Category utility 1.166 when put with C-8406{LION PANTHER}
+ Category utility 0.864 when put with C-8405{PENGUIN}
+ Category utility 0.840 when put with C-8404{EAGLE GRACKLE ROBIN}
+ Category utility 0.934 when by itself
+ Category utility 0.000 when merge C-8406{LION PANTHER} and C-8405{PENGUIN}
+ Category utility 0.000 when split C-8406{LION PANTHER} and put in NIL
+ Level 0: putting instance with C-8406{LION PANTHER}
+   Category utility 0.278 when put with C-8412{PANTHER}
+   Category utility 0.111 when put with C-8411{LION}
+   Category utility 0.296 when by itself
+   Level 1: putting instance by itself
+
+ C-8382{BEAR EAGLE LION GRACKLE PANTHER ROBIN PENGUIN}
+   C-8406{BEAR LION PANTHER}
+     C-8416{BEAR}
+     C-8411{LION}
+     C-8412{PANTHER}
+   C-8404{EAGLE GRACKLE ROBIN}
+     C-8414{EAGLE}
+     C-8408{GRACKLE}
+     C-8409{ROBIN}
+   C-8405{PENGUIN}
+
+
+Incorporating instance: DUCK
+ Category utility 1.160 when put with C-8405{PENGUIN}
+ Category utility 1.097 when put with C-8404{EAGLE GRACKLE ROBIN}
+ Category utility 0.750 when put with C-8406{BEAR LION PANTHER}
+ Category utility 0.964 when by itself
+ Category utility 0.000 when merge C-8405{PENGUIN} and C-8404{EAGLE GRACKLE ROBIN}
+ Level 0: putting instance with C-8405{PENGUIN}
+   Level 1: Growing leaf category
+
+ C-8382{DUCK BEAR EAGLE LION GRACKLE PANTHER ROBIN PENGUIN}
+   C-8406{BEAR LION PANTHER}
+     C-8416{BEAR}
+     C-8411{LION}
+     C-8412{PANTHER}
+   C-8404{EAGLE GRACKLE ROBIN}
+     C-8414{EAGLE}
+     C-8408{GRACKLE}
+     C-8409{ROBIN}
+   C-8405{DUCK PENGUIN}
+     C-8418{DUCK}
+     C-8419{PENGUIN}
+
+
+Incorporating instance: ELEPHANT
+ Category utility 1.150 when put with C-8406{BEAR LION PANTHER}
+ Category utility 0.922 when put with C-8405{DUCK PENGUIN}
+ Category utility 0.848 when put with C-8404{EAGLE GRACKLE ROBIN}
+ Category utility 0.941 when by itself
+ Category utility 0.000 when merge C-8406{BEAR LION PANTHER} and C-8405{DUCK PENGUIN}
+ Category utility 0.000 when split C-8406{BEAR LION PANTHER} and put in NIL
+ Level 0: putting instance with C-8406{BEAR LION PANTHER}
+   Category utility 0.292 when put with C-8411{LION}
+   Category utility 0.292 when put with C-8412{PANTHER}
+   Category utility 0.208 when put with C-8416{BEAR}
+   Category utility 0.344 when by itself
+   Level 1: putting instance by itself
+
+ C-8382{ELEPHANT DUCK BEAR EAGLE LION GRACKLE PANTHER ROBIN PENGUIN}
+   C-8406{ELEPHANT BEAR LION PANTHER}
+     C-8421{ELEPHANT}
+     C-8416{BEAR}
+     C-8411{LION}
+     C-8412{PANTHER}
+   C-8404{EAGLE GRACKLE ROBIN}
+     C-8414{EAGLE}
+     C-8408{GRACKLE}
+     C-8409{ROBIN}
+   C-8405{DUCK PENGUIN}
+     C-8418{DUCK}
+     C-8419{PENGUIN}
+
+
+Incorporating instance: HEDGEHOG
+ Category utility 1.087 when put with C-8406{ELEPHANT BEAR LION PANTHER}
+ Category utility 0.907 when put with C-8404{EAGLE GRACKLE ROBIN}
+ Category utility 0.901 when put with C-8405{DUCK PENGUIN}
+ Category utility 0.918 when by itself
+ Category utility 0.000 when merge C-8406{ELEPHANT BEAR LION PANTHER} and C-8404{EAGLE GRACKLE ROBIN}
+ Category utility 0.000 when split C-8406{ELEPHANT BEAR LION PANTHER} and put in NIL
+ Level 0: putting instance with C-8406{ELEPHANT BEAR LION PANTHER}
+   Category utility 0.330 when put with C-8416{BEAR}
+   Category utility 0.330 when put with C-8411{LION}
+   Category utility 0.330 when put with C-8412{PANTHER}
+   Category utility 0.280 when put with C-8421{ELEPHANT}
+   Category utility 0.384 when by itself
+   Level 1: putting instance by itself
+
+ C-8382{HEDGEHOG ELEPHANT DUCK BEAR EAGLE LION GRACKLE PANTHER ROBIN PENGUIN}
+   C-8406{HEDGEHOG ELEPHANT BEAR LION PANTHER}
+     C-8423{HEDGEHOG}
+     C-8421{ELEPHANT}
+     C-8416{BEAR}
+     C-8411{LION}
+     C-8412{PANTHER}
+   C-8404{EAGLE GRACKLE ROBIN}
+     C-8414{EAGLE}
+     C-8408{GRACKLE}
+     C-8409{ROBIN}
+   C-8405{DUCK PENGUIN}
+     C-8418{DUCK}
+     C-8419{PENGUIN}
+
+
+Incorporating instance: GIBBON
+ Category utility 1.073 when put with C-8406{HEDGEHOG ELEPHANT BEAR LION PANTHER}
+ Category utility 0.822 when put with C-8404{EAGLE GRACKLE ROBIN}
+ Category utility 0.782 when put with C-8405{DUCK PENGUIN}
+ Category utility 0.821 when by itself
+ Category utility 0.000 when merge C-8406{HEDGEHOG ELEPHANT BEAR LION PANTHER} and C-8404{EAGLE GRACKLE ROBIN}
+ Category utility 0.000 when split C-8406{HEDGEHOG ELEPHANT BEAR LION PANTHER} and put in NIL
+ Level 0: putting instance with C-8406{HEDGEHOG ELEPHANT BEAR LION PANTHER}
+   Category utility 0.344 when put with C-8412{PANTHER}
+   Category utility 0.311 when put with C-8416{BEAR}
+   Category utility 0.311 when put with C-8411{LION}
+   Category utility 0.278 when put with C-8421{ELEPHANT}
+   Category utility 0.244 when put with C-8423{HEDGEHOG}
+   Category utility 0.287 when by itself
+   Category utility 0.000 when merge C-8412{PANTHER} and C-8416{BEAR}
+   Level 1: putting instance with C-8412{PANTHER}
+     Level 2: Growing leaf category
+
+ C-8382{GIBBON HEDGEHOG ELEPHANT DUCK BEAR EAGLE LION GRACKLE PANTHER ROBIN PENGUIN}
+   C-8406{GIBBON HEDGEHOG ELEPHANT BEAR LION PANTHER}
+     C-8423{HEDGEHOG}
+     C-8421{ELEPHANT}
+     C-8416{BEAR}
+     C-8411{LION}
+     C-8412{GIBBON PANTHER}
+       C-8426{GIBBON}
+       C-8427{PANTHER}
+   C-8404{EAGLE GRACKLE ROBIN}
+     C-8414{EAGLE}
+     C-8408{GRACKLE}
+     C-8409{ROBIN}
+   C-8405{DUCK PENGUIN}
+     C-8418{DUCK}
+     C-8419{PENGUIN}
+
+
+Incorporating instance: IBEX
+ Category utility 1.030 when put with C-8406{GIBBON HEDGEHOG ELEPHANT BEAR LION PANTHER}
+ Category utility 0.829 when put with C-8404{EAGLE GRACKLE ROBIN}
+ Category utility 0.824 when put with C-8405{DUCK PENGUIN}
+ Category utility 0.819 when by itself
+ Category utility 0.000 when merge C-8406{GIBBON HEDGEHOG ELEPHANT BEAR LION PANTHER} and C-8404{EAGLE GRACKLE ROBIN}
+ Category utility 0.000 when split C-8406{GIBBON HEDGEHOG ELEPHANT BEAR LION PANTHER} and put in NIL
+ Level 0: putting instance with C-8406{GIBBON HEDGEHOG ELEPHANT BEAR LION PANTHER}
+   Category utility 0.302 when put with C-8423{HEDGEHOG}
+   Category utility 0.302 when put with C-8416{BEAR}
+   Category utility 0.302 when put with C-8411{LION}
+   Category utility 0.283 when put with C-8412{GIBBON PANTHER}
+   Category utility 0.273 when put with C-8421{ELEPHANT}
+   Category utility 0.299 when by itself
+   Category utility 0.000 when merge C-8423{HEDGEHOG} and C-8416{BEAR}
+   Level 1: putting instance with C-8423{HEDGEHOG}
+     Level 2: Growing leaf category
+
+ C-8382{IBEX GIBBON HEDGEHOG ELEPHANT DUCK BEAR EAGLE LION GRACKLE PANTHER ROBIN PENGUIN}
+   C-8406{IBEX GIBBON HEDGEHOG ELEPHANT BEAR LION PANTHER}
+     C-8423{IBEX HEDGEHOG}
+       C-8430{IBEX}
+       C-8431{HEDGEHOG}
+     C-8421{ELEPHANT}
+     C-8416{BEAR}
+     C-8411{LION}
+     C-8412{GIBBON PANTHER}
+       C-8426{GIBBON}
+       C-8427{PANTHER}
+   C-8404{EAGLE GRACKLE ROBIN}
+     C-8414{EAGLE}
+     C-8408{GRACKLE}
+     C-8409{ROBIN}
+   C-8405{DUCK PENGUIN}
+     C-8418{DUCK}
+     C-8419{PENGUIN}
+
+
+Incorporating instance: NARWHAL
+ Category utility 0.947 when put with C-8406{IBEX GIBBON HEDGEHOG ELEPHANT BEAR LION PANTHER}
+ Category utility 0.898 when put with C-8405{DUCK PENGUIN}
+ Category utility 0.842 when put with C-8404{EAGLE GRACKLE ROBIN}
+ Category utility 0.834 when by itself
+ Category utility 0.000 when merge C-8406{IBEX GIBBON HEDGEHOG ELEPHANT BEAR LION PANTHER} and C-8405{DUCK PENGUIN}
+ Category utility 0.000 when split C-8406{IBEX GIBBON HEDGEHOG ELEPHANT BEAR LION PANTHER} and put in NIL
+ Level 0: putting instance with C-8406{IBEX GIBBON HEDGEHOG ELEPHANT BEAR LION PANTHER}
+   Category utility 0.325 when put with C-8421{ELEPHANT}
+   Category utility 0.325 when put with C-8416{BEAR}
+   Category utility 0.300 when put with C-8411{LION}
+   Category utility 0.292 when put with C-8412{GIBBON PANTHER}
+   Category utility 0.258 when put with C-8423{IBEX HEDGEHOG}
+   Category utility 0.354 when by itself
+   Level 1: putting instance by itself
+
+ C-8382{NARWHAL IBEX GIBBON HEDGEHOG ELEPHANT DUCK BEAR EAGLE LION GRACKLE PANTHER ROBIN PENGUIN}
+   C-8406{NARWHAL IBEX GIBBON HEDGEHOG ELEPHANT BEAR LION PANTHER}
+     C-8433{NARWHAL}
+     C-8423{IBEX HEDGEHOG}
+       C-8430{IBEX}
+       C-8431{HEDGEHOG}
+     C-8421{ELEPHANT}
+     C-8416{BEAR}
+     C-8411{LION}
+     C-8412{GIBBON PANTHER}
+       C-8426{GIBBON}
+       C-8427{PANTHER}
+   C-8404{EAGLE GRACKLE ROBIN}
+     C-8414{EAGLE}
+     C-8408{GRACKLE}
+     C-8409{ROBIN}
+   C-8405{DUCK PENGUIN}
+     C-8418{DUCK}
+     C-8419{PENGUIN}
+
+
+Incorporating instance: QUETZAL
+ Category utility 0.981 when put with C-8404{EAGLE GRACKLE ROBIN}
+ Category utility 0.898 when put with C-8405{DUCK PENGUIN}
+ Category utility 0.760 when put with C-8406{NARWHAL IBEX GIBBON HEDGEHOG ELEPHANT BEAR LION PANTHER}
+ Category utility 0.763 when by itself
+ Category utility 0.000 when merge C-8404{EAGLE GRACKLE ROBIN} and C-8405{DUCK PENGUIN}
+ Category utility 0.000 when split C-8404{EAGLE GRACKLE ROBIN} and put in NIL
+ Level 0: putting instance with C-8404{EAGLE GRACKLE ROBIN}
+   Category utility 0.375 when put with C-8409{ROBIN}
+   Category utility 0.292 when put with C-8414{EAGLE}
+   Category utility 0.292 when put with C-8408{GRACKLE}
+   Category utility 0.344 when by itself
+   Category utility 0.000 when merge C-8409{ROBIN} and C-8414{EAGLE}
+   Level 1: putting instance with C-8409{ROBIN}
+     Level 2: Growing leaf category
+
+ C-8382{QUETZAL NARWHAL IBEX GIBBON HEDGEHOG ELEPHANT DUCK BEAR EAGLE LION GRACKLE PANTHER ROBIN PENGUIN}
+   C-8406{NARWHAL IBEX GIBBON HEDGEHOG ELEPHANT BEAR LION PANTHER}
+     C-8433{NARWHAL}
+     C-8423{IBEX HEDGEHOG}
+       C-8430{IBEX}
+       C-8431{HEDGEHOG}
+     C-8421{ELEPHANT}
+     C-8416{BEAR}
+     C-8411{LION}
+     C-8412{GIBBON PANTHER}
+       C-8426{GIBBON}
+       C-8427{PANTHER}
+   C-8404{QUETZAL EAGLE GRACKLE ROBIN}
+     C-8414{EAGLE}
+     C-8408{GRACKLE}
+     C-8409{QUETZAL ROBIN}
+       C-8436{QUETZAL}
+       C-8437{ROBIN}
+   C-8405{DUCK PENGUIN}
+     C-8418{DUCK}
+     C-8419{PENGUIN}
+
+
+Incorporating instance: CAMEL
+ Category utility 0.963 when put with C-8406{NARWHAL IBEX GIBBON HEDGEHOG ELEPHANT BEAR LION PANTHER}
+ Category utility 0.770 when put with C-8404{QUETZAL EAGLE GRACKLE ROBIN}
+ Category utility 0.765 when put with C-8405{DUCK PENGUIN}
+ Category utility 0.746 when by itself
+ Category utility 0.000 when merge C-8406{NARWHAL IBEX GIBBON HEDGEHOG ELEPHANT BEAR LION PANTHER} and C-8404{QUETZAL EAGLE GRACKLE ROBIN}
+ Category utility 0.000 when split C-8406{NARWHAL IBEX GIBBON HEDGEHOG ELEPHANT BEAR LION PANTHER} and put in NIL
+ Level 0: putting instance with C-8406{NARWHAL IBEX GIBBON HEDGEHOG ELEPHANT BEAR LION PANTHER}
+   Category utility 0.342 when put with C-8411{LION}
+   Category utility 0.317 when put with C-8412{GIBBON PANTHER}
+   Category utility 0.305 when put with C-8421{ELEPHANT}
+   Category utility 0.305 when put with C-8416{BEAR}
+   Category utility 0.292 when put with C-8423{IBEX HEDGEHOG}
+   Category utility 0.249 when put with C-8433{NARWHAL}
+   Category utility 0.293 when by itself
+   Category utility 0.000 when merge C-8411{LION} and C-8412{GIBBON PANTHER}
+   Level 1: putting instance with C-8411{LION}
+     Level 2: Growing leaf category
+
+ C-8382{CAMEL QUETZAL NARWHAL IBEX GIBBON HEDGEHOG ELEPHANT DUCK BEAR EAGLE LION GRACKLE PANTHER ROBIN PENGUIN}
+   C-8406{CAMEL NARWHAL IBEX GIBBON HEDGEHOG ELEPHANT BEAR LION PANTHER}
+     C-8433{NARWHAL}
+     C-8423{IBEX HEDGEHOG}
+       C-8430{IBEX}
+       C-8431{HEDGEHOG}
+     C-8421{ELEPHANT}
+     C-8416{BEAR}
+     C-8411{CAMEL LION}
+       C-8440{CAMEL}
+       C-8441{LION}
+     C-8412{GIBBON PANTHER}
+       C-8426{GIBBON}
+       C-8427{PANTHER}
+   C-8404{QUETZAL EAGLE GRACKLE ROBIN}
+     C-8414{EAGLE}
+     C-8408{GRACKLE}
+     C-8409{QUETZAL ROBIN}
+       C-8436{QUETZAL}
+       C-8437{ROBIN}
+   C-8405{DUCK PENGUIN}
+     C-8418{DUCK}
+     C-8419{PENGUIN}
+
+
+Incorporating instance: PLATYPUS
+ Category utility 0.891 when put with C-8405{DUCK PENGUIN}
+ Category utility 0.872 when put with C-8406{CAMEL NARWHAL IBEX GIBBON HEDGEHOG ELEPHANT BEAR LION PANTHER}
+ Category utility 0.832 when put with C-8404{QUETZAL EAGLE GRACKLE ROBIN}
+ Category utility 0.757 when by itself
+ Category utility 0.000 when merge C-8405{DUCK PENGUIN} and C-8406{CAMEL NARWHAL IBEX GIBBON HEDGEHOG ELEPHANT BEAR LION PANTHER}
+ Category utility 0.000 when split C-8405{DUCK PENGUIN} and put in NIL
+ Level 0: putting instance with C-8405{DUCK PENGUIN}
+   Category utility 0.611 when put with C-8418{DUCK}
+   Category utility 0.611 when put with C-8419{PENGUIN}
+   Category utility 0.963 when by itself
+   Level 1: putting instance by itself
+
+ C-8382{PLATYPUS CAMEL QUETZAL NARWHAL IBEX GIBBON HEDGEHOG ELEPHANT DUCK BEAR EAGLE LION GRACKLE PANTHER ROBIN PENGUIN}
+   C-8406{CAMEL NARWHAL IBEX GIBBON HEDGEHOG ELEPHANT BEAR LION PANTHER}
+     C-8433{NARWHAL}
+     C-8423{IBEX HEDGEHOG}
+       C-8430{IBEX}
+       C-8431{HEDGEHOG}
+     C-8421{ELEPHANT}
+     C-8416{BEAR}
+     C-8411{CAMEL LION}
+       C-8440{CAMEL}
+       C-8441{LION}
+     C-8412{GIBBON PANTHER}
+       C-8426{GIBBON}
+       C-8427{PANTHER}
+   C-8404{QUETZAL EAGLE GRACKLE ROBIN}
+     C-8414{EAGLE}
+     C-8408{GRACKLE}
+     C-8409{QUETZAL ROBIN}
+       C-8436{QUETZAL}
+       C-8437{ROBIN}
+   C-8405{PLATYPUS DUCK PENGUIN}
+     C-8443{PLATYPUS}
+     C-8418{DUCK}
+     C-8419{PENGUIN}
+
+
+Incorporating instance: MEERKAT
+ Category utility 0.876 when put with C-8406{CAMEL NARWHAL IBEX GIBBON HEDGEHOG ELEPHANT BEAR LION PANTHER}
+ Category utility 0.733 when put with C-8405{PLATYPUS DUCK PENGUIN}
+ Category utility 0.708 when put with C-8404{QUETZAL EAGLE GRACKLE ROBIN}
+ Category utility 0.680 when by itself
+ Category utility 0.000 when merge C-8406{CAMEL NARWHAL IBEX GIBBON HEDGEHOG ELEPHANT BEAR LION PANTHER} and C-8405{PLATYPUS DUCK PENGUIN}
+ Category utility 0.000 when split C-8406{CAMEL NARWHAL IBEX GIBBON HEDGEHOG ELEPHANT BEAR LION PANTHER} and put in NIL
+ Level 0: putting instance with C-8406{CAMEL NARWHAL IBEX GIBBON HEDGEHOG ELEPHANT BEAR LION PANTHER}
+   Category utility 0.311 when put with C-8411{CAMEL LION}
+   Category utility 0.311 when put with C-8412{GIBBON PANTHER}
+   Category utility 0.300 when put with C-8421{ELEPHANT}
+   Category utility 0.300 when put with C-8416{BEAR}
+   Category utility 0.289 when put with C-8423{IBEX HEDGEHOG}
+   Category utility 0.250 when put with C-8433{NARWHAL}
+   Category utility 0.286 when by itself
+   Category utility 0.000 when merge C-8411{CAMEL LION} and C-8412{GIBBON PANTHER}
+   Category utility 0.000 when split C-8411{CAMEL LION} and put in NIL
+   Level 1: putting instance with C-8411{CAMEL LION}
+     Category utility 0.056 when put with C-8440{CAMEL}
+     Category utility 0.056 when put with C-8441{LION}
+     Category utility 0.148 when by itself
+     Level 2: putting instance by itself
+
+ C-8382{MEERKAT PLATYPUS CAMEL QUETZAL NARWHAL IBEX GIBBON HEDGEHOG ELEPHANT DUCK BEAR EAGLE LION GRACKLE PANTHER ROBIN PENGUIN}
+   C-8406{MEERKAT CAMEL NARWHAL IBEX GIBBON HEDGEHOG ELEPHANT BEAR LION PANTHER}
+     C-8433{NARWHAL}
+     C-8423{IBEX HEDGEHOG}
+       C-8430{IBEX}
+       C-8431{HEDGEHOG}
+     C-8421{ELEPHANT}
+     C-8416{BEAR}
+     C-8411{MEERKAT CAMEL LION}
+       C-8446{MEERKAT}
+       C-8440{CAMEL}
+       C-8441{LION}
+     C-8412{GIBBON PANTHER}
+       C-8426{GIBBON}
+       C-8427{PANTHER}
+   C-8404{QUETZAL EAGLE GRACKLE ROBIN}
+     C-8414{EAGLE}
+     C-8408{GRACKLE}
+     C-8409{QUETZAL ROBIN}
+       C-8436{QUETZAL}
+       C-8437{ROBIN}
+   C-8405{PLATYPUS DUCK PENGUIN}
+     C-8443{PLATYPUS}
+     C-8418{DUCK}
+     C-8419{PENGUIN}
+
+
+Incorporating instance: PANGOLIN
+ Category utility 0.844 when put with C-8406{MEERKAT CAMEL NARWHAL IBEX GIBBON HEDGEHOG ELEPHANT BEAR LION PANTHER}
+ Category utility 0.742 when put with C-8405{PLATYPUS DUCK PENGUIN}
+ Category utility 0.728 when put with C-8404{QUETZAL EAGLE GRACKLE ROBIN}
+ Category utility 0.686 when by itself
+ Category utility 0.000 when merge C-8406{MEERKAT CAMEL NARWHAL IBEX GIBBON HEDGEHOG ELEPHANT BEAR LION PANTHER} and C-8405{PLATYPUS DUCK PENGUIN}
+ Category utility 0.000 when split C-8406{MEERKAT CAMEL NARWHAL IBEX GIBBON HEDGEHOG ELEPHANT BEAR LION PANTHER} and put in NIL
+ Level 0: putting instance with C-8406{MEERKAT CAMEL NARWHAL IBEX GIBBON HEDGEHOG ELEPHANT BEAR LION PANTHER}
+   Category utility 0.300 when put with C-8423{IBEX HEDGEHOG}
+   Category utility 0.295 when put with C-8416{BEAR}
+   Category utility 0.285 when put with C-8411{MEERKAT CAMEL LION}
+   Category utility 0.280 when put with C-8421{ELEPHANT}
+   Category utility 0.280 when put with C-8412{GIBBON PANTHER}
+   Category utility 0.250 when put with C-8433{NARWHAL}
+   Category utility 0.292 when by itself
+   Category utility 0.000 when merge C-8423{IBEX HEDGEHOG} and C-8416{BEAR}
+   Category utility 0.000 when split C-8423{IBEX HEDGEHOG} and put in NIL
+   Level 1: putting instance with C-8423{IBEX HEDGEHOG}
+     Category utility 0.444 when put with C-8431{HEDGEHOG}
+     Category utility 0.278 when put with C-8430{IBEX}
+     Category utility 0.519 when by itself
+     Level 2: putting instance by itself
+
+ C-8382{PANGOLIN MEERKAT PLATYPUS CAMEL QUETZAL NARWHAL IBEX GIBBON HEDGEHOG ELEPHANT DUCK BEAR EAGLE LION GRACKLE PANTHER ROBIN PENGUIN}
+   C-8406{PANGOLIN MEERKAT CAMEL NARWHAL IBEX GIBBON HEDGEHOG ELEPHANT BEAR LION PANTHER}
+     C-8433{NARWHAL}
+     C-8423{PANGOLIN IBEX HEDGEHOG}
+       C-8449{PANGOLIN}
+       C-8430{IBEX}
+       C-8431{HEDGEHOG}
+     C-8421{ELEPHANT}
+     C-8416{BEAR}
+     C-8411{MEERKAT CAMEL LION}
+       C-8446{MEERKAT}
+       C-8440{CAMEL}
+       C-8441{LION}
+     C-8412{GIBBON PANTHER}
+       C-8426{GIBBON}
+       C-8427{PANTHER}
+   C-8404{QUETZAL EAGLE GRACKLE ROBIN}
+     C-8414{EAGLE}
+     C-8408{GRACKLE}
+     C-8409{QUETZAL ROBIN}
+       C-8436{QUETZAL}
+       C-8437{ROBIN}
+   C-8405{PLATYPUS DUCK PENGUIN}
+     C-8443{PLATYPUS}
+     C-8418{DUCK}
+     C-8419{PENGUIN}
+
+C-8382{PANGOLIN MEERKAT PLATYPUS CAMEL QUETZAL NARWHAL IBEX GIBBON HEDGEHOG ELEPHANT DUCK BEAR EAGLE LION GRACKLE PANTHER ROBIN PENGUIN}
+CL-USER> 

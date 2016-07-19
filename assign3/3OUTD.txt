@@ -1,0 +1,449 @@
+;;;; -*- Mode: LISP; Syntax: Common-lisp; Package: USER; Base: 10 -*-
+;;;; Name:  Kevin Barroga                   Date: 2014 OCT 16
+;;;; Course: ICS361                   Assignment: Assignment 3
+;;;; File name: 3OUTD.txt
+
+;;;; 15 PUZZLE OUTPUT(5, 10 ,15 STATES)
+
+CL-USER> (load "a:/LispCabinet/home/nxnpuz.lisp")
+;; Loading file A:\LispCabinet\home\nxnpuz.lisp ...
+;; Loaded file A:\LispCabinet\home\nxnpuz.lisp
+T
+CL-USER> (solve-npuzzle  '#(1 2 0 3 5 6 7 4 9 10 11 8 13 14 15 12))
+
+
+
+
+
+================== Welcome to nxn Puzzle Solver ==================
+
+Solver: Checking for n x n puzzle ...
+Solver: Intializing ...
+Solver: Now trying to solve the puzzle ...
+
+|1|2| |3|
+|5|6|7|4|
+|9|10|11|8|
+|13|14|15|12|
+Solver: Empty Slot at position 2
+
+|1|2|3| |
+|5|6|7|4|
+|9|10|11|8|
+|13|14|15|12|
+Solver: Empty Slot at position 3
+
+|1|2|3|4|
+|5|6|7| |
+|9|10|11|8|
+|13|14|15|12|
+Solver: Empty Slot at position 7
+
+|1|2|3|4|
+|5|6|7|8|
+|9|10|11| |
+|13|14|15|12|
+Solver: Empty Slot at position 11
+
+|1|2|3|4|
+|5|6|7|8|
+|9|10|11|12|
+|13|14|15| |
+
+Solver: Goal State Reached
+
+
+Total nodes expanded = 4
+
+==================================================================
+NIL
+CL-USER> (solve-npuzzle '#(2 0 7 3 1 5 6 4 9 10 11 8 13 14 15 12))
+
+
+
+
+
+================== Welcome to nxn Puzzle Solver ==================
+
+Solver: Checking for n x n puzzle ...
+Solver: Intializing ...
+Solver: Now trying to solve the puzzle ...
+
+|2| |7|3|
+|1|5|6|4|
+|9|10|11|8|
+|13|14|15|12|
+Solver: Empty Slot at position 1
+
+| |2|7|3|
+|1|5|6|4|
+|9|10|11|8|
+|13|14|15|12|
+Solver: Empty Slot at position 0
+
+|1|2|7|3|
+| |5|6|4|
+|9|10|11|8|
+|13|14|15|12|
+Solver: Empty Slot at position 4
+
+|1|2|7|3|
+|5| |6|4|
+|9|10|11|8|
+|13|14|15|12|
+Solver: Empty Slot at position 5
+
+|1|2|7|3|
+|5|6| |4|
+|9|10|11|8|
+|13|14|15|12|
+Solver: Empty Slot at position 6
+
+|1|2| |3|
+|5|6|7|4|
+|9|10|11|8|
+|13|14|15|12|
+Solver: Empty Slot at position 2
+
+|1|2|3| |
+|5|6|7|4|
+|9|10|11|8|
+|13|14|15|12|
+Solver: Empty Slot at position 3
+
+|1|2|3|4|
+|5|6|7| |
+|9|10|11|8|
+|13|14|15|12|
+Solver: Empty Slot at position 7
+
+|1|2|3|4|
+|5|6|7|8|
+|9|10|11| |
+|13|14|15|12|
+Solver: Empty Slot at position 11
+
+|1|2|3|4|
+|5|6|7|8|
+|9|10|11|12|
+|13|14|15| |
+
+Solver: Goal State Reached
+
+
+Total nodes expanded = 9
+
+==================================================================
+NIL
+CL-USER> (solve-npuzzle  '#(2 7 0 3 1 5 6 4 9 10 11 8 13 14 15 12))
+
+
+
+
+
+================== Welcome to nxn Puzzle Solver ==================
+
+Solver: Checking for n x n puzzle ...
+Solver: Intializing ...
+Solver: Now trying to solve the puzzle ...
+
+|2|7| |3|
+|1|5|6|4|
+|9|10|11|8|
+|13|14|15|12|
+Solver: Empty Slot at position 2
+
+|2|7|3| |
+|1|5|6|4|
+|9|10|11|8|
+|13|14|15|12|
+Solver: Empty Slot at position 3
+
+|2|7|3|4|
+|1|5|6| |
+|9|10|11|8|
+|13|14|15|12|
+Solver: Empty Slot at position 7
+
+|2|7|3|4|
+|1|5|6|8|
+|9|10|11| |
+|13|14|15|12|
+Solver: Empty Slot at position 11
+
+|2|7|3|4|
+|1|5|6|8|
+|9|10|11|12|
+|13|14|15| |
+Solver: Empty Slot at position 15
+
+|2| |7|3|
+|1|5|6|4|
+|9|10|11|8|
+|13|14|15|12|
+Solver: Empty Slot at position 1
+
+|2|7|3|4|
+|1|5| |6|
+|9|10|11|8|
+|13|14|15|12|
+Solver: Empty Slot at position 6
+
+|2|7|6|3|
+|1|5| |4|
+|9|10|11|8|
+|13|14|15|12|
+Solver: Empty Slot at position 6
+
+| |2|7|3|
+|1|5|6|4|
+|9|10|11|8|
+|13|14|15|12|
+Solver: Empty Slot at position 0
+
+|1|2|7|3|
+| |5|6|4|
+|9|10|11|8|
+|13|14|15|12|
+Solver: Empty Slot at position 4
+
+|1|2|7|3|
+|5| |6|4|
+|9|10|11|8|
+|13|14|15|12|
+Solver: Empty Slot at position 5
+
+|1|2|7|3|
+|5|6| |4|
+|9|10|11|8|
+|13|14|15|12|
+Solver: Empty Slot at position 6
+
+|1|2| |3|
+|5|6|7|4|
+|9|10|11|8|
+|13|14|15|12|
+Solver: Empty Slot at position 2
+
+|1|2|3| |
+|5|6|7|4|
+|9|10|11|8|
+|13|14|15|12|
+Solver: Empty Slot at position 3
+
+|1|2|3|4|
+|5|6|7| |
+|9|10|11|8|
+|13|14|15|12|
+Solver: Empty Slot at position 7
+
+|1|2|3|4|
+|5|6|7|8|
+|9|10|11| |
+|13|14|15|12|
+Solver: Empty Slot at position 11
+
+|1|2|3|4|
+|5|6|7|8|
+|9|10|11|12|
+|13|14|15| |
+
+Solver: Goal State Reached
+
+
+Total nodes expanded = 16
+
+==================================================================
+NIL
+CL-USER> (solve-npuzzle  '#(2 7 3 0 1 5 6 4 9 10 11 8 13 14 15 12))
+
+
+
+
+
+================== Welcome to nxn Puzzle Solver ==================
+
+Solver: Checking for n x n puzzle ...
+Solver: Intializing ...
+Solver: Now trying to solve the puzzle ...
+
+|2|7|3| |
+|1|5|6|4|
+|9|10|11|8|
+|13|14|15|12|
+Solver: Empty Slot at position 3
+
+|2|7|3|4|
+|1|5|6| |
+|9|10|11|8|
+|13|14|15|12|
+Solver: Empty Slot at position 7
+
+|2|7|3|4|
+|1|5|6|8|
+|9|10|11| |
+|13|14|15|12|
+Solver: Empty Slot at position 11
+
+|2|7|3|4|
+|1|5|6|8|
+|9|10|11|12|
+|13|14|15| |
+Solver: Empty Slot at position 15
+
+|2|7|3|4|
+|1|5| |6|
+|9|10|11|8|
+|13|14|15|12|
+Solver: Empty Slot at position 6
+
+|2|7| |3|
+|1|5|6|4|
+|9|10|11|8|
+|13|14|15|12|
+Solver: Empty Slot at position 2
+
+|2|7|3|4|
+|1|5|6|8|
+|9|10|11|12|
+|13|14| |15|
+Solver: Empty Slot at position 14
+
+|2|7|3|4|
+|1|5|6|8|
+|9|10| |11|
+|13|14|15|12|
+Solver: Empty Slot at position 10
+
+|2|7|3|4|
+|1| |5|6|
+|9|10|11|8|
+|13|14|15|12|
+Solver: Empty Slot at position 5
+
+|2| |3|4|
+|1|7|5|6|
+|9|10|11|8|
+|13|14|15|12|
+Solver: Empty Slot at position 1
+
+| |2|3|4|
+|1|7|5|6|
+|9|10|11|8|
+|13|14|15|12|
+Solver: Empty Slot at position 0
+
+|1|2|3|4|
+| |7|5|6|
+|9|10|11|8|
+|13|14|15|12|
+Solver: Empty Slot at position 4
+
+|2|7|3|4|
+|1|5| |8|
+|9|10|6|11|
+|13|14|15|12|
+Solver: Empty Slot at position 6
+
+|2|7|6|3|
+|1|5| |4|
+|9|10|11|8|
+|13|14|15|12|
+Solver: Empty Slot at position 6
+
+|2|7|3|4|
+|1|5|11|6|
+|9|10| |8|
+|13|14|15|12|
+Solver: Empty Slot at position 10
+
+|2|7|3|4|
+| |1|5|6|
+|9|10|11|8|
+|13|14|15|12|
+Solver: Empty Slot at position 4
+
+|2| |7|3|
+|1|5|6|4|
+|9|10|11|8|
+|13|14|15|12|
+Solver: Empty Slot at position 1
+
+|2|7| |4|
+|1|5|3|6|
+|9|10|11|8|
+|13|14|15|12|
+Solver: Empty Slot at position 2
+
+| |2|7|3|
+|1|5|6|4|
+|9|10|11|8|
+|13|14|15|12|
+Solver: Empty Slot at position 0
+
+|1|2|7|3|
+| |5|6|4|
+|9|10|11|8|
+|13|14|15|12|
+Solver: Empty Slot at position 4
+
+|1|2|7|3|
+|5| |6|4|
+|9|10|11|8|
+|13|14|15|12|
+Solver: Empty Slot at position 5
+
+|1|2|7|3|
+|5|6| |4|
+|9|10|11|8|
+|13|14|15|12|
+Solver: Empty Slot at position 6
+
+|1|2| |3|
+|5|6|7|4|
+|9|10|11|8|
+|13|14|15|12|
+Solver: Empty Slot at position 2
+
+|1|2|3| |
+|5|6|7|4|
+|9|10|11|8|
+|13|14|15|12|
+Solver: Empty Slot at position 3
+
+|1|2|3|4|
+|5|6|7| |
+|9|10|11|8|
+|13|14|15|12|
+Solver: Empty Slot at position 7
+
+|1|2|3|4|
+|5|6|7|8|
+|9|10|11| |
+|13|14|15|12|
+Solver: Empty Slot at position 11
+
+|1|2|3|4|
+|5|6|7|8|
+|9|10|11|12|
+|13|14|15| |
+
+Solver: Goal State Reached
+
+
+Total nodes expanded = 26
+
+==================================================================
+NIL
+CL-USER> 
+
+
+
+
+
+
+
+
+
+
+

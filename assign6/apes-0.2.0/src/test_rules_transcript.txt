@@ -1,0 +1,1524 @@
+% -*- mode: Prolog;   -*-
+% Kevin Barroga, 2014 Nov, 28
+% ICS 361, Assignment #6
+% File: test_rules_transcript.txt
+
+
+Script started on Wed, Nov 26, 2014  9:24:35 AM
+/home/apes-0.2.0/src
+
+kbarroga@OSDLOCKBOX002A /home/apes-0.2.0/src
+
+$ swipl -f main.pl
+%  engine.pl compiled 0.02 sec, 64 clauses
+%  tokenizer.pl compiled 0.00 sec, 62 clauses
+%  parser.pl compiled 0.00 sec, 32 clauses
+%  knowledge/knowledge.pl compiled 0.02 sec, 35 clauses
+ERROR: /home/apes-0.2.0/src/main.pl:10:
+	source_sink `knowledge/groups/*.pl' does not exist
+Warning: /home/apes-0.2.0/src/main.pl:10:
+	Goal (directive) failed: user:ensure_loaded(knowledge/groups/*.pl)
+%  knowledge/groups/feline.pl compiled 0.00 sec, 2 clauses
+%  knowledge/groups/pet.pl compiled 0.00 sec, 5 clauses
+%  knowledge/groups/hawaiian-fish.pl compiled 0.00 sec, 17 clauses
+%  helpers.pl compiled 0.02 sec, 24 clauses
+Warning: /home/apes-0.2.0/src/processor.pl:53:
+	Singleton variable in branch: X
+%  processor.pl compiled 0.00 sec, 12 clauses
+% main.pl compiled 0.05 sec, 276 clauses
+Welcome to SWI-Prolog (Multi-threaded, 32 bits, Version 6.6.6)
+Copyright (c) 1990-2013 University of Amsterdam, VU Amsterdam
+SWI-Prolog comes with ABSOLUTELY NO WARRANTY. This is free software,
+and you are welcome to redistribute it under certain conditions.
+Please visit http://www.swi-prolog.org for details.
+
+For help, use ?- help(Topic). or ?- apropos(Word).
+
+?- start.
+_____________________________________________________
+
+|: what is object-a?
+
+Is it true: object-a has a nervous system? y.
+
+object-a isa animal is true
+Would you like to see how? y.
+
+object-a isa animal
+was derived by rule0 from 
+    object-a has a nervous system
+    was told
+
+More solutions? y.
+
+Is it true: object-a has blood? y.
+
+object-a isa animal is true
+Would you like to see how? y.
+
+object-a isa animal
+was derived by rule0 from 
+    object-a has blood
+    was told
+
+More solutions? y.
+
+Is it true: object-a has hair? n.
+
+Is it true: object-a does give milk? n.
+
+Is it true: object-a has feathers? n.
+
+Is it true: object-a does fly? n.
+
+Is it true: object-a has scales? n.
+
+Is it true: object-a does swim? y.
+
+Is it true: object-a has fins? y.
+
+object-a isa fish is true
+Would you like to see how? y.
+
+object-a isa fish
+was derived by rule from 
+    object-a does swim
+    was told
+    and
+    object-a has fins
+    was told
+
+More solutions? y.
+
+Is it true: object-a has hawaiian-name-oopu-nakea? y.
+
+Is it true: object-a has disc-shaped-sucker? y.
+
+Is it true: object-a does climb-waterfalls? y.
+
+object-a isa goby is true
+Would you like to see how? y.
+
+object-a isa goby
+was derived by rule from 
+    object-a isa fish
+    was derived by rule from 
+        object-a does swim
+        was told
+        and
+        object-a has fins
+        was told
+    and
+    object-a has hawaiian-name-oopu-nakea
+    was told
+    and
+    object-a has disc-shaped-sucker
+    was told
+    and
+    object-a does climb-waterfalls
+    was told
+
+More solutions? n.
+|: what is object-b?
+
+Is it true: object-b has a nervous system? y.
+
+object-b isa animal is true
+Would you like to see how? y.
+
+object-b isa animal
+was derived by rule0 from 
+    object-b has a nervous system
+    was told
+
+More solutions? y.
+
+Is it true: object-b has blood? y.
+
+object-b isa animal is true
+Would you like to see how? y.
+
+object-b isa animal
+was derived by rule0 from 
+    object-b has blood
+    was told
+
+More solutions? y.
+
+Is it true: object-b has hair? n.
+
+Is it true: object-b does give milk? n.
+
+Is it true: object-b has feathers? n.
+
+Is it true: object-b does fly? n.
+
+Is it true: object-b has scales? n.
+
+Is it true: object-b does swim? y.
+
+Is it true: object-b has fins? y.
+
+object-b isa fish is true
+Would you like to see how? y.
+
+object-b isa fish
+was derived by rule from 
+    object-b does swim
+    was told
+    and
+    object-b has fins
+    was told
+
+More solutions? y.
+
+Is it true: object-b has hawaiian-name-oopu-nakea? n.
+
+Is it true: object-b has hawaiian-name-oopu-alamoo? n.
+
+Is it true: object-b has hawaiian-name-oopu-nopili? n.
+
+Is it true: object-b has hawaiian-name-oopu-naniha? n.
+
+Is it true: object-b has hawaiian-name-oau? n.
+
+Is it true: object-b has large-eyes? y.
+
+Is it true: object-b has straight-dorsal-head? y.
+
+Is it true: object-b has olive-bronze-color? y.
+
+object-b isa strange-tail-flagtail is true
+Would you like to see how? y.
+
+object-b isa strange-tail-flagtail
+was derived by rule from 
+    object-b isa fish
+    was derived by rule from 
+        object-b does swim
+        was told
+        and
+        object-b has fins
+        was told
+    and
+    object-b has large-eyes
+    was told
+    and
+    object-b has straight-dorsal-head
+    was told
+    and
+    object-b has olive-bronze-color
+    was told
+
+More solutions? n.
+|: what is object-c?
+
+Is it true: object-c has a nervous system? n.
+
+Is it true: object-c has blood? n.
+
+Is it true: object-c does give milk? n.
+
+Is it true: object-c does fly? n.
+
+Is it true: object-c has scales? n.
+
+Is it true: object-c does swim? y.
+
+Is it true: object-c has fins? y.
+
+object-c isa fish is true
+Would you like to see how? y.
+
+object-c isa fish
+was derived by rule from 
+    object-c does swim
+    was told
+    and
+    object-c has fins
+    was told
+
+More solutions? y.
+
+Is it true: object-c has hawaiian-name-oopu-nakea? n.
+
+Is it true: object-c has hawaiian-name-oopu-alamoo? n.
+
+Is it true: object-c has hawaiian-name-oopu-nopili? y.
+
+Is it true: object-c has disc-shaped-sucker? y.
+
+Is it true: object-c does climb-waterfalls? n.
+
+Is it true: object-c has hawaiian-name-oopu-naniha? n.
+
+Is it true: object-c has hawaiian-name-oau? n.
+
+Is it true: object-c has large-eyes? n.
+
+Is it true: object-c has olive-green-color? y.
+
+Is it true: object-c has silvery-white-sides? y.
+
+Is it true: object-c has thin-lips? y.
+
+Is it true: object-c has lateral-horizonal-lines? y.
+
+object-c isa mullet is true
+Would you like to see how? y.
+
+object-c isa mullet
+was derived by rule from 
+    object-c isa fish
+    was derived by rule from 
+        object-c does swim
+        was told
+        and
+        object-c has fins
+        was told
+    and
+    object-c has olive-green-color
+    was told
+    and
+    object-c has silvery-white-sides
+    was told
+    and
+    object-c has thin-lips
+    was told
+    and
+    object-c has lateral-horizonal-lines
+    was told
+
+More solutions? n.
+|: what is object-d?
+
+Is it true: object-d has a nervous system? n.
+
+Is it true: object-d has blood? n.
+
+Is it true: object-d does give milk? n.
+
+Is it true: object-d does fly? n.
+
+Is it true: object-d has scales? n.
+
+Is it true: object-d does swim? n.
+
+Is it true: object-d has charcoal-color? n.
+
+Is it true: object-d has brownish-gray-color? n.
+
+object-d isa animal is false
+Would you like to see how? y.
+
+object-d isa animal is false
+was derived by rule0 from 
+    object-d has a nervous system is false
+    was told
+    and
+    object-d has blood is false
+    was told
+
+More negative solutions? y.
+
+object-d isa mammal is false
+Would you like to see how? y.
+
+object-d isa mammal is false
+was derived by rule1 from 
+    object-d isa animal is false
+    was derived by rule0 from 
+        object-d has a nervous system is false
+        was told
+        and
+        object-d has blood is false
+        was told
+    and
+    object-d does give milk is false
+    was told
+
+More negative solutions? y.
+
+object-d isa bird is false
+Would you like to see how? y.
+
+object-d isa bird is false
+was derived by rule2 from 
+    object-d isa animal is false
+    was derived by rule0 from 
+        object-d has a nervous system is false
+        was told
+        and
+        object-d has blood is false
+        was told
+    and
+    object-d does fly is false
+    was told
+
+More negative solutions? y.
+
+object-d isa carnivore is false
+Would you like to see how? y.
+
+object-d isa carnivore is false
+was derived by rule3 from 
+    object-d isa mammal is false
+    was derived by rule1 from 
+        object-d isa animal is false
+        was derived by rule0 from 
+            object-d has a nervous system is false
+            was told
+            and
+            object-d has blood is false
+            was told
+        and
+        object-d does give milk is false
+        was told
+
+More negative solutions? y.
+
+object-d isa cheetah is false
+Would you like to see how? y.
+
+object-d isa cheetah is false
+was derived by rule4 from 
+    object-d isa carnivore is false
+    was derived by rule3 from 
+        object-d isa mammal is false
+        was derived by rule1 from 
+            object-d isa animal is false
+            was derived by rule0 from 
+                object-d has a nervous system is false
+                was told
+                and
+                object-d has blood is false
+                was told
+            and
+            object-d does give milk is false
+            was told
+
+More negative solutions? y.
+
+object-d isa tiger is false
+Would you like to see how? y.
+
+object-d isa tiger is false
+was derived by rule5 from 
+    object-d isa carnivore is false
+    was derived by rule3 from 
+        object-d isa mammal is false
+        was derived by rule1 from 
+            object-d isa animal is false
+            was derived by rule0 from 
+                object-d has a nervous system is false
+                was told
+                and
+                object-d has blood is false
+                was told
+            and
+            object-d does give milk is false
+            was told
+
+More negative solutions? y.
+
+object-d isa pinguin is false
+Would you like to see how? y.
+
+object-d isa pinguin is false
+was derived by rule6 from 
+    object-d isa animal is false
+    was derived by rule0 from 
+        object-d has a nervous system is false
+        was told
+        and
+        object-d has blood is false
+        was told
+
+More negative solutions? y.
+
+object-d isa albatross is false
+Would you like to see how? y.
+
+object-d isa albatross is false
+was derived by rule7 from 
+    object-d isa bird is false
+    was derived by rule2 from 
+        object-d isa animal is false
+        was derived by rule0 from 
+            object-d has a nervous system is false
+            was told
+            and
+            object-d has blood is false
+            was told
+        and
+        object-d does fly is false
+        was told
+
+More negative solutions? y.
+
+object-d isa humanoid is false
+Would you like to see how? y.
+
+object-d isa humanoid is false
+was derived by rule from 
+    object-d isa mammal is false
+    was derived by rule1 from 
+        object-d isa animal is false
+        was derived by rule0 from 
+            object-d has a nervous system is false
+            was told
+            and
+            object-d has blood is false
+            was told
+        and
+        object-d does give milk is false
+        was told
+
+More negative solutions? y.
+
+object-d isa human is false
+Would you like to see how? y.
+
+object-d isa human is false
+was derived by rule from 
+    object-d isa humanoid is false
+    was derived by rule from 
+        object-d isa mammal is false
+        was derived by rule1 from 
+            object-d isa animal is false
+            was derived by rule0 from 
+                object-d has a nervous system is false
+                was told
+                and
+                object-d has blood is false
+                was told
+            and
+            object-d does give milk is false
+            was told
+
+More negative solutions? y.
+
+object-d isa erectus is false
+Would you like to see how? y.
+
+object-d isa erectus is false
+was derived by rule from 
+    object-d isa humanoid is false
+    was derived by rule from 
+        object-d isa mammal is false
+        was derived by rule1 from 
+            object-d isa animal is false
+            was derived by rule0 from 
+                object-d has a nervous system is false
+                was told
+                and
+                object-d has blood is false
+                was told
+            and
+            object-d does give milk is false
+            was told
+
+More negative solutions? y.
+
+object-d isa reptile is false
+Would you like to see how? y.
+
+object-d isa reptile is false
+was derived by rule from 
+    object-d has scales is false
+    was told
+
+More negative solutions? y.
+
+object-d isa fish is false
+Would you like to see how? y.
+
+object-d isa fish is false
+was derived by rule from 
+    object-d does swim is false
+    was told
+
+More negative solutions? n.
+|: what is object-e?
+
+Is it true: object-e has a nervous system? y.
+
+object-e isa animal is true
+Would you like to see how? y.
+
+object-e isa animal
+was derived by rule0 from 
+    object-e has a nervous system
+    was told
+
+More solutions? y.
+
+Is it true: object-e has blood? y.
+
+object-e isa animal is true
+Would you like to see how? y.
+
+object-e isa animal
+was derived by rule0 from 
+    object-e has blood
+    was told
+
+More solutions? y.
+
+Is it true: object-e has hair? n.
+
+Is it true: object-e does give milk? n.
+
+Is it true: object-e has feathers? n.
+
+Is it true: object-e does fly? n.
+
+Is it true: object-e has scales? n.
+
+Is it true: object-e does swim? y.
+
+Is it true: object-e has fins? y.
+
+object-e isa fish is true
+Would you like to see how? y.
+
+object-e isa fish
+was derived by rule from 
+    object-e does swim
+    was told
+    and
+    object-e has fins
+    was told
+
+More solutions? y.
+
+Is it true: object-e has hawaiian-name-oopu-nakea? y.
+
+Is it true: object-e has disc-shaped-sucker? n.
+
+Is it true: object-e has hawaiian-name-oopu-alamoo? n.
+
+Is it true: object-e has hawaiian-name-oopu-nopili? n.
+
+Is it true: object-e has hawaiian-name-oopu-naniha? n.
+
+Is it true: object-e has hawaiian-name-oau? n.
+
+Is it true: object-e has large-eyes? n.
+
+Is it true: object-e has olive-green-color? n.
+
+Is it true: object-e does live-near-coral-reefs? n.
+
+Is it true: object-e has hawaiian-name-kaku? y.
+
+Is it true: object-e has long-body? y.
+
+Is it true: object-e has black-fin? y.
+
+Is it true: object-e has small-smooth-scales? y.
+
+object-e isa blackfin-barracuda is true
+Would you like to see how? y.
+
+object-e isa blackfin-barracuda
+was derived by rule from 
+    object-e isa fish
+    was derived by rule from 
+        object-e does swim
+        was told
+        and
+        object-e has fins
+        was told
+    and
+    object-e has hawaiian-name-kaku
+    was told
+    and
+    object-e has long-body
+    was told
+    and
+    object-e has black-fin
+    was told
+    and
+    object-e has small-smooth-scales
+    was told
+
+More solutions? n.
+|: what is object-f?
+
+Is it true: object-f has a nervous system? n.
+
+Is it true: object-f has blood? n.
+
+Is it true: object-f does give milk? n.
+
+Is it true: object-f does fly? n.
+
+Is it true: object-f has scales? n.
+
+Is it true: object-f does swim? y.
+
+Is it true: object-f has fins? y.
+
+object-f isa fish is true
+Would you like to see how? y.
+
+object-f isa fish
+was derived by rule from 
+    object-f does swim
+    was told
+    and
+    object-f has fins
+    was told
+
+More solutions? y.
+
+Is it true: object-f has hawaiian-name-oopu-nakea? n.
+
+Is it true: object-f has hawaiian-name-oopu-alamoo? y.
+
+Is it true: object-f has disc-shaped-sucker? y.
+
+Is it true: object-f does climb-waterfalls? y.
+
+Is it true: object-f has salmon-like-lifestyle? y.
+
+object-f isa freshwater-goby is true
+Would you like to see how? y.
+
+object-f isa freshwater-goby
+was derived by rule from 
+    object-f isa fish
+    was derived by rule from 
+        object-f does swim
+        was told
+        and
+        object-f has fins
+        was told
+    and
+    object-f has hawaiian-name-oopu-alamoo
+    was told
+    and
+    object-f has disc-shaped-sucker
+    was told
+    and
+    object-f does climb-waterfalls
+    was told
+    and
+    object-f has salmon-like-lifestyle
+    was told
+
+More solutions? n.
+|: what is object-g?
+
+Is it true: object-g has a nervous system? y.
+
+object-g isa animal is true
+Would you like to see how? n.
+
+More solutions? y.
+
+Is it true: object-g has blood? y.
+
+object-g isa animal is true
+Would you like to see how? n.
+
+More solutions? y.
+
+Is it true: object-g has hair? n.
+
+Is it true: object-g does give milk? n.
+
+Is it true: object-g has feathers? n.
+
+Is it true: object-g does fly? n.
+
+Is it true: object-g has scales? n.
+
+Is it true: object-g does swim? y.
+
+Is it true: object-g has fins? y.
+
+object-g isa fish is true
+Would you like to see how? y.
+
+object-g isa fish
+was derived by rule from 
+    object-g does swim
+    was told
+    and
+    object-g has fins
+    was told
+
+More solutions? y.
+
+Is it true: object-g has hawaiian-name-oopu-nakea? n.
+
+Is it true: object-g has hawaiian-name-oopu-alamoo? n.
+
+Is it true: object-g has hawaiian-name-oopu-nopili? y.
+
+Is it true: object-g has disc-shaped-sucker? y.
+
+Is it true: object-g does climb-waterfalls? n.
+
+Is it true: object-g has hawaiian-name-oopu-naniha? y.
+
+Is it true: object-g does not-climb-waterfalls? y.
+
+object-g isa hawaiian-goby is true
+Would you like to see how? y.
+
+object-g isa hawaiian-goby
+was derived by rule from 
+    object-g isa fish
+    was derived by rule from 
+        object-g does swim
+        was told
+        and
+        object-g has fins
+        was told
+    and
+    object-g has hawaiian-name-oopu-naniha
+    was told
+    and
+    object-g has disc-shaped-sucker
+    was told
+    and
+    object-g does not-climb-waterfalls
+    was told
+
+More solutions? n.
+|: what is object-h?
+
+Is it true: object-h has a nervous system? y.
+
+object-h isa animal is true
+Would you like to see how? y.
+
+object-h isa animal
+was derived by rule0 from 
+    object-h has a nervous system
+    was told
+
+More solutions? y.
+
+Is it true: object-h has blood? y.
+
+object-h isa animal is true
+Would you like to see how? y.
+
+object-h isa animal
+was derived by rule0 from 
+    object-h has blood
+    was told
+
+More solutions? y.
+
+Is it true: object-h has hair? n.
+
+Is it true: object-h does give milk? n.
+
+Is it true: object-h has feathers? n.
+
+Is it true: object-h does fly? n.
+
+Is it true: object-h has scales? n.
+
+Is it true: object-h does swim? y.
+
+Is it true: object-h has fins? y.
+
+object-h isa fish is true
+Would you like to see how? y.
+
+object-h isa fish
+was derived by rule from 
+    object-h does swim
+    was told
+    and
+    object-h has fins
+    was told
+
+More solutions? y.
+
+Is it true: object-h has hawaiian-name-oopu-nakea? n.
+
+Is it true: object-h has hawaiian-name-oopu-alamoo? n.
+
+Is it true: object-h has hawaiian-name-oopu-nopili? n.
+
+Is it true: object-h has hawaiian-name-oopu-naniha? n.
+
+Is it true: object-h has hawaiian-name-oau? n.
+
+Is it true: object-h has large-eyes? n.
+
+Is it true: object-h has olive-green-color? n.
+
+Is it true: object-h does live-near-coral-reefs? n.
+
+Is it true: object-h has hawaiian-name-kaku? n.
+
+Is it true: object-h has hawaiian-name-aweoweo? n.
+
+Is it true: object-h has hawaiian-name-ulua? n.
+
+Is it true: object-h has hawaiian-name-aliaihi? n.
+
+Is it true: object-h has hawaiian-name-hinalea-lauwili? y.
+
+Is it true: object-h has vibrant-blue-green-color? y.
+
+Is it true: object-h has brownish-orange-saddle-bar? y.
+
+object-h isa saddle-wrasse is true
+Would you like to see how? y.
+
+object-h isa saddle-wrasse
+was derived by rule from 
+    object-h isa fish
+    was derived by rule from 
+        object-h does swim
+        was told
+        and
+        object-h has fins
+        was told
+    and
+    object-h has hawaiian-name-hinalea-lauwili
+    was told
+    and
+    object-h has vibrant-blue-green-color
+    was told
+    and
+    object-h has brownish-orange-saddle-bar
+    was told
+
+More solutions? n.
+|: what is object-i?
+
+Is it true: object-i has a nervous system? y.
+
+object-i isa animal is true
+Would you like to see how? n.
+
+More solutions? y.
+
+Is it true: object-i has blood? y.
+
+object-i isa animal is true
+Would you like to see how? n.
+
+More solutions? y.
+
+Is it true: object-i has hair? n.
+
+Is it true: object-i does give milk? n.
+
+Is it true: object-i has feathers? n.
+
+Is it true: object-i does fly? n.
+
+Is it true: object-i has scales? n.
+
+Is it true: object-i does swim? y.
+
+Is it true: object-i has fins? y.
+
+object-i isa fish is true
+Would you like to see how? y.
+
+object-i isa fish
+was derived by rule from 
+    object-i does swim
+    was told
+    and
+    object-i has fins
+    was told
+
+More solutions? y.
+
+Is it true: object-i has hawaiian-name-oopu-nakea? n.
+
+Is it true: object-i has hawaiian-name-oopu-alamoo? n.
+
+Is it true: object-i has hawaiian-name-oopu-nopili? y.
+
+Is it true: object-i has disc-shaped-sucker? y.
+
+Is it true: object-i does climb-waterfalls? y.
+
+Is it true: object-i has amphidromous-lifestyle? y.
+
+object-i isa rockclimbing-goby is true
+Would you like to see how? y.
+
+object-i isa rockclimbing-goby
+was derived by rule from 
+    object-i isa fish
+    was derived by rule from 
+        object-i does swim
+        was told
+        and
+        object-i has fins
+        was told
+    and
+    object-i has hawaiian-name-oopu-nopili
+    was told
+    and
+    object-i has disc-shaped-sucker
+    was told
+    and
+    object-i does climb-waterfalls
+    was told
+    and
+    object-i has amphidromous-lifestyle
+    was told
+
+More solutions? n.
+|: what is object-j?
+
+Is it true: object-j has a nervous system? y.
+
+object-j isa animal is true
+Would you like to see how? n.
+
+More solutions? y.
+
+Is it true: object-j has blood? y.
+
+object-j isa animal is true
+Would you like to see how? n.
+
+More solutions? y.
+
+Is it true: object-j has hair? n.
+
+Is it true: object-j does give milk? n.
+
+Is it true: object-j has feathers? n.
+
+Is it true: object-j does fly? n.
+
+Is it true: object-j has scales? n.
+
+Is it true: object-j does swim? y.
+
+Is it true: object-j has fins? y.
+
+object-j isa fish is true
+Would you like to see how? n.
+
+More solutions? y.
+
+Is it true: object-j has hawaiian-name-oopu-nakea? n.
+
+Is it true: object-j has hawaiian-name-oopu-alamoo? n.
+
+Is it true: object-j has hawaiian-name-oopu-nopili? n.
+
+Is it true: object-j has hawaiian-name-oopu-naniha? y.
+
+Is it true: object-j has disc-shaped-sucker? y.
+
+Is it true: object-j does not-climb-waterfalls? y.
+
+object-j isa hawaiian-goby is true
+Would you like to see how? n.
+
+More solutions? y.
+
+Is it true: object-j has hawaiian-name-oau? y.
+
+object-j isa sleeper-goby is true
+Would you like to see how? y.
+
+object-j isa sleeper-goby
+was derived by rule from 
+    object-j isa fish
+    was derived by rule from 
+        object-j does swim
+        was told
+        and
+        object-j has fins
+        was told
+    and
+    object-j has hawaiian-name-oau
+    was told
+    and
+    object-j has disc-shaped-sucker
+    was told
+    and
+    object-j does not-climb-waterfalls
+    was told
+
+More solutions? n.
+|: is object-k a giant-trevally?
+
+Is it true: object-k does swim? y.
+
+Is it true: object-k has fins? y.
+
+Is it true: object-k has hawaiian-name-ulua? y.
+
+Is it true: object-k has thick-lips? y.
+
+Is it true: object-k has silver-body? y.
+
+Is it true: object-k does swim-fast? y.
+
+object-k isa giant-trevally is true
+Would you like to see how? y.
+
+object-k isa giant-trevally
+was derived by rule from 
+    object-k isa fish
+    was derived by rule from 
+        object-k does swim
+        was told
+        and
+        object-k has fins
+        was told
+    and
+    object-k has hawaiian-name-ulua
+    was told
+    and
+    object-k has thick-lips
+    was told
+    and
+    object-k has silver-body
+    was told
+    and
+    object-k does swim-fast
+    was told
+
+More solutions? n.
+|: is object-l a hawaiian-spotted-toby?
+> >  can't comprehend  < <
+|: is object-l a hawaiian-whitespotted-toby?
+
+Is it true: object-l does swim? y.
+
+Is it true: object-l has fins? y.
+
+Is it true: object-l does inflate-twice-its-size? n.
+
+object-l isa hawaiian-whitespotted-toby is false
+Would you like to see how? y.
+
+object-l isa hawaiian-whitespotted-toby is false
+was derived by rule from 
+    object-l does inflate-twice-its-size is false
+    was told
+
+More negative solutions? y.
+
+object-l isa hawaiian-whitespotted-toby is false
+Would you like to see how? y.
+
+object-l isa hawaiian-whitespotted-toby is false
+was derived by rule from 
+    object-l does inflate-twice-its-size is false
+    was told
+
+More negative solutions? n.
+|: is object-l a hawaiian-whitespotted-toby?
+
+object-l isa hawaiian-whitespotted-toby is false
+Would you like to see how? y.
+
+object-l isa hawaiian-whitespotted-toby is false
+was derived by rule from 
+    object-l does inflate-twice-its-size is false
+    was told
+
+More negative solutions? y.
+
+object-l isa hawaiian-whitespotted-toby is false
+Would you like to see how? n.
+
+More negative solutions? n.
+|: is object-m a goldenring-surgeonfish?
+
+Is it true: object-m does swim? y.
+
+Is it true: object-m has fins? y.
+
+Is it true: object-m has brown-color? y.
+
+Is it true: object-m has vivid-yellow-eye? y.
+
+Is it true: object-m has blue-to-yellow-horizontal-stripes? y.
+
+object-m isa goldenring-surgeonfish is true
+Would you like to see how? y.
+
+object-m isa goldenring-surgeonfish
+was derived by rule from 
+    object-m isa fish
+    was derived by rule from 
+        object-m does swim
+        was told
+        and
+        object-m has fins
+        was told
+    and
+    object-m has brown-color
+    was told
+    and
+    object-m has vivid-yellow-eye
+    was told
+    and
+    object-m has blue-to-yellow-horizontal-stripes
+    was told
+
+More solutions? n.
+|: is object-n a hawaiian-zebra-blenny?
+
+Is it true: object-n does swim? y.
+
+Is it true: object-n has fins? y.
+
+Is it true: object-n has hawaiian-name-paoo? y.
+
+Is it true: object-n does live-in-tidepools? y.
+
+Is it true: object-n has smart-blue-color? y.
+
+object-n isa hawaiian-zebra-blenny is true
+Would you like to see how? y.
+
+object-n isa hawaiian-zebra-blenny
+was derived by rule from 
+    object-n isa fish
+    was derived by rule from 
+        object-n does swim
+        was told
+        and
+        object-n has fins
+        was told
+    and
+    object-n has hawaiian-name-paoo
+    was told
+    and
+    object-n does live-in-tidepools
+    was told
+    and
+    object-n has smart-blue-color
+    was told
+
+More solutions? n.
+|: what is masked-anglefish?
+
+Is it true: masked-anglefish has a nervous system? y.
+
+masked-anglefish isa animal is true
+Would you like to see how? y.
+
+masked-anglefish isa animal
+was derived by rule0 from 
+    masked-anglefish has a nervous system
+    was told
+
+More solutions? y.
+
+Is it true: masked-anglefish has blood? y.
+
+masked-anglefish isa animal is true
+Would you like to see how? y.
+
+masked-anglefish isa animal
+was derived by rule0 from 
+    masked-anglefish has blood
+    was told
+
+More solutions? y.
+
+Is it true: masked-anglefish has hair? n.
+
+Is it true: masked-anglefish does give milk? n.
+
+Is it true: masked-anglefish has feathers? n.
+
+Is it true: masked-anglefish does fly? n.
+
+Is it true: masked-anglefish has scales? n.
+
+Is it true: masked-anglefish does swim? y.
+
+Is it true: masked-anglefish has fins? y.
+
+masked-anglefish isa fish is true
+Would you like to see how? y.
+
+masked-anglefish isa fish
+was derived by rule from 
+    masked-anglefish does swim
+    was told
+    and
+    masked-anglefish has fins
+    was told
+
+More solutions? n.
+|: is hawaiian-squirrelfish a fish?
+
+Is it true: hawaiian-squirrelfish does swim? y.
+
+Is it true: hawaiian-squirrelfish has fins? y.
+
+hawaiian-squirrelfish isa fish is true
+Would you like to see how? y.
+
+hawaiian-squirrelfish isa fish
+was derived by rule from 
+    hawaiian-squirrelfish does swim
+    was told
+    and
+    hawaiian-squirrelfish has fins
+    was told
+
+More solutions? y.
+
+hawaiian-squirrelfish isa fish is true
+Would you like to see how? y.
+
+hawaiian-squirrelfish isa fish
+was derived by rule from 
+    hawaiian-squirrelfish does swim
+    was told
+    and
+    hawaiian-squirrelfish has fins
+    was told
+
+More solutions? n.
+|: is hawaiian-squirrelfish a hawaiian-fish?
+> >  can't comprehend  < <
+|: is a hawaiian-squirrelfish a hawaiian-fish?
+> >  can't comprehend  < <
+|: is a hawaiian-squirrelfish a hawaiian-fish?
+> >  can't comprehend  < <
+|: what is hawaiian-squirrelfish?
+
+Is it true: hawaiian-squirrelfish has a nervous system? y.
+
+hawaiian-squirrelfish isa animal is true
+Would you like to see how? y.
+
+hawaiian-squirrelfish isa animal
+was derived by rule0 from 
+    hawaiian-squirrelfish has a nervous system
+    was told
+
+More solutions? y.
+
+Is it true: hawaiian-squirrelfish has blood? y.
+
+hawaiian-squirrelfish isa animal is true
+Would you like to see how? y.
+
+hawaiian-squirrelfish isa animal
+was derived by rule0 from 
+    hawaiian-squirrelfish has blood
+    was told
+
+More solutions? y.
+
+Is it true: hawaiian-squirrelfish has hair? n.
+
+Is it true: hawaiian-squirrelfish does give milk? n.
+
+Is it true: hawaiian-squirrelfish has feathers? n.
+
+Is it true: hawaiian-squirrelfish does fly? n.
+
+Is it true: hawaiian-squirrelfish has scales? n.
+
+hawaiian-squirrelfish isa fish is true
+Would you like to see how? y.
+
+hawaiian-squirrelfish isa fish
+was derived by rule from 
+    hawaiian-squirrelfish does swim
+    was told
+    and
+    hawaiian-squirrelfish has fins
+    was told
+
+More solutions? n.
+|: what is object-o?
+
+Is it true: object-o has a nervous system? y.
+
+object-o isa animal is true
+Would you like to see how? n.
+
+More solutions? y.
+
+Is it true: object-o has blood? y.
+
+object-o isa animal is true
+Would you like to see how? n.
+
+More solutions? y.
+
+Is it true: object-o has hair? n.
+
+Is it true: object-o does give milk? n.
+
+Is it true: object-o has feathers? n.
+
+Is it true: object-o does fly? n.
+
+Is it true: object-o has scales? n.
+
+Is it true: object-o does swim? y.
+
+Is it true: object-o has fins? y.
+
+object-o isa fish is true
+Would you like to see how? y.
+
+object-o isa fish
+was derived by rule from 
+    object-o does swim
+    was told
+    and
+    object-o has fins
+    was told
+
+More solutions? y.
+
+Is it true: object-o has hawaiian-name-oopu-nakea? n.
+
+Is it true: object-o has hawaiian-name-oopu-alamoo? n.
+
+Is it true: object-o has hawaiian-name-oopu-nopili? n.
+
+Is it true: object-o has hawaiian-name-oopu-naniha? n.
+
+Is it true: object-o has hawaiian-name-oau? n.
+
+Is it true: object-o has large-eyes? n.
+
+Is it true: object-o has olive-green-color? n.
+
+Is it true: object-o does live-near-coral-reefs? n.
+
+Is it true: object-o has hawaiian-name-kaku? n.
+
+Is it true: object-o has hawaiian-name-aweoweo? y.
+
+Is it true: object-o has large-eye? y.
+
+Is it true: object-o has bright-red-color? y.
+
+object-o isa hawaiian-bigeye is true
+Would you like to see how? y.
+
+object-o isa hawaiian-bigeye
+was derived by rule from 
+    object-o isa fish
+    was derived by rule from 
+        object-o does swim
+        was told
+        and
+        object-o has fins
+        was told
+    and
+    object-o has hawaiian-name-aweoweo
+    was told
+    and
+    object-o has large-eye
+    was told
+    and
+    object-o has bright-red-color
+    was told
+
+More solutions? n.
+|: 
+WARNING: By typing Control-C twice, you have forced an asynchronous
+WARNING: interrupt.  Your only SAFE operation are: c(ontinue), p(id),
+WARNING: s(stack) and e(xit).  Notably a(abort) often works, but
+WARNING: leaves the system in an UNSTABLE state
+
+Action (h for help) ? exit
+/home/apes-0.2.0/src
+
+kbarroga@OSDLOCKBOX002A /home/apes-0.2.0/src
+
+$ exit
+exit
+
+Script done on Wed, Nov 26, 2014 10:03:17 AM
+Script started on Wed, Nov 26, 2014 10:05:08 AM
+/home/apes-0.2.0/src
+
+kbarroga@OSDLOCKBOX002A /home/apes-0.2.0/src
+
+$ swipl -f main.pl
+%  engine.pl compiled 0.00 sec, 64 clauses
+%  tokenizer.pl compiled 0.02 sec, 62 clauses
+%  parser.pl compiled 0.00 sec, 32 clauses
+%  knowledge/knowledge.pl compiled 0.00 sec, 35 clauses
+ERROR: /home/apes-0.2.0/src/main.pl:10:
+	source_sink `knowledge/groups/*.pl' does not exist
+Warning: /home/apes-0.2.0/src/main.pl:10:
+	Goal (directive) failed: user:ensure_loaded(knowledge/groups/*.pl)
+%  knowledge/groups/feline.pl compiled 0.00 sec, 2 clauses
+%  knowledge/groups/pet.pl compiled 0.00 sec, 5 clauses
+%  knowledge/groups/hawaiian-fish.pl compiled 0.00 sec, 17 clauses
+%  helpers.pl compiled 0.02 sec, 24 clauses
+Warning: /home/apes-0.2.0/src/processor.pl:53:
+	Singleton variable in branch: X
+%  processor.pl compiled 0.00 sec, 12 clauses
+% main.pl compiled 0.06 sec, 276 clauses
+Welcome to SWI-Prolog (Multi-threaded, 32 bits, Version 6.6.6)
+Copyright (c) 1990-2013 University of Amsterdam, VU Amsterdam
+SWI-Prolog comes with ABSOLUTELY NO WARRANTY. This is free software,
+and you are welcome to redistribute it under certain conditions.
+Please visit http://www.swi-prolog.org for details.
+
+For help, use ?- help(Topic). or ?- apropos(Word).
+
+?- start.
+_____________________________________________________
+
+|: show group hawaiian-fish?
+:-dynamic hawaiian-fish/1
+hawaiian-fish(goby)
+hawaiian-fish(freshwater-goby)
+hawaiian-fish(rockclimbing-goby)
+hawaiian-fish(hawaiian-goby)
+hawaiian-fish(sleeper-goby)
+hawaiian-fish(strange-tail-flagtail)
+hawaiian-fish(masked-angelfish)
+hawaiian-fish(blackfin-barracuda)
+hawaiian-fish(hawaiian-bigeye)
+hawaiian-fish(giant-trevally)
+hawaiian-fish(hawaiian-squirrelfish)
+hawaiian-fish(mullet)
+hawaiian-fish(saddle-wrasse)
+hawaiian-fish(goldenring-surgeonfish)
+hawaiian-fish(hawaiian-whitespotted-toby)
+hawaiian-fish(hawaiian-zebra-blenny)
+
+|: show group fish.
+fish(freshwater-goby)
+fish(mullet)
+fish(hawaiian-bigeye)
+
+|: 
+WARNING: By typing Control-C twice, you have forced an asynchronous
+WARNING: interrupt.  Your only SAFE operation are: c(ontinue), p(id),
+WARNING: s(stack) and e(xit).  Notably a(abort) often works, but
+WARNING: leaves the system in an UNSTABLE state
+
+Action (h for help) ? exit
+/home/apes-0.2.0/src
+
+kbarroga@OSDLOCKBOX002A /home/apes-0.2.0/src
+
+$ exit
+exit
+
+Script done on Wed, Nov 26, 2014 10:05:40 AM

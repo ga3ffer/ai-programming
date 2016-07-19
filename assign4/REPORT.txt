@@ -1,0 +1,199 @@
+;;;; -*- Mode: LISP; Syntax: Common-lisp; Package: USER; Base: 10 -*-
+;;;; Name:  Kevin Barroga                   Date: 2014 NOV 04
+;;;; Course: ICS361                   Assignment: Assignment 4
+;;;; File name: REPORT.txt
+
+;;;; REPORT
+
+- OUTPUT FILES
+  
+  4OUTA.TXT - Output of Luger's supervised ID3 machine learning code. Includes
+              transcript of files: ID3-luger-orig.lisp, ID3-credit-data-orig.lisp.
+
+  4OUTB.TXT - Output of Mooney's COBWEB code for clustering (unsupervised
+              learning). Includes transcript of files: ml-utilities.lisp, 
+              cobweb.lisp, cobweb-animal-data.lisp, cobweb-animal2-data.lisp.
+
+  4OUTC.TXT - Output of Mooney's COBWEB code for clustering (unsupervised
+              learning). Includes transcript of files: ml-utilities.lisp, 
+              cobweb.lisp, cobweb-soybean-data.lisp, cobweb-soybean2-data.lisp.
+
+  4OUTD.TXT - Output of Mooney's COBWEB code for clustering (unsupervised
+              learning). Includes transcript of files: ml-utilities.lisp, 
+              cobweb.lisp, cobweb-engine-data.lisp.
+
+- REPORT
+
+1       ID3 CREDIT DATA
+1.1
+        The classification tree the ID3 algorithm created, examined the 
+        data in the following order: INCOME, HISTORY, DEBT.The tree did 
+        not consider the COLLATERAL property in constructing the 
+        decision tree.
+1.2           
+        The total number of combinations of credit data depend on how 
+        the ID3 algorithm constructs the tree. In this instance since 
+        COLLATERAL in not included in the tree and it does not consider 
+        it a property when making decisions, the total number of 
+        combinations is, 3! for income, 3! for history, and 2! for debt.
+        Total combinations = 3!*3!*2! = 72 different combinations.
+        If COLLATERAL was considered it would equal: 
+        3!*3!*2!*2! = 144 different combinations.
+1.3
+        Here are the 10 new, unique credit date instances:
+
+;;;; 10 new instances of credit data
+(history . bad)    (debt . high)(collateral . none)    (income . over-35k)   - moderate
+(history . bad)    (debt . low) (collateral . adequate)(income . 0-to-15k)   - high
+(history . bad)    (debt . low) (collateral . none)    (income . over-35k)   - moderate
+(history . good)   (debt . high)(collateral . adequate)(income . 15k-to-35k) - moderate
+(history . good)   (debt . low) (collateral . adequate)(income . 15k-to-35k) - moderate
+(history . good)   (debt . low) (collateral . none)    (income . 0-to-15k)   - high
+(history . good)   (debt . low) (collateral . none)    (income . 15k-to-35k) - moderate
+(history . unknown)(debt . high)(collateral . none)    (income . over-35k)   - low
+(history . unknown)(debt . low) (collateral . adequate)(income . 0-to-15k)   - high
+(history . unknown)(debt . low) (collateral . adequate)(income . 15k-to-35k) - moderate
+
+        I classified each instance in the current data set making no 
+        modifications to ID3-credit-data-orig.lisp. To the right I 
+        labeled each instance with the corresponding risk value,
+        via running the classify function in ID3-luger-orig.lisp.
+
+2       COBWEB ANIMAL DATA 10 NEW INSTANCES
+2.1
+        Here are the 10 new instances of animal data:
+
+;;;;  10 new instances of animal data                                                         
+(Elephant  (hair      no-fly swim    teeth  live-birth   legs   gray        Africa      no-web))
+(Hedgehog  (spines    no-fly no-swim teeth  live-birth   legs   brown       Underground no-web))
+(Gibbon    (hair      no-fly no-swim teeth  live-birth   legs   black       Africa      no-web))
+(Ibex      (hair      no-fly no-swim teeth  live-birth   legs   brown       Alpine      no-web))
+(Narwhal   (hair      no-fly swim    none   live-birth   fins   black       Antarctic    no-web))
+(Quetzal   (feathers  fly    no-swim beak   eggs         wings  red-breast  Tropics     no-web))
+(Camel     (hair      no-fly no-swim teeth  live-birth   legs   tawny       Africa      no-web))
+(Platypus  (hair      no-fly swim    beak   eggs         legs   brown       Australia   no-web))
+(Meerkat   (hair      no-fly no-swim teeth  live-birth   legs   golden      Africa      no-web))
+(Pangolin  (scales    no-fly no-swim teeth  live-birth   legs   golden      Underground no-web))
+
+        Below I have labeled the common propert(y)(ies) for each cluster 
+        to make it easier to see the relationships between the clusters.
+
+        ORIGINAL CLUSTER OF ANIMAL DATA
+
+C-7526{DUCK BEAR EAGLE LION GRACKLE PANTHER ROBIN PENGUIN}
+  C-7529{BEAR LION PANTHER} ; hair no-fly no-swim teeth live-birth legs black no-web
+    C-7539{BEAR} ; West
+    C-7534{LION} ; Africa
+    C-7535{PANTHER} ; Africa
+  C-7527{EAGLE GRACKLE ROBIN} ; feathers fly no-swim beak eggs wings no-web
+    C-7537{EAGLE} ; white West
+    C-7531{GRACKLE} ; black UT-Campus
+    C-7532{ROBIN} ; red-breast Midwest
+  C-7528{DUCK PENGUIN} ; feathers swim beak eggs wings webbed
+    C-7541{DUCK} ; no-fly tuxedo Antarctic
+    C-7542{PENGUIN} ; fly brown Midwest              
+
+        CLUSTER OF ANIMAL DATA WITH NEW INSTANCES
+
+C-8382{PANGOLIN MEERKAT PLATYPUS CAMEL QUETZAL NARWHAL IBEX GIBBON HEDGEHOG ELEPHANT DUCK BEAR EAGLE LION GRACKLE PANTHER ROBIN PENGUIN}
+  C-8406{PANGOLIN MEERKAT CAMEL NARWHAL IBEX GIBBON HEDGEHOG ELEPHANT BEAR LION PANTHER} ; no-fly live-birth no-web
+    C-8433{NARWHAL} ; hair swim none fins black Antarctic
+    C-8423{PANGOLIN IBEX HEDGEHOG} ; no-swim teeth legs
+      C-8449{PANGOLIN} ; scales golden Underground
+      C-8430{IBEX} ; hair brown Alpine
+      C-8431{HEDGEHOG} ; spines brown Underground
+    C-8421{ELEPHANT} ; hair swim teeth legs gray Africa
+    C-8416{BEAR} ; hair no-swim teeth legs black West
+    C-8411{MEERKAT CAMEL LION} ; hair no-swim teeth legs Africa
+      C-8446{MEERKAT} ; golden 
+      C-8440{CAMEL}; tawny
+      C-8441{LION}; tawny
+    C-8412{GIBBON PANTHER} ; hair no-swim teeth legs black Africa
+      C-8426{GIBBON} ; 
+      C-8427{PANTHER}; 
+  C-8404{QUETZAL EAGLE GRACKLE ROBIN} ; feathers fly no-swim beak eggs wings no-web
+    C-8414{EAGLE} ; white West
+    C-8408{GRACKLE} ; black UT-Campus
+    C-8409{QUETZAL ROBIN} ; red-breast
+      C-8436{QUETZAL} ; Tropics
+      C-8437{ROBIN} ; Midwest
+  C-8405{PLATYPUS DUCK PENGUIN} ; swim beak eggs
+    C-8443{PLATYPUS} ; hair no-fly legs brown Australia no-web
+    C-8418{DUCK} ; feathers fly wings brown Midwest webbed
+    C-8419{PENGUIN} ; feathers no-fly wings tuxedo Antarctic webbed
+
+        In adding the 10 new animal instances, I was surprised to see 
+        that the number of top level clusters did not change. 
+  
+        There remains three main clusters:
+
+C-8406{PANGOLIN MEERKAT CAMEL NARWHAL IBEX GIBBON HEDGEHOG ELEPHANT BEAR LION PANTHER} ; no-fly live-birth no-web
+C-8404{QUETZAL EAGLE GRACKLE ROBIN} ; feathers fly no-swim beak eggs wings no-web
+C-8405{PLATYPUS DUCK PENGUIN} ; swim beak eggs
+
+        The first cluster (C-8406) with notable change and the other two 
+        (C-8404,C8405) classified the same, only different is the 
+        addition of QUETZAL, and PLATYPUS, respectively. All other new 
+        animal instances created were grouped in cluster C-8406.
+        In reviewing the results I can conclude that C-8406 is a 
+        mammalian cluster, evident by the properties common to this 
+        cluster: no-fly live-birth no-web.
+        I would also agree that the sub/child clusters in the group do 
+        make logical sense.
+
+3       COBWEB ENGINE DATA
+
+        Below I have labeled the common propert(y)(ies) for each cluster 
+        to make it easier to see the relationships between the clusters.
+
+        CLUSTER OF ENGINE DATA
+
+ C-7556{DIESEL TURBINE ROTARY WANKEL V8 RC211V 2S-PARALLEL-TWIN 2S-SINGLE BOXER-SIX BOXER-FOUR BOXER-TWO V-TWIN-FOUR V-TWIN IN-LINE-SIX IN-LINE-FOUR IN-LINE-TRIPLE IN-LINE-PARALLEL SINGLE-CYLINDER}
+   C-7580{TURBINE V8 RC211V 2S-PARALLEL-TWIN BOXER-SIX BOXER-FOUR IN-LINE-SIX IN-LINE-FOUR IN-LINE-TRIPLE} ; high-rpm high-hp
+     C-7607{TURBINE 2S-PARALLEL-TWIN} ; high-torque
+       C-7621{TURBINE} ; other other turbine  1200+
+       C-7622{2S-PARALLEL-TWIN} ; two   two   parallel 250-500
+     C-7585{BOXER-SIX IN-LINE-SIX} ; six 1200+ medium-torque
+       C-7601{BOXER-SIX} ; four straight
+       C-7602{IN-LINE-SIX}; two  boxer   
+     C-7582{BOXER-FOUR IN-LINE-FOUR} ; four four 800-1000 high-torque 
+       C-7597{BOXER-FOUR} ; boxer
+       C-7598{IN-LINE-FOUR} ; straight
+     C-7583{V8 RC211V IN-LINE-TRIPLE} ; four high-torque
+       C-7614{V8} ; eight v 600-750
+       C-7610{RC211V} ; five v 990
+       C-7611{IN-LINE-TRIPLE} ; three straight 600-750
+   C-7578{DIESEL BOXER-TWO V-TWIN-FOUR V-TWIN IN-LINE-PARALLEL} ; medium-hp
+     C-7624{DIESEL} ; diesel three straight 800-1000 medium-rpm high-torque
+     C-7594{BOXER-TWO} ; four two boxer 1200+ high-rpm high-torque
+     C-7587{V-TWIN-FOUR V-TWIN} ; four v 800-1000 high-torque
+       C-7591{V-TWIN-FOUR}  ;two low-rpm    
+       C-7592{V-TWIN} ;four medium-rpm 
+     C-7588{IN-LINE-PARALLEL} ; four two parallel 250-500 medium-rpm medium-torque
+   C-7579{ROTARY WANKEL 2S-SINGLE SINGLE-CYLINDER}
+     C-7618{ROTARY} ; other other rotary 250-500 low-rpm    low-hp    low-torque
+     C-7616{WANKEL} ; other five  wankel 600-750 medium-rpm low-hp    medium-torque
+     C-7604{2S-SINGLE} ; two   one   single 50-125  high-rpm   medium-hp high-torque
+     C-7605{SINGLE-CYLINDER} ; four  one   single 50-125  low-rpm    low-hp    medium-torque              
+
+        I created a domain of engines. The characteristics I used for 
+        domain instances are stroke cycle, number of cylinders, engine 
+        layout, cubic centimetre range, horsepower, revolutions per 
+        minute, and torque. Typically engines are classified by first 
+        the stroke cycle: two vs four, then the cylinder configuration: 
+        straight, v, boxer, etc... All other characteristic of and 
+        engine are derived from those two important properties.
+
+        In creating this domain, I wanted to see how the COBWEB 
+        algorithm clustered the engine instances I created. I was 
+        surprised by the results. It did not classify the engines the 
+        way they are normally are.
+
+        COBWEB created three main clusters:
+          C-7580{TURBINE V8 RC211V 2S-PARALLEL-TWIN BOXER-SIX BOXER-FOUR IN-LINE-SIX IN-LINE-FOUR IN-LINE-TRIPLE} ; high-rpm high-hp
+          C-7578{DIESEL BOXER-TWO V-TWIN-FOUR V-TWIN IN-LINE-PARALLEL} ; medium-hp
+          C-7579{ROTARY WANKEL 2S-SINGLE SINGLE-CYLINDER}
+              
+        It grouped together instances which shared a common property 
+        first, then creating child clusters, and finally grouping the 
+        four instances with least likability in a cluster of their own.

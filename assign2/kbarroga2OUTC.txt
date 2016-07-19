@@ -1,0 +1,267 @@
+;;;; -*- Mode: LISP; Syntax: Common-lisp; Package: USER; Base: 10 -*-
+;;;; Name:  Kevin Barroga                   Date: 2014 Sep 15
+;;;; Course: ICS361                   Assignment: Assignment 2   
+;;;; File name: kbarroga2OUTC.lisp
+
+;;;; SOLUTION
+;;;; *** Omitted open list on other runs ***
+
+; SLIME 2012-02-12
+CL-USER> (load "d:/Dropbox/FALL2014/ICS361/assignment_2/8_puzzle.lisp")
+;; Loading file D:\Dropbox\FALL2014\ICS361\assignment_2\8_puzzle.lisp ...
+;; Loaded file D:\Dropbox\FALL2014\ICS361\assignment_2\8_puzzle.lisp
+T
+CL-USER> (load "d:/Dropbox/FALL2014/ICS361/assignment_2/8_puzzle_bfs.lisp")
+;; Loading file D:\Dropbox\FALL2014\ICS361\assignment_2\8_puzzle_bfs.lisp ...
+;; Loaded file D:\Dropbox\FALL2014\ICS361\assignment_2\8_puzzle_bfs.lisp
+T
+CL-USER> *start*
+(2 8 3 1 6 4 7 B 5)
+CL-USER> *goal*
+(1 2 3 8 B 4 7 6 5)
+CL-USER> (breadth-first-search *start*)
+
+"open" 
+((2 8 3 1 6 4 7 B 5)) 
+"open" 
+((2 8 3 1 B 4 7 6 5) (2 8 3 1 6 4 B 7 5) (2 8 3 1 6 4 7 5 B)) 
+"open" 
+((2 8 3 1 6 4 B 7 5) (2 8 3 1 6 4 7 5 B) (2 B 3 1 8 4 7 6 5) (2 8 3 B 1 4 7 6 5) (2 8 3 1 4 B 7 6 5)) 
+"open" 
+((2 8 3 1 6 4 7 5 B) (2 B 3 1 8 4 7 6 5) (2 8 3 B 1 4 7 6 5) (2 8 3 1 4 B 7 6 5) (2 8 3 B 6 4 1 7 5)) 
+"open" 
+((2 B 3 1 8 4 7 6 5) (2 8 3 B 1 4 7 6 5) (2 8 3 1 4 B 7 6 5) (2 8 3 B 6 4 1 7 5) (2 8 3 1 6 B 7 5 4)) 
+"open" 
+((2 8 3 B 1 4 7 6 5) (2 8 3 1 4 B 7 6 5) (2 8 3 B 6 4 1 7 5) (2 8 3 1 6 B 7 5 4) (B 2 3 1 8 4 7 6 5) (2 3 B 1 8 4 7 6 5)) 
+"open" 
+((2 8 3 1 4 B 7 6 5) (2 8 3 B 6 4 1 7 5) (2 8 3 1 6 B 7 5 4) (B 2 3 1 8 4 7 6 5) (2 3 B 1 8 4 7 6 5) (B 8 3 2 1 4 7 6 5)
+ (2 8 3 7 1 4 B 6 5)) 
+"open" 
+((2 8 3 B 6 4 1 7 5) (2 8 3 1 6 B 7 5 4) (B 2 3 1 8 4 7 6 5) (2 3 B 1 8 4 7 6 5) (B 8 3 2 1 4 7 6 5) (2 8 3 7 1 4 B 6 5)
+ (2 8 B 1 4 3 7 6 5) (2 8 3 1 4 5 7 6 B)) 
+"open" 
+((2 8 3 1 6 B 7 5 4) (B 2 3 1 8 4 7 6 5) (2 3 B 1 8 4 7 6 5) (B 8 3 2 1 4 7 6 5) (2 8 3 7 1 4 B 6 5) (2 8 B 1 4 3 7 6 5)
+ (2 8 3 1 4 5 7 6 B) (B 8 3 2 6 4 1 7 5) (2 8 3 6 B 4 1 7 5)) 
+"open" 
+((B 2 3 1 8 4 7 6 5) (2 3 B 1 8 4 7 6 5) (B 8 3 2 1 4 7 6 5) (2 8 3 7 1 4 B 6 5) (2 8 B 1 4 3 7 6 5) (2 8 3 1 4 5 7 6 B)
+ (B 8 3 2 6 4 1 7 5) (2 8 3 6 B 4 1 7 5) (2 8 B 1 6 3 7 5 4) (2 8 3 1 B 6 7 5 4)) 
+"open" 
+((2 3 B 1 8 4 7 6 5) (B 8 3 2 1 4 7 6 5) (2 8 3 7 1 4 B 6 5) (2 8 B 1 4 3 7 6 5) (2 8 3 1 4 5 7 6 B) (B 8 3 2 6 4 1 7 5)
+ (2 8 3 6 B 4 1 7 5) (2 8 B 1 6 3 7 5 4) (2 8 3 1 B 6 7 5 4) (1 2 3 B 8 4 7 6 5)) 
+"open" 
+((B 8 3 2 1 4 7 6 5) (2 8 3 7 1 4 B 6 5) (2 8 B 1 4 3 7 6 5) (2 8 3 1 4 5 7 6 B) (B 8 3 2 6 4 1 7 5) (2 8 3 6 B 4 1 7 5)
+ (2 8 B 1 6 3 7 5 4) (2 8 3 1 B 6 7 5 4) (1 2 3 B 8 4 7 6 5) (2 3 4 1 8 B 7 6 5)) 
+"open" 
+((2 8 3 7 1 4 B 6 5) (2 8 B 1 4 3 7 6 5) (2 8 3 1 4 5 7 6 B) (B 8 3 2 6 4 1 7 5) (2 8 3 6 B 4 1 7 5) (2 8 B 1 6 3 7 5 4)
+ (2 8 3 1 B 6 7 5 4) (1 2 3 B 8 4 7 6 5) (2 3 4 1 8 B 7 6 5) (8 B 3 2 1 4 7 6 5)) 
+"open" 
+((2 8 B 1 4 3 7 6 5) (2 8 3 1 4 5 7 6 B) (B 8 3 2 6 4 1 7 5) (2 8 3 6 B 4 1 7 5) (2 8 B 1 6 3 7 5 4) (2 8 3 1 B 6 7 5 4)
+ (1 2 3 B 8 4 7 6 5) (2 3 4 1 8 B 7 6 5) (8 B 3 2 1 4 7 6 5) (2 8 3 7 1 4 6 B 5)) 
+"open" 
+((2 8 3 1 4 5 7 6 B) (B 8 3 2 6 4 1 7 5) (2 8 3 6 B 4 1 7 5) (2 8 B 1 6 3 7 5 4) (2 8 3 1 B 6 7 5 4) (1 2 3 B 8 4 7 6 5)
+ (2 3 4 1 8 B 7 6 5) (8 B 3 2 1 4 7 6 5) (2 8 3 7 1 4 6 B 5) (2 B 8 1 4 3 7 6 5)) 
+"open" 
+((B 8 3 2 6 4 1 7 5) (2 8 3 6 B 4 1 7 5) (2 8 B 1 6 3 7 5 4) (2 8 3 1 B 6 7 5 4) (1 2 3 B 8 4 7 6 5) (2 3 4 1 8 B 7 6 5)
+ (8 B 3 2 1 4 7 6 5) (2 8 3 7 1 4 6 B 5) (2 B 8 1 4 3 7 6 5) (2 8 3 1 4 5 7 B 6)) 
+"open" 
+((2 8 3 6 B 4 1 7 5) (2 8 B 1 6 3 7 5 4) (2 8 3 1 B 6 7 5 4) (1 2 3 B 8 4 7 6 5) (2 3 4 1 8 B 7 6 5) (8 B 3 2 1 4 7 6 5)
+ (2 8 3 7 1 4 6 B 5) (2 B 8 1 4 3 7 6 5) (2 8 3 1 4 5 7 B 6) (8 B 3 2 6 4 1 7 5)) 
+"open" 
+((2 8 B 1 6 3 7 5 4) (2 8 3 1 B 6 7 5 4) (1 2 3 B 8 4 7 6 5) (2 3 4 1 8 B 7 6 5) (8 B 3 2 1 4 7 6 5) (2 8 3 7 1 4 6 B 5)
+ (2 B 8 1 4 3 7 6 5) (2 8 3 1 4 5 7 B 6) (8 B 3 2 6 4 1 7 5) (2 B 3 6 8 4 1 7 5) (2 8 3 6 7 4 1 B 5) (2 8 3 6 4 B 1 7 5)) 
+"open" 
+((2 8 3 1 B 6 7 5 4) (1 2 3 B 8 4 7 6 5) (2 3 4 1 8 B 7 6 5) (8 B 3 2 1 4 7 6 5) (2 8 3 7 1 4 6 B 5) (2 B 8 1 4 3 7 6 5)
+ (2 8 3 1 4 5 7 B 6) (8 B 3 2 6 4 1 7 5) (2 B 3 6 8 4 1 7 5) (2 8 3 6 7 4 1 B 5) (2 8 3 6 4 B 1 7 5) (2 B 8 1 6 3 7 5 4)) 
+"open" 
+((1 2 3 B 8 4 7 6 5) (2 3 4 1 8 B 7 6 5) (8 B 3 2 1 4 7 6 5) (2 8 3 7 1 4 6 B 5) (2 B 8 1 4 3 7 6 5) (2 8 3 1 4 5 7 B 6)
+ (8 B 3 2 6 4 1 7 5) (2 B 3 6 8 4 1 7 5) (2 8 3 6 7 4 1 B 5) (2 8 3 6 4 B 1 7 5) (2 B 8 1 6 3 7 5 4) (2 B 3 1 8 6 7 5 4)
+ (2 8 3 1 5 6 7 B 4) (2 8 3 B 1 6 7 5 4)) 
+"open" 
+((2 3 4 1 8 B 7 6 5) (8 B 3 2 1 4 7 6 5) (2 8 3 7 1 4 6 B 5) (2 B 8 1 4 3 7 6 5) (2 8 3 1 4 5 7 B 6) (8 B 3 2 6 4 1 7 5)
+ (2 B 3 6 8 4 1 7 5) (2 8 3 6 7 4 1 B 5) (2 8 3 6 4 B 1 7 5) (2 B 8 1 6 3 7 5 4) (2 B 3 1 8 6 7 5 4) (2 8 3 1 5 6 7 B 4)
+ (2 8 3 B 1 6 7 5 4) (1 2 3 7 8 4 B 6 5) (1 2 3 8 B 4 7 6 5)) 
+"open" 
+((8 B 3 2 1 4 7 6 5) (2 8 3 7 1 4 6 B 5) (2 B 8 1 4 3 7 6 5) (2 8 3 1 4 5 7 B 6) (8 B 3 2 6 4 1 7 5) (2 B 3 6 8 4 1 7 5)
+ (2 8 3 6 7 4 1 B 5) (2 8 3 6 4 B 1 7 5) (2 B 8 1 6 3 7 5 4) (2 B 3 1 8 6 7 5 4) (2 8 3 1 5 6 7 B 4) (2 8 3 B 1 6 7 5 4)
+ (1 2 3 7 8 4 B 6 5) (1 2 3 8 B 4 7 6 5) (2 3 4 1 8 5 7 6 B) (2 3 4 1 B 8 7 6 5)) 
+"open" 
+((2 8 3 7 1 4 6 B 5) (2 B 8 1 4 3 7 6 5) (2 8 3 1 4 5 7 B 6) (8 B 3 2 6 4 1 7 5) (2 B 3 6 8 4 1 7 5) (2 8 3 6 7 4 1 B 5)
+ (2 8 3 6 4 B 1 7 5) (2 B 8 1 6 3 7 5 4) (2 B 3 1 8 6 7 5 4) (2 8 3 1 5 6 7 B 4) (2 8 3 B 1 6 7 5 4) (1 2 3 7 8 4 B 6 5)
+ (1 2 3 8 B 4 7 6 5) (2 3 4 1 8 5 7 6 B) (2 3 4 1 B 8 7 6 5) (8 1 3 2 B 4 7 6 5) (8 3 B 2 1 4 7 6 5)) 
+"open" 
+((2 B 8 1 4 3 7 6 5) (2 8 3 1 4 5 7 B 6) (8 B 3 2 6 4 1 7 5) (2 B 3 6 8 4 1 7 5) (2 8 3 6 7 4 1 B 5) (2 8 3 6 4 B 1 7 5)
+ (2 B 8 1 6 3 7 5 4) (2 B 3 1 8 6 7 5 4) (2 8 3 1 5 6 7 B 4) (2 8 3 B 1 6 7 5 4) (1 2 3 7 8 4 B 6 5) (1 2 3 8 B 4 7 6 5)
+ (2 3 4 1 8 5 7 6 B) (2 3 4 1 B 8 7 6 5) (8 1 3 2 B 4 7 6 5) (8 3 B 2 1 4 7 6 5) (2 8 3 7 B 4 6 1 5) (2 8 3 7 1 4 6 5 B)) 
+"open" 
+((2 8 3 1 4 5 7 B 6) (8 B 3 2 6 4 1 7 5) (2 B 3 6 8 4 1 7 5) (2 8 3 6 7 4 1 B 5) (2 8 3 6 4 B 1 7 5) (2 B 8 1 6 3 7 5 4)
+ (2 B 3 1 8 6 7 5 4) (2 8 3 1 5 6 7 B 4) (2 8 3 B 1 6 7 5 4) (1 2 3 7 8 4 B 6 5) (1 2 3 8 B 4 7 6 5) (2 3 4 1 8 5 7 6 B)
+ (2 3 4 1 B 8 7 6 5) (8 1 3 2 B 4 7 6 5) (8 3 B 2 1 4 7 6 5) (2 8 3 7 B 4 6 1 5) (2 8 3 7 1 4 6 5 B) (2 4 8 1 B 3 7 6 5)
+ (B 2 8 1 4 3 7 6 5)) 
+"open" 
+((8 B 3 2 6 4 1 7 5) (2 B 3 6 8 4 1 7 5) (2 8 3 6 7 4 1 B 5) (2 8 3 6 4 B 1 7 5) (2 B 8 1 6 3 7 5 4) (2 B 3 1 8 6 7 5 4)
+ (2 8 3 1 5 6 7 B 4) (2 8 3 B 1 6 7 5 4) (1 2 3 7 8 4 B 6 5) (1 2 3 8 B 4 7 6 5) (2 3 4 1 8 5 7 6 B) (2 3 4 1 B 8 7 6 5)
+ (8 1 3 2 B 4 7 6 5) (8 3 B 2 1 4 7 6 5) (2 8 3 7 B 4 6 1 5) (2 8 3 7 1 4 6 5 B) (2 4 8 1 B 3 7 6 5) (B 2 8 1 4 3 7 6 5)
+ (2 8 3 1 B 5 7 4 6) (2 8 3 1 4 5 B 7 6)) 
+"open" 
+((2 B 3 6 8 4 1 7 5) (2 8 3 6 7 4 1 B 5) (2 8 3 6 4 B 1 7 5) (2 B 8 1 6 3 7 5 4) (2 B 3 1 8 6 7 5 4) (2 8 3 1 5 6 7 B 4)
+ (2 8 3 B 1 6 7 5 4) (1 2 3 7 8 4 B 6 5) (1 2 3 8 B 4 7 6 5) (2 3 4 1 8 5 7 6 B) (2 3 4 1 B 8 7 6 5) (8 1 3 2 B 4 7 6 5)
+ (8 3 B 2 1 4 7 6 5) (2 8 3 7 B 4 6 1 5) (2 8 3 7 1 4 6 5 B) (2 4 8 1 B 3 7 6 5) (B 2 8 1 4 3 7 6 5) (2 8 3 1 B 5 7 4 6)
+ (2 8 3 1 4 5 B 7 6) (8 6 3 2 B 4 1 7 5) (8 3 B 2 6 4 1 7 5)) 
+"open" 
+((2 8 3 6 7 4 1 B 5) (2 8 3 6 4 B 1 7 5) (2 B 8 1 6 3 7 5 4) (2 B 3 1 8 6 7 5 4) (2 8 3 1 5 6 7 B 4) (2 8 3 B 1 6 7 5 4)
+ (1 2 3 7 8 4 B 6 5) (1 2 3 8 B 4 7 6 5) (2 3 4 1 8 5 7 6 B) (2 3 4 1 B 8 7 6 5) (8 1 3 2 B 4 7 6 5) (8 3 B 2 1 4 7 6 5)
+ (2 8 3 7 B 4 6 1 5) (2 8 3 7 1 4 6 5 B) (2 4 8 1 B 3 7 6 5) (B 2 8 1 4 3 7 6 5) (2 8 3 1 B 5 7 4 6) (2 8 3 1 4 5 B 7 6)
+ (8 6 3 2 B 4 1 7 5) (8 3 B 2 6 4 1 7 5) (B 2 3 6 8 4 1 7 5) (2 3 B 6 8 4 1 7 5)) 
+"open" 
+((2 8 3 6 4 B 1 7 5) (2 B 8 1 6 3 7 5 4) (2 B 3 1 8 6 7 5 4) (2 8 3 1 5 6 7 B 4) (2 8 3 B 1 6 7 5 4) (1 2 3 7 8 4 B 6 5)
+ (1 2 3 8 B 4 7 6 5) (2 3 4 1 8 5 7 6 B) (2 3 4 1 B 8 7 6 5) (8 1 3 2 B 4 7 6 5) (8 3 B 2 1 4 7 6 5) (2 8 3 7 B 4 6 1 5)
+ (2 8 3 7 1 4 6 5 B) (2 4 8 1 B 3 7 6 5) (B 2 8 1 4 3 7 6 5) (2 8 3 1 B 5 7 4 6) (2 8 3 1 4 5 B 7 6) (8 6 3 2 B 4 1 7 5)
+ (8 3 B 2 6 4 1 7 5) (B 2 3 6 8 4 1 7 5) (2 3 B 6 8 4 1 7 5) (2 8 3 6 7 4 B 1 5) (2 8 3 6 7 4 1 5 B)) 
+"open" 
+((2 B 8 1 6 3 7 5 4) (2 B 3 1 8 6 7 5 4) (2 8 3 1 5 6 7 B 4) (2 8 3 B 1 6 7 5 4) (1 2 3 7 8 4 B 6 5) (1 2 3 8 B 4 7 6 5)
+ (2 3 4 1 8 5 7 6 B) (2 3 4 1 B 8 7 6 5) (8 1 3 2 B 4 7 6 5) (8 3 B 2 1 4 7 6 5) (2 8 3 7 B 4 6 1 5) (2 8 3 7 1 4 6 5 B)
+ (2 4 8 1 B 3 7 6 5) (B 2 8 1 4 3 7 6 5) (2 8 3 1 B 5 7 4 6) (2 8 3 1 4 5 B 7 6) (8 6 3 2 B 4 1 7 5) (8 3 B 2 6 4 1 7 5)
+ (B 2 3 6 8 4 1 7 5) (2 3 B 6 8 4 1 7 5) (2 8 3 6 7 4 B 1 5) (2 8 3 6 7 4 1 5 B) (2 8 B 6 4 3 1 7 5) (2 8 3 6 4 5 1 7 B)) 
+"open" 
+((2 B 3 1 8 6 7 5 4) (2 8 3 1 5 6 7 B 4) (2 8 3 B 1 6 7 5 4) (1 2 3 7 8 4 B 6 5) (1 2 3 8 B 4 7 6 5) (2 3 4 1 8 5 7 6 B)
+ (2 3 4 1 B 8 7 6 5) (8 1 3 2 B 4 7 6 5) (8 3 B 2 1 4 7 6 5) (2 8 3 7 B 4 6 1 5) (2 8 3 7 1 4 6 5 B) (2 4 8 1 B 3 7 6 5)
+ (B 2 8 1 4 3 7 6 5) (2 8 3 1 B 5 7 4 6) (2 8 3 1 4 5 B 7 6) (8 6 3 2 B 4 1 7 5) (8 3 B 2 6 4 1 7 5) (B 2 3 6 8 4 1 7 5)
+ (2 3 B 6 8 4 1 7 5) (2 8 3 6 7 4 B 1 5) (2 8 3 6 7 4 1 5 B) (2 8 B 6 4 3 1 7 5) (2 8 3 6 4 5 1 7 B) (2 6 8 1 B 3 7 5 4)
+ (B 2 8 1 6 3 7 5 4)) 
+"open" 
+((2 8 3 1 5 6 7 B 4) (2 8 3 B 1 6 7 5 4) (1 2 3 7 8 4 B 6 5) (1 2 3 8 B 4 7 6 5) (2 3 4 1 8 5 7 6 B) (2 3 4 1 B 8 7 6 5)
+ (8 1 3 2 B 4 7 6 5) (8 3 B 2 1 4 7 6 5) (2 8 3 7 B 4 6 1 5) (2 8 3 7 1 4 6 5 B) (2 4 8 1 B 3 7 6 5) (B 2 8 1 4 3 7 6 5)
+ (2 8 3 1 B 5 7 4 6) (2 8 3 1 4 5 B 7 6) (8 6 3 2 B 4 1 7 5) (8 3 B 2 6 4 1 7 5) (B 2 3 6 8 4 1 7 5) (2 3 B 6 8 4 1 7 5)
+ (2 8 3 6 7 4 B 1 5) (2 8 3 6 7 4 1 5 B) (2 8 B 6 4 3 1 7 5) (2 8 3 6 4 5 1 7 B) (2 6 8 1 B 3 7 5 4) (B 2 8 1 6 3 7 5 4)
+ (B 2 3 1 8 6 7 5 4) (2 3 B 1 8 6 7 5 4)) 
+"open" 
+((2 8 3 B 1 6 7 5 4) (1 2 3 7 8 4 B 6 5) (1 2 3 8 B 4 7 6 5) (2 3 4 1 8 5 7 6 B) (2 3 4 1 B 8 7 6 5) (8 1 3 2 B 4 7 6 5)
+ (8 3 B 2 1 4 7 6 5) (2 8 3 7 B 4 6 1 5) (2 8 3 7 1 4 6 5 B) (2 4 8 1 B 3 7 6 5) (B 2 8 1 4 3 7 6 5) (2 8 3 1 B 5 7 4 6)
+ (2 8 3 1 4 5 B 7 6) (8 6 3 2 B 4 1 7 5) (8 3 B 2 6 4 1 7 5) (B 2 3 6 8 4 1 7 5) (2 3 B 6 8 4 1 7 5) (2 8 3 6 7 4 B 1 5)
+ (2 8 3 6 7 4 1 5 B) (2 8 B 6 4 3 1 7 5) (2 8 3 6 4 5 1 7 B) (2 6 8 1 B 3 7 5 4) (B 2 8 1 6 3 7 5 4) (B 2 3 1 8 6 7 5 4)
+ (2 3 B 1 8 6 7 5 4) (2 8 3 1 5 6 B 7 4) (2 8 3 1 5 6 7 4 B)) 
+"open" 
+((1 2 3 7 8 4 B 6 5) (1 2 3 8 B 4 7 6 5) (2 3 4 1 8 5 7 6 B) (2 3 4 1 B 8 7 6 5) (8 1 3 2 B 4 7 6 5) (8 3 B 2 1 4 7 6 5)
+ (2 8 3 7 B 4 6 1 5) (2 8 3 7 1 4 6 5 B) (2 4 8 1 B 3 7 6 5) (B 2 8 1 4 3 7 6 5) (2 8 3 1 B 5 7 4 6) (2 8 3 1 4 5 B 7 6)
+ (8 6 3 2 B 4 1 7 5) (8 3 B 2 6 4 1 7 5) (B 2 3 6 8 4 1 7 5) (2 3 B 6 8 4 1 7 5) (2 8 3 6 7 4 B 1 5) (2 8 3 6 7 4 1 5 B)
+ (2 8 B 6 4 3 1 7 5) (2 8 3 6 4 5 1 7 B) (2 6 8 1 B 3 7 5 4) (B 2 8 1 6 3 7 5 4) (B 2 3 1 8 6 7 5 4) (2 3 B 1 8 6 7 5 4)
+ (2 8 3 1 5 6 B 7 4) (2 8 3 1 5 6 7 4 B) (B 8 3 2 1 6 7 5 4) (2 8 3 7 1 6 B 5 4)) 
+"open" 
+((1 2 3 8 B 4 7 6 5) (2 3 4 1 8 5 7 6 B) (2 3 4 1 B 8 7 6 5) (8 1 3 2 B 4 7 6 5) (8 3 B 2 1 4 7 6 5) (2 8 3 7 B 4 6 1 5)
+ (2 8 3 7 1 4 6 5 B) (2 4 8 1 B 3 7 6 5) (B 2 8 1 4 3 7 6 5) (2 8 3 1 B 5 7 4 6) (2 8 3 1 4 5 B 7 6) (8 6 3 2 B 4 1 7 5)
+ (8 3 B 2 6 4 1 7 5) (B 2 3 6 8 4 1 7 5) (2 3 B 6 8 4 1 7 5) (2 8 3 6 7 4 B 1 5) (2 8 3 6 7 4 1 5 B) (2 8 B 6 4 3 1 7 5)
+ (2 8 3 6 4 5 1 7 B) (2 6 8 1 B 3 7 5 4) (B 2 8 1 6 3 7 5 4) (B 2 3 1 8 6 7 5 4) (2 3 B 1 8 6 7 5 4) (2 8 3 1 5 6 B 7 4)
+ (2 8 3 1 5 6 7 4 B) (B 8 3 2 1 6 7 5 4) (2 8 3 7 1 6 B 5 4) (1 2 3 7 8 4 6 B 5)) 
+"Found (1 2 3 8 B 4 7 6 5) in 34 steps.
+          Expanded 94 nodes, stored a maximum of 28 nodes."
+CL-USER> 
+
+;;;; Transcript of run moving the 'blank' tile one move from 
+;;;; *goal* on each successive run.
+;;;; *** Omitted open list ***
+
+CL-USER> *start*
+(2 8 3 1 6 4 7 B 5)
+CL-USER> *goal*
+(1 2 3 8 B 4 7 6 5)
+CL-USER> (breadth-first-search '(1 2 3 B 8 4 7 6 5))
+"Found (1 2 3 8 B 4 7 6 5) in 3 steps.
+          Expanded 7 nodes, stored a maximum of 3 nodes."
+CL-USER> (breadth-first-search '(1 2 B 3 8 4 7 6 5))
+"Found (1 2 3 8 B 4 7 6 5) in 1426 steps.
+          Expanded 3872 nodes, stored a maximum of 870 nodes."
+CL-USER> (breadth-first-search '(1 B 2 3 8 4 7 6 5))
+"Found (1 2 3 8 B 4 7 6 5) in 3317 steps.
+          Expanded 8840 nodes, stored a maximum of 1783 nodes."
+CL-USER> (breadth-first-search '(B 1 2 3 8 4 7 6 5))
+"Found (1 2 3 8 B 4 7 6 5) in 4715 steps.
+          Expanded 12562 nodes, stored a maximum of 2491 nodes."
+CL-USER> (breadth-first-search '( 1 2 3 8 4 B 7 6 5))
+"Found (1 2 3 8 B 4 7 6 5) in 3 steps.
+          Expanded 7 nodes, stored a maximum of 3 nodes."
+CL-USER> (breadth-first-search '( 1 2 3 8 4 7 B 6 5))
+"Found (1 2 3 8 B 4 7 6 5) in 1461 steps.
+          Expanded 3960 nodes, stored a maximum of 885 nodes."
+CL-USER> (breadth-first-search '( 1 2 3 8 4 7 6 B 5))
+"Found (1 2 3 8 B 4 7 6 5) in 3030 steps.
+          Expanded 8130 nodes, stored a maximum of 1684 nodes."
+CL-USER> (breadth-first-search '( 1 2 3 8 4 7 6 5 B))
+"Found (1 2 3 8 B 4 7 6 5) in 4741 steps.
+          Expanded 12628 nodes, stored a maximum of 2502 nodes."
+CL-USER> 
+
+;;;; Transcript of run moving the 'blank' tile one move from 
+;;;; original *start* on each successive run.
+;;;; *** Omitted open list ***
+
+CL-USER> *start*
+(2 8 3 1 6 4 7 B 5)
+CL-USER> *goal*
+(1 2 3 8 B 4 7 6 5)
+CL-USER> (breadth-first-search *start*)
+"Found (1 2 3 8 B 4 7 6 5) in 34 steps.
+          Expanded 94 nodes, stored a maximum of 28 nodes."
+CL-USER> (breadth-first-search *goal*)
+"Found (1 2 3 8 B 4 7 6 5) in 0 steps.
+          Expanded 0 nodes, stored a maximum of 0 nodes."
+CL-USER> (breadth-first-search '(2 8 3 1 6 4 7 5 b))
+"Found (1 2 3 8 B 4 7 6 5) in 72 steps.
+          Expanded 196 nodes, stored a maximum of 51 nodes."
+CL-USER> (breadth-first-search '(2 8 3 1 6 4 b 7 5))
+"Found (1 2 3 8 B 4 7 6 5) in 72 steps.
+          Expanded 196 nodes, stored a maximum of 51 nodes."
+CL-USER> (breadth-first-search '(2 8 3 1 6 b 4 7 5))
+"Found (1 2 3 8 B 4 7 6 5) in 14151 steps.
+          Expanded 38787 nodes, stored a maximum of 7699 nodes."
+CL-USER> (breadth-first-search '(2 8 3 1 b 6 4 7 5))
+"Found (1 2 3 8 B 4 7 6 5) in 22842 steps.
+          Expanded 62712 nodes, stored a maximum of 11384 nodes."
+CL-USER> (breadth-first-search '(2 8 3 b 1 6 4 7 5))
+"Found (1 2 3 8 B 4 7 6 5) in 37579 steps.
+          Expanded 100953 nodes, stored a maximum of 14800 nodes."
+CL-USER> (breadth-first-search '(2 8 b 3 1 6 4 7 5))
+"Found (1 2 3 8 B 4 7 6 5) in 130189 steps.
+          Expanded 349008 nodes, stored a maximum of 24049 nodes."
+CL-USER> (breadth-first-search '(2 b 8 3 1 6 4 7 5))
+"Found (1 2 3 8 B 4 7 6 5) in 158121 steps.
+          Expanded 421576 nodes, stored a maximum of 25133 nodes."
+CL-USER> (breadth-first-search '(b 2 8 3 1 6 4 7 5))
+"Found (1 2 3 8 B 4 7 6 5) in 130049 steps.
+          Expanded 348668 nodes, stored a maximum of 24048 nodes."
+CL-USER> 
+
+;;;; Transcript of traditional run of the 8 puzzle.
+;;;; Moving the 'blank' tile one move on each successive run
+;;;; *goal* state is (1 2 3 4 5 6 7 8 b)
+;;;; *** Omitted open list ***
+
+CL-USER> (setq *goal* '(1 2 3 4 5 6 7 8 b))
+(1 2 3 4 5 6 7 8 b)
+CL-USER> (breadth-first-search '(1 2 3 4 5 6 7 8 b))
+"Found (1 2 3 4 5 6 7 8 B) in 0 steps.
+          Expanded 0 nodes, stored a maximum of 0 nodes."
+CL-USER> (breadth-first-search '(1 2 3 4 5 6 7 b 8))
+"Found (1 2 3 4 5 6 7 8 B) in 3 steps.
+          Expanded 9 nodes, stored a maximum of 5 nodes."
+CL-USER> (breadth-first-search '(1 2 3 4 5 6 b 7 8))
+"Found (1 2 3 4 5 6 7 8 B) in 6 steps.
+          Expanded 18 nodes, stored a maximum of 8 nodes."
+CL-USER> (breadth-first-search '(1 2 3 4 5 b 6 7 8))
+"Found (1 2 3 4 5 6 7 8 B) in 2709 steps.
+          Expanded 7340 nodes, stored a maximum of 1590 nodes."
+CL-USER> (breadth-first-search '(1 2 3 4 b 5 6 7 8))
+"Found (1 2 3 4 5 6 7 8 B) in 6026 steps.
+          Expanded 16030 nodes, stored a maximum of 3076 nodes."
+CL-USER> (breadth-first-search '(1 2 3 b 4 5 6 7 8))
+"Found (1 2 3 4 5 6 7 8 B) in 8430 steps.
+          Expanded 22430 nodes, stored a maximum of 4186 nodes."
+CL-USER> (breadth-first-search '(1 2 b 3 4 5 6 7 8))
+"Found (1 2 3 4 5 6 7 8 B) in 75169 steps.
+          Expanded 204804 nodes, stored a maximum of 23980 nodes."
+CL-USER> (breadth-first-search '(1 b 2 3 4 5 6 7 8))
+"Found (1 2 3 4 5 6 7 8 B) in 66220 steps.
+          Expanded 178880 nodes, stored a maximum of 21826 nodes."
+CL-USER> (breadth-first-search '(b 1 2 3 4 5 6 7 8))
+"Found (1 2 3 4 5 6 7 8 B) in 84542 steps.
+          Expanded 227542 nodes, stored a maximum of 23973 nodes."
+CL-USER> 

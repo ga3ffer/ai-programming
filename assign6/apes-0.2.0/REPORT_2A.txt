@@ -1,0 +1,16 @@
+% -*- mode: Prolog;   -*-
+% Kevin Barroga, 2014 Dec, 03
+% ICS 361, Assignment #6
+% File: REPORT_2A.txt
+
+The knowledge based simple expert system from J.R Fisher's code: animalES.pro, is a simple inference engine that classifies animals and correctly identifies them if a match can be made. The bulk of the code is the knowledge-base that the inference engine consults to correctly identify an animal. I modified these sections of code to meet the requirement of classifying different native Hawaiian fish species.
+
+The main sections that I had to modify were the animal identification rules, and the classification rules, finally I add a hypotheses to be tested for each new species of native Hawaiian fish. I designed my knowledge base to classify the fish in three classes: freshwater for fish that live in streams, and rivers, brackish water for fish that spend their time in both freshwater and saltwater, and saltwater for strictly marine fish. Next I added fish identification rules for each of the different type of fish I want identified. I made an effort to list at least four unique characteristics for each species, along with the Hawaiian name for the fish, because most fisherman in Hawaii knows the type by its Hawaiian name. Last step was to add a hypotheses for each species as well as an unknown hypothesis if the inference engine can not identify the fish.
+
+Writing the knowledge base rule in code was not that difficult once I understood the structure of the code. Some negatives about this is that this expert system does not have the ability to expand its knowledge dynamically. It is also limited a small universe, only Hawaiian fish. To make changes a person that understands the code and has programming skills can only modify and expand this expert system.
+
+The APES (Prolog Expert System) package used is a knowledge-based rule development program whose aim is to support expansion of the knowledge-base by generating rules in a natural language format to keep maintenance possible by domain experts with no programming skills.
+
+I felt like that rules based system APES provide was difficult for me to use right from the beginning. After looking looking through the code and familiarizing myself to it, I grasped the code structure much better. After running a few small queries and experimenting to see how it parsed my queries, I started to like this expert system better than the one used in problem one. It used a fairly simple grammar, mainly using 'is a', 'has', and 'does' for relational decisions.
+
+I think this rule-based expert system is a thousand times better than the previous knowledge-based simple expert system. For me there was a medium learning curve, but once I understood how it worked I really came to like it. This type of expert system is not restricted to only a specific world. The knowledge-base can expand to include other related worlds, and all can be done dynamically. Building up knowledge through a suitable grammar, makes the system maintainable by the domain expert without requiring programming skills.

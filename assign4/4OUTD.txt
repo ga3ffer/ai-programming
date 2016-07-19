@@ -1,0 +1,545 @@
+;;;; -*- Mode: LISP; Syntax: Common-lisp; Package: USER; Base: 10 -*-
+;;;; Name:  Kevin Barroga                   Date: 2014 NOV 04
+;;;; Course: ICS361                   Assignment: Assignment 4
+;;;; File name: 4OUTD.txt
+
+;;;; COBWEB ENGINE OUTPUT
+
+;;;; This file is the transcript of cobweb-engine-data.lisp
+
+; SLIME 2012-02-12
+CL-USER> (load "d:/Dropbox/FALL2014/ICS361/MachineLearning/ml-utilities.lisp")
+;; Loading file D:\Dropbox\FALL2014\ICS361\MachineLearning\ml-utilities.lisp ...
+;; Loaded file D:\Dropbox\FALL2014\ICS361\MachineLearning\ml-utilities.lisp
+T
+CL-USER> (load "d:/Dropbox/FALL2014/ICS361/MachineLearning/cobweb.lisp")
+;; Loading file D:\Dropbox\FALL2014\ICS361\MachineLearning\cobweb.lisp ...
+;; Loaded file D:\Dropbox\FALL2014\ICS361\MachineLearning\cobweb.lisp
+T
+CL-USER> (load "d:/Dropbox/FALL2014/ICS361/MachineLearning/cobweb-ics361-data.lisp")
+;; Loading file D:\Dropbox\FALL2014\ICS361\MachineLearning\cobweb-ics361-data.lisp ...
+;; Loaded file D:\Dropbox\FALL2014\ICS361\MachineLearning\cobweb-ics361-data.lisp
+T
+CL-USER> (train-cobweb *raw-examples*)
+
+
+Intializing root category with first instance. 
+C-7556{SINGLE-CYLINDER}
+
+
+Incorporating instance: IN-LINE-PARALLEL
+ Level 0: Growing leaf category
+
+ C-7556{IN-LINE-PARALLEL SINGLE-CYLINDER}
+   C-7578{IN-LINE-PARALLEL}
+   C-7579{SINGLE-CYLINDER}
+
+
+Incorporating instance: IN-LINE-TRIPLE
+ Category utility 0.889 when put with C-7578{IN-LINE-PARALLEL}
+ Category utility 0.889 when put with C-7579{SINGLE-CYLINDER}
+ Category utility 1.259 when by itself
+ Level 0: putting instance by itself
+
+ C-7556{IN-LINE-TRIPLE IN-LINE-PARALLEL SINGLE-CYLINDER}
+   C-7580{IN-LINE-TRIPLE}
+   C-7578{IN-LINE-PARALLEL}
+   C-7579{SINGLE-CYLINDER}
+
+
+Incorporating instance: IN-LINE-FOUR
+ Category utility 1.125 when put with C-7580{IN-LINE-TRIPLE}
+ Category utility 0.792 when put with C-7578{IN-LINE-PARALLEL}
+ Category utility 0.792 when put with C-7579{SINGLE-CYLINDER}
+ Category utility 0.969 when by itself
+ Category utility 0.000 when merge C-7580{IN-LINE-TRIPLE} and C-7578{IN-LINE-PARALLEL}
+ Level 0: putting instance with C-7580{IN-LINE-TRIPLE}
+   Level 1: Growing leaf category
+
+ C-7556{IN-LINE-FOUR IN-LINE-TRIPLE IN-LINE-PARALLEL SINGLE-CYLINDER}
+   C-7580{IN-LINE-FOUR IN-LINE-TRIPLE}
+     C-7582{IN-LINE-FOUR}
+     C-7583{IN-LINE-TRIPLE}
+   C-7578{IN-LINE-PARALLEL}
+   C-7579{SINGLE-CYLINDER}
+
+
+Incorporating instance: IN-LINE-SIX
+ Category utility 0.898 when put with C-7580{IN-LINE-FOUR IN-LINE-TRIPLE}
+ Category utility 0.787 when put with C-7578{IN-LINE-PARALLEL}
+ Category utility 0.787 when put with C-7579{SINGLE-CYLINDER}
+ Category utility 0.840 when by itself
+ Category utility 0.000 when merge C-7580{IN-LINE-FOUR IN-LINE-TRIPLE} and C-7578{IN-LINE-PARALLEL}
+ Category utility 0.000 when split C-7580{IN-LINE-FOUR IN-LINE-TRIPLE} and put in NIL
+ Level 0: putting instance with C-7580{IN-LINE-FOUR IN-LINE-TRIPLE}
+   Category utility 0.389 when put with C-7582{IN-LINE-FOUR}
+   Category utility 0.389 when put with C-7583{IN-LINE-TRIPLE}
+   Category utility 0.593 when by itself
+   Level 1: putting instance by itself
+
+ C-7556{IN-LINE-SIX IN-LINE-FOUR IN-LINE-TRIPLE IN-LINE-PARALLEL SINGLE-CYLINDER}
+   C-7580{IN-LINE-SIX IN-LINE-FOUR IN-LINE-TRIPLE}
+     C-7585{IN-LINE-SIX}
+     C-7582{IN-LINE-FOUR}
+     C-7583{IN-LINE-TRIPLE}
+   C-7578{IN-LINE-PARALLEL}
+   C-7579{SINGLE-CYLINDER}
+
+
+Incorporating instance: V-TWIN
+ Category utility 0.796 when put with C-7578{IN-LINE-PARALLEL}
+ Category utility 0.741 when put with C-7579{SINGLE-CYLINDER}
+ Category utility 0.676 when put with C-7580{IN-LINE-SIX IN-LINE-FOUR IN-LINE-TRIPLE}
+ Category utility 0.764 when by itself
+ Category utility 0.000 when merge C-7578{IN-LINE-PARALLEL} and C-7579{SINGLE-CYLINDER}
+ Level 0: putting instance with C-7578{IN-LINE-PARALLEL}
+   Level 1: Growing leaf category
+
+ C-7556{V-TWIN IN-LINE-SIX IN-LINE-FOUR IN-LINE-TRIPLE IN-LINE-PARALLEL SINGLE-CYLINDER}
+   C-7580{IN-LINE-SIX IN-LINE-FOUR IN-LINE-TRIPLE}
+     C-7585{IN-LINE-SIX}
+     C-7582{IN-LINE-FOUR}
+     C-7583{IN-LINE-TRIPLE}
+   C-7578{V-TWIN IN-LINE-PARALLEL}
+     C-7587{V-TWIN}
+     C-7588{IN-LINE-PARALLEL}
+   C-7579{SINGLE-CYLINDER}
+
+
+Incorporating instance: V-TWIN-FOUR
+ Category utility 0.748 when put with C-7578{V-TWIN IN-LINE-PARALLEL}
+ Category utility 0.605 when put with C-7580{IN-LINE-SIX IN-LINE-FOUR IN-LINE-TRIPLE}
+ Category utility 0.590 when put with C-7579{SINGLE-CYLINDER}
+ Category utility 0.656 when by itself
+ Category utility 0.000 when merge C-7578{V-TWIN IN-LINE-PARALLEL} and C-7580{IN-LINE-SIX IN-LINE-FOUR IN-LINE-TRIPLE}
+ Category utility 0.000 when split C-7578{V-TWIN IN-LINE-PARALLEL} and put in NIL
+ Level 0: putting instance with C-7578{V-TWIN IN-LINE-PARALLEL}
+   Category utility 0.778 when put with C-7587{V-TWIN}
+   Category utility 0.444 when put with C-7588{IN-LINE-PARALLEL}
+   Category utility 0.741 when by itself
+   Category utility 0.000 when merge C-7587{V-TWIN} and C-7588{IN-LINE-PARALLEL}
+   Level 1: putting instance with C-7587{V-TWIN}
+     Level 2: Growing leaf category
+
+ C-7556{V-TWIN-FOUR V-TWIN IN-LINE-SIX IN-LINE-FOUR IN-LINE-TRIPLE IN-LINE-PARALLEL SINGLE-CYLINDER}
+   C-7580{IN-LINE-SIX IN-LINE-FOUR IN-LINE-TRIPLE}
+     C-7585{IN-LINE-SIX}
+     C-7582{IN-LINE-FOUR}
+     C-7583{IN-LINE-TRIPLE}
+   C-7578{V-TWIN-FOUR V-TWIN IN-LINE-PARALLEL}
+     C-7587{V-TWIN-FOUR V-TWIN}
+       C-7591{V-TWIN-FOUR}
+       C-7592{V-TWIN}
+     C-7588{IN-LINE-PARALLEL}
+   C-7579{SINGLE-CYLINDER}
+
+
+Incorporating instance: BOXER-TWO
+ Category utility 0.653 when put with C-7578{V-TWIN-FOUR V-TWIN IN-LINE-PARALLEL}
+ Category utility 0.618 when put with C-7580{IN-LINE-SIX IN-LINE-FOUR IN-LINE-TRIPLE}
+ Category utility 0.562 when put with C-7579{SINGLE-CYLINDER}
+ Category utility 0.609 when by itself
+ Category utility 0.000 when merge C-7578{V-TWIN-FOUR V-TWIN IN-LINE-PARALLEL} and C-7580{IN-LINE-SIX IN-LINE-FOUR IN-LINE-TRIPLE}
+ Category utility 0.000 when split C-7578{V-TWIN-FOUR V-TWIN IN-LINE-PARALLEL} and put in NIL
+ Level 0: putting instance with C-7578{V-TWIN-FOUR V-TWIN IN-LINE-PARALLEL}
+   Category utility 0.562 when put with C-7587{V-TWIN-FOUR V-TWIN}
+   Category utility 0.562 when put with C-7588{IN-LINE-PARALLEL}
+   Category utility 0.708 when by itself
+   Level 1: putting instance by itself
+
+ C-7556{BOXER-TWO V-TWIN-FOUR V-TWIN IN-LINE-SIX IN-LINE-FOUR IN-LINE-TRIPLE IN-LINE-PARALLEL SINGLE-CYLINDER}
+   C-7580{IN-LINE-SIX IN-LINE-FOUR IN-LINE-TRIPLE}
+     C-7585{IN-LINE-SIX}
+     C-7582{IN-LINE-FOUR}
+     C-7583{IN-LINE-TRIPLE}
+   C-7578{BOXER-TWO V-TWIN-FOUR V-TWIN IN-LINE-PARALLEL}
+     C-7594{BOXER-TWO}
+     C-7587{V-TWIN-FOUR V-TWIN}
+       C-7591{V-TWIN-FOUR}
+       C-7592{V-TWIN}
+     C-7588{IN-LINE-PARALLEL}
+   C-7579{SINGLE-CYLINDER}
+
+
+Incorporating instance: BOXER-FOUR
+ Category utility 0.599 when put with C-7580{IN-LINE-SIX IN-LINE-FOUR IN-LINE-TRIPLE}
+ Category utility 0.538 when put with C-7578{BOXER-TWO V-TWIN-FOUR V-TWIN IN-LINE-PARALLEL}
+ Category utility 0.475 when put with C-7579{SINGLE-CYLINDER}
+ Category utility 0.523 when by itself
+ Category utility 0.000 when merge C-7580{IN-LINE-SIX IN-LINE-FOUR IN-LINE-TRIPLE} and C-7578{BOXER-TWO V-TWIN-FOUR V-TWIN IN-LINE-PARALLEL}
+ Category utility 0.000 when split C-7580{IN-LINE-SIX IN-LINE-FOUR IN-LINE-TRIPLE} and put in NIL
+ Level 0: putting instance with C-7580{IN-LINE-SIX IN-LINE-FOUR IN-LINE-TRIPLE}
+   Category utility 0.583 when put with C-7582{IN-LINE-FOUR}
+   Category utility 0.417 when put with C-7583{IN-LINE-TRIPLE}
+   Category utility 0.333 when put with C-7585{IN-LINE-SIX}
+   Category utility 0.500 when by itself
+   Category utility 0.000 when merge C-7582{IN-LINE-FOUR} and C-7583{IN-LINE-TRIPLE}
+   Level 1: putting instance with C-7582{IN-LINE-FOUR}
+     Level 2: Growing leaf category
+
+ C-7556{BOXER-FOUR BOXER-TWO V-TWIN-FOUR V-TWIN IN-LINE-SIX IN-LINE-FOUR IN-LINE-TRIPLE IN-LINE-PARALLEL SINGLE-CYLINDER}
+   C-7580{BOXER-FOUR IN-LINE-SIX IN-LINE-FOUR IN-LINE-TRIPLE}
+     C-7585{IN-LINE-SIX}
+     C-7582{BOXER-FOUR IN-LINE-FOUR}
+       C-7597{BOXER-FOUR}
+       C-7598{IN-LINE-FOUR}
+     C-7583{IN-LINE-TRIPLE}
+   C-7578{BOXER-TWO V-TWIN-FOUR V-TWIN IN-LINE-PARALLEL}
+     C-7594{BOXER-TWO}
+     C-7587{V-TWIN-FOUR V-TWIN}
+       C-7591{V-TWIN-FOUR}
+       C-7592{V-TWIN}
+     C-7588{IN-LINE-PARALLEL}
+   C-7579{SINGLE-CYLINDER}
+
+
+Incorporating instance: BOXER-SIX
+ Category utility 0.570 when put with C-7580{BOXER-FOUR IN-LINE-SIX IN-LINE-FOUR IN-LINE-TRIPLE}
+ Category utility 0.530 when put with C-7579{SINGLE-CYLINDER}
+ Category utility 0.480 when put with C-7578{BOXER-TWO V-TWIN-FOUR V-TWIN IN-LINE-PARALLEL}
+ Category utility 0.548 when by itself
+ Category utility 0.000 when merge C-7580{BOXER-FOUR IN-LINE-SIX IN-LINE-FOUR IN-LINE-TRIPLE} and C-7579{SINGLE-CYLINDER}
+ Category utility 0.000 when split C-7580{BOXER-FOUR IN-LINE-SIX IN-LINE-FOUR IN-LINE-TRIPLE} and put in NIL
+ Level 0: putting instance with C-7580{BOXER-FOUR IN-LINE-SIX IN-LINE-FOUR IN-LINE-TRIPLE}
+   Category utility 0.653 when put with C-7585{IN-LINE-SIX}
+   Category utility 0.453 when put with C-7583{IN-LINE-TRIPLE}
+   Category utility 0.409 when put with C-7582{BOXER-FOUR IN-LINE-FOUR}
+   Category utility 0.590 when by itself
+   Category utility 0.000 when merge C-7585{IN-LINE-SIX} and C-7583{IN-LINE-TRIPLE}
+   Level 1: putting instance with C-7585{IN-LINE-SIX}
+     Level 2: Growing leaf category
+
+ C-7556{BOXER-SIX BOXER-FOUR BOXER-TWO V-TWIN-FOUR V-TWIN IN-LINE-SIX IN-LINE-FOUR IN-LINE-TRIPLE IN-LINE-PARALLEL SINGLE-CYLINDER}
+   C-7580{BOXER-SIX BOXER-FOUR IN-LINE-SIX IN-LINE-FOUR IN-LINE-TRIPLE}
+     C-7585{BOXER-SIX IN-LINE-SIX}
+       C-7601{BOXER-SIX}
+       C-7602{IN-LINE-SIX}
+     C-7582{BOXER-FOUR IN-LINE-FOUR}
+       C-7597{BOXER-FOUR}
+       C-7598{IN-LINE-FOUR}
+     C-7583{IN-LINE-TRIPLE}
+   C-7578{BOXER-TWO V-TWIN-FOUR V-TWIN IN-LINE-PARALLEL}
+     C-7594{BOXER-TWO}
+     C-7587{V-TWIN-FOUR V-TWIN}
+       C-7591{V-TWIN-FOUR}
+       C-7592{V-TWIN}
+     C-7588{IN-LINE-PARALLEL}
+   C-7579{SINGLE-CYLINDER}
+
+
+Incorporating instance: 2S-SINGLE
+ Category utility 0.561 when put with C-7579{SINGLE-CYLINDER}
+ Category utility 0.504 when put with C-7578{BOXER-TWO V-TWIN-FOUR V-TWIN IN-LINE-PARALLEL}
+ Category utility 0.484 when put with C-7580{BOXER-SIX BOXER-FOUR IN-LINE-SIX IN-LINE-FOUR IN-LINE-TRIPLE}
+ Category utility 0.512 when by itself
+ Category utility 0.000 when merge C-7579{SINGLE-CYLINDER} and C-7578{BOXER-TWO V-TWIN-FOUR V-TWIN IN-LINE-PARALLEL}
+ Level 0: putting instance with C-7579{SINGLE-CYLINDER}
+   Level 1: Growing leaf category
+
+ C-7556{2S-SINGLE BOXER-SIX BOXER-FOUR BOXER-TWO V-TWIN-FOUR V-TWIN IN-LINE-SIX IN-LINE-FOUR IN-LINE-TRIPLE IN-LINE-PARALLEL SINGLE-CYLINDER}
+   C-7580{BOXER-SIX BOXER-FOUR IN-LINE-SIX IN-LINE-FOUR IN-LINE-TRIPLE}
+     C-7585{BOXER-SIX IN-LINE-SIX}
+       C-7601{BOXER-SIX}
+       C-7602{IN-LINE-SIX}
+     C-7582{BOXER-FOUR IN-LINE-FOUR}
+       C-7597{BOXER-FOUR}
+       C-7598{IN-LINE-FOUR}
+     C-7583{IN-LINE-TRIPLE}
+   C-7578{BOXER-TWO V-TWIN-FOUR V-TWIN IN-LINE-PARALLEL}
+     C-7594{BOXER-TWO}
+     C-7587{V-TWIN-FOUR V-TWIN}
+       C-7591{V-TWIN-FOUR}
+       C-7592{V-TWIN}
+     C-7588{IN-LINE-PARALLEL}
+   C-7579{2S-SINGLE SINGLE-CYLINDER}
+     C-7604{2S-SINGLE}
+     C-7605{SINGLE-CYLINDER}
+
+
+Incorporating instance: 2S-PARALLEL-TWIN
+ Category utility 0.509 when put with C-7580{BOXER-SIX BOXER-FOUR IN-LINE-SIX IN-LINE-FOUR IN-LINE-TRIPLE}
+ Category utility 0.492 when put with C-7578{BOXER-TWO V-TWIN-FOUR V-TWIN IN-LINE-PARALLEL}
+ Category utility 0.478 when put with C-7579{2S-SINGLE SINGLE-CYLINDER}
+ Category utility 0.483 when by itself
+ Category utility 0.000 when merge C-7580{BOXER-SIX BOXER-FOUR IN-LINE-SIX IN-LINE-FOUR IN-LINE-TRIPLE} and C-7578{BOXER-TWO V-TWIN-FOUR V-TWIN IN-LINE-PARALLEL}
+ Category utility 0.000 when split C-7580{BOXER-SIX BOXER-FOUR IN-LINE-SIX IN-LINE-FOUR IN-LINE-TRIPLE} and put in NIL
+ Level 0: putting instance with C-7580{BOXER-SIX BOXER-FOUR IN-LINE-SIX IN-LINE-FOUR IN-LINE-TRIPLE}
+   Category utility 0.593 when put with C-7583{IN-LINE-TRIPLE}
+   Category utility 0.537 when put with C-7582{BOXER-FOUR IN-LINE-FOUR}
+   Category utility 0.519 when put with C-7585{BOXER-SIX IN-LINE-SIX}
+   Category utility 0.611 when by itself
+   Level 1: putting instance by itself
+
+ C-7556{2S-PARALLEL-TWIN 2S-SINGLE BOXER-SIX BOXER-FOUR BOXER-TWO V-TWIN-FOUR V-TWIN IN-LINE-SIX IN-LINE-FOUR IN-LINE-TRIPLE IN-LINE-PARALLEL SINGLE-CYLINDER}
+   C-7580{2S-PARALLEL-TWIN BOXER-SIX BOXER-FOUR IN-LINE-SIX IN-LINE-FOUR IN-LINE-TRIPLE}
+     C-7607{2S-PARALLEL-TWIN}
+     C-7585{BOXER-SIX IN-LINE-SIX}
+       C-7601{BOXER-SIX}
+       C-7602{IN-LINE-SIX}
+     C-7582{BOXER-FOUR IN-LINE-FOUR}
+       C-7597{BOXER-FOUR}
+       C-7598{IN-LINE-FOUR}
+     C-7583{IN-LINE-TRIPLE}
+   C-7578{BOXER-TWO V-TWIN-FOUR V-TWIN IN-LINE-PARALLEL}
+     C-7594{BOXER-TWO}
+     C-7587{V-TWIN-FOUR V-TWIN}
+       C-7591{V-TWIN-FOUR}
+       C-7592{V-TWIN}
+     C-7588{IN-LINE-PARALLEL}
+   C-7579{2S-SINGLE SINGLE-CYLINDER}
+     C-7604{2S-SINGLE}
+     C-7605{SINGLE-CYLINDER}
+
+
+Incorporating instance: RC211V
+ Category utility 0.475 when put with C-7580{2S-PARALLEL-TWIN BOXER-SIX BOXER-FOUR IN-LINE-SIX IN-LINE-FOUR IN-LINE-TRIPLE}
+ Category utility 0.441 when put with C-7578{BOXER-TWO V-TWIN-FOUR V-TWIN IN-LINE-PARALLEL}
+ Category utility 0.418 when put with C-7579{2S-SINGLE SINGLE-CYLINDER}
+ Category utility 0.429 when by itself
+ Category utility 0.000 when merge C-7580{2S-PARALLEL-TWIN BOXER-SIX BOXER-FOUR IN-LINE-SIX IN-LINE-FOUR IN-LINE-TRIPLE} and C-7578{BOXER-TWO V-TWIN-FOUR V-TWIN IN-LINE-PARALLEL}
+ Category utility 0.000 when split C-7580{2S-PARALLEL-TWIN BOXER-SIX BOXER-FOUR IN-LINE-SIX IN-LINE-FOUR IN-LINE-TRIPLE} and put in NIL
+ Level 0: putting instance with C-7580{2S-PARALLEL-TWIN BOXER-SIX BOXER-FOUR IN-LINE-SIX IN-LINE-FOUR IN-LINE-TRIPLE}
+   Category utility 0.551 when put with C-7583{IN-LINE-TRIPLE}
+   Category utility 0.527 when put with C-7582{BOXER-FOUR IN-LINE-FOUR}
+   Category utility 0.515 when put with C-7607{2S-PARALLEL-TWIN}
+   Category utility 0.468 when put with C-7585{BOXER-SIX IN-LINE-SIX}
+   Category utility 0.527 when by itself
+   Category utility 0.000 when merge C-7583{IN-LINE-TRIPLE} and C-7582{BOXER-FOUR IN-LINE-FOUR}
+   Level 1: putting instance with C-7583{IN-LINE-TRIPLE}
+     Level 2: Growing leaf category
+
+ C-7556{RC211V 2S-PARALLEL-TWIN 2S-SINGLE BOXER-SIX BOXER-FOUR BOXER-TWO V-TWIN-FOUR V-TWIN IN-LINE-SIX IN-LINE-FOUR IN-LINE-TRIPLE IN-LINE-PARALLEL SINGLE-CYLINDER}
+   C-7580{RC211V 2S-PARALLEL-TWIN BOXER-SIX BOXER-FOUR IN-LINE-SIX IN-LINE-FOUR IN-LINE-TRIPLE}
+     C-7607{2S-PARALLEL-TWIN}
+     C-7585{BOXER-SIX IN-LINE-SIX}
+       C-7601{BOXER-SIX}
+       C-7602{IN-LINE-SIX}
+     C-7582{BOXER-FOUR IN-LINE-FOUR}
+       C-7597{BOXER-FOUR}
+       C-7598{IN-LINE-FOUR}
+     C-7583{RC211V IN-LINE-TRIPLE}
+       C-7610{RC211V}
+       C-7611{IN-LINE-TRIPLE}
+   C-7578{BOXER-TWO V-TWIN-FOUR V-TWIN IN-LINE-PARALLEL}
+     C-7594{BOXER-TWO}
+     C-7587{V-TWIN-FOUR V-TWIN}
+       C-7591{V-TWIN-FOUR}
+       C-7592{V-TWIN}
+     C-7588{IN-LINE-PARALLEL}
+   C-7579{2S-SINGLE SINGLE-CYLINDER}
+     C-7604{2S-SINGLE}
+     C-7605{SINGLE-CYLINDER}
+
+
+Incorporating instance: V8
+ Category utility 0.452 when put with C-7580{RC211V 2S-PARALLEL-TWIN BOXER-SIX BOXER-FOUR IN-LINE-SIX IN-LINE-FOUR IN-LINE-TRIPLE}
+ Category utility 0.404 when put with C-7578{BOXER-TWO V-TWIN-FOUR V-TWIN IN-LINE-PARALLEL}
+ Category utility 0.383 when put with C-7579{2S-SINGLE SINGLE-CYLINDER}
+ Category utility 0.394 when by itself
+ Category utility 0.000 when merge C-7580{RC211V 2S-PARALLEL-TWIN BOXER-SIX BOXER-FOUR IN-LINE-SIX IN-LINE-FOUR IN-LINE-TRIPLE} and C-7578{BOXER-TWO V-TWIN-FOUR V-TWIN IN-LINE-PARALLEL}
+ Category utility 0.000 when split C-7580{RC211V 2S-PARALLEL-TWIN BOXER-SIX BOXER-FOUR IN-LINE-SIX IN-LINE-FOUR IN-LINE-TRIPLE} and put in NIL
+ Level 0: putting instance with C-7580{RC211V 2S-PARALLEL-TWIN BOXER-SIX BOXER-FOUR IN-LINE-SIX IN-LINE-FOUR IN-LINE-TRIPLE}
+   Category utility 0.526 when put with C-7583{RC211V IN-LINE-TRIPLE}
+   Category utility 0.464 when put with C-7582{BOXER-FOUR IN-LINE-FOUR}
+   Category utility 0.453 when put with C-7607{2S-PARALLEL-TWIN}
+   Category utility 0.411 when put with C-7585{BOXER-SIX IN-LINE-SIX}
+   Category utility 0.463 when by itself
+   Category utility 0.000 when merge C-7583{RC211V IN-LINE-TRIPLE} and C-7582{BOXER-FOUR IN-LINE-FOUR}
+   Category utility 0.000 when split C-7583{RC211V IN-LINE-TRIPLE} and put in NIL
+   Level 1: putting instance with C-7583{RC211V IN-LINE-TRIPLE}
+     Category utility 0.444 when put with C-7610{RC211V}
+     Category utility 0.444 when put with C-7611{IN-LINE-TRIPLE}
+     Category utility 0.519 when by itself
+     Level 2: putting instance by itself
+
+ C-7556{V8 RC211V 2S-PARALLEL-TWIN 2S-SINGLE BOXER-SIX BOXER-FOUR BOXER-TWO V-TWIN-FOUR V-TWIN IN-LINE-SIX IN-LINE-FOUR IN-LINE-TRIPLE IN-LINE-PARALLEL SINGLE-CYLINDER}
+   C-7580{V8 RC211V 2S-PARALLEL-TWIN BOXER-SIX BOXER-FOUR IN-LINE-SIX IN-LINE-FOUR IN-LINE-TRIPLE}
+     C-7607{2S-PARALLEL-TWIN}
+     C-7585{BOXER-SIX IN-LINE-SIX}
+       C-7601{BOXER-SIX}
+       C-7602{IN-LINE-SIX}
+     C-7582{BOXER-FOUR IN-LINE-FOUR}
+       C-7597{BOXER-FOUR}
+       C-7598{IN-LINE-FOUR}
+     C-7583{V8 RC211V IN-LINE-TRIPLE}
+       C-7614{V8}
+       C-7610{RC211V}
+       C-7611{IN-LINE-TRIPLE}
+   C-7578{BOXER-TWO V-TWIN-FOUR V-TWIN IN-LINE-PARALLEL}
+     C-7594{BOXER-TWO}
+     C-7587{V-TWIN-FOUR V-TWIN}
+       C-7591{V-TWIN-FOUR}
+       C-7592{V-TWIN}
+     C-7588{IN-LINE-PARALLEL}
+   C-7579{2S-SINGLE SINGLE-CYLINDER}
+     C-7604{2S-SINGLE}
+     C-7605{SINGLE-CYLINDER}
+
+
+Incorporating instance: WANKEL
+ Category utility 0.449 when put with C-7579{2S-SINGLE SINGLE-CYLINDER}
+ Category utility 0.421 when put with C-7578{BOXER-TWO V-TWIN-FOUR V-TWIN IN-LINE-PARALLEL}
+ Category utility 0.406 when put with C-7580{V8 RC211V 2S-PARALLEL-TWIN BOXER-SIX BOXER-FOUR IN-LINE-SIX IN-LINE-FOUR IN-LINE-TRIPLE}
+ Category utility 0.448 when by itself
+ Category utility 0.000 when merge C-7579{2S-SINGLE SINGLE-CYLINDER} and C-7578{BOXER-TWO V-TWIN-FOUR V-TWIN IN-LINE-PARALLEL}
+ Category utility 0.000 when split C-7579{2S-SINGLE SINGLE-CYLINDER} and put in NIL
+ Level 0: putting instance with C-7579{2S-SINGLE SINGLE-CYLINDER}
+   Category utility 0.944 when put with C-7605{SINGLE-CYLINDER}
+   Category utility 0.611 when put with C-7604{2S-SINGLE}
+   Category utility 1.185 when by itself
+   Level 1: putting instance by itself
+
+ C-7556{WANKEL V8 RC211V 2S-PARALLEL-TWIN 2S-SINGLE BOXER-SIX BOXER-FOUR BOXER-TWO V-TWIN-FOUR V-TWIN IN-LINE-SIX IN-LINE-FOUR IN-LINE-TRIPLE IN-LINE-PARALLEL SINGLE-CYLINDER}
+   C-7580{V8 RC211V 2S-PARALLEL-TWIN BOXER-SIX BOXER-FOUR IN-LINE-SIX IN-LINE-FOUR IN-LINE-TRIPLE}
+     C-7607{2S-PARALLEL-TWIN}
+     C-7585{BOXER-SIX IN-LINE-SIX}
+       C-7601{BOXER-SIX}
+       C-7602{IN-LINE-SIX}
+     C-7582{BOXER-FOUR IN-LINE-FOUR}
+       C-7597{BOXER-FOUR}
+       C-7598{IN-LINE-FOUR}
+     C-7583{V8 RC211V IN-LINE-TRIPLE}
+       C-7614{V8}
+       C-7610{RC211V}
+       C-7611{IN-LINE-TRIPLE}
+   C-7578{BOXER-TWO V-TWIN-FOUR V-TWIN IN-LINE-PARALLEL}
+     C-7594{BOXER-TWO}
+     C-7587{V-TWIN-FOUR V-TWIN}
+       C-7591{V-TWIN-FOUR}
+       C-7592{V-TWIN}
+     C-7588{IN-LINE-PARALLEL}
+   C-7579{WANKEL 2S-SINGLE SINGLE-CYLINDER}
+     C-7616{WANKEL}
+     C-7604{2S-SINGLE}
+     C-7605{SINGLE-CYLINDER}
+
+
+Incorporating instance: ROTARY
+ Category utility 0.469 when put with C-7579{WANKEL 2S-SINGLE SINGLE-CYLINDER}
+ Category utility 0.417 when put with C-7578{BOXER-TWO V-TWIN-FOUR V-TWIN IN-LINE-PARALLEL}
+ Category utility 0.392 when put with C-7580{V8 RC211V 2S-PARALLEL-TWIN BOXER-SIX BOXER-FOUR IN-LINE-SIX IN-LINE-FOUR IN-LINE-TRIPLE}
+ Category utility 0.443 when by itself
+ Category utility 0.000 when merge C-7579{WANKEL 2S-SINGLE SINGLE-CYLINDER} and C-7578{BOXER-TWO V-TWIN-FOUR V-TWIN IN-LINE-PARALLEL}
+ Category utility 0.000 when split C-7579{WANKEL 2S-SINGLE SINGLE-CYLINDER} and put in NIL
+ Level 0: putting instance with C-7579{WANKEL 2S-SINGLE SINGLE-CYLINDER}
+   Category utility 0.958 when put with C-7616{WANKEL}
+   Category utility 0.958 when put with C-7605{SINGLE-CYLINDER}
+   Category utility 0.792 when put with C-7604{2S-SINGLE}
+   Category utility 1.031 when by itself
+   Level 1: putting instance by itself
+
+ C-7556{ROTARY WANKEL V8 RC211V 2S-PARALLEL-TWIN 2S-SINGLE BOXER-SIX BOXER-FOUR BOXER-TWO V-TWIN-FOUR V-TWIN IN-LINE-SIX IN-LINE-FOUR IN-LINE-TRIPLE IN-LINE-PARALLEL SINGLE-CYLINDER}
+   C-7580{V8 RC211V 2S-PARALLEL-TWIN BOXER-SIX BOXER-FOUR IN-LINE-SIX IN-LINE-FOUR IN-LINE-TRIPLE}
+     C-7607{2S-PARALLEL-TWIN}
+     C-7585{BOXER-SIX IN-LINE-SIX}
+       C-7601{BOXER-SIX}
+       C-7602{IN-LINE-SIX}
+     C-7582{BOXER-FOUR IN-LINE-FOUR}
+       C-7597{BOXER-FOUR}
+       C-7598{IN-LINE-FOUR}
+     C-7583{V8 RC211V IN-LINE-TRIPLE}
+       C-7614{V8}
+       C-7610{RC211V}
+       C-7611{IN-LINE-TRIPLE}
+   C-7578{BOXER-TWO V-TWIN-FOUR V-TWIN IN-LINE-PARALLEL}
+     C-7594{BOXER-TWO}
+     C-7587{V-TWIN-FOUR V-TWIN}
+       C-7591{V-TWIN-FOUR}
+       C-7592{V-TWIN}
+     C-7588{IN-LINE-PARALLEL}
+   C-7579{ROTARY WANKEL 2S-SINGLE SINGLE-CYLINDER}
+     C-7618{ROTARY}
+     C-7616{WANKEL}
+     C-7604{2S-SINGLE}
+     C-7605{SINGLE-CYLINDER}
+
+
+Incorporating instance: TURBINE
+ Category utility 0.450 when put with C-7580{V8 RC211V 2S-PARALLEL-TWIN BOXER-SIX BOXER-FOUR IN-LINE-SIX IN-LINE-FOUR IN-LINE-TRIPLE}
+ Category utility 0.420 when put with C-7579{ROTARY WANKEL 2S-SINGLE SINGLE-CYLINDER}
+ Category utility 0.397 when put with C-7578{BOXER-TWO V-TWIN-FOUR V-TWIN IN-LINE-PARALLEL}
+ Category utility 0.402 when by itself
+ Category utility 0.000 when merge C-7580{V8 RC211V 2S-PARALLEL-TWIN BOXER-SIX BOXER-FOUR IN-LINE-SIX IN-LINE-FOUR IN-LINE-TRIPLE} and C-7579{ROTARY WANKEL 2S-SINGLE SINGLE-CYLINDER}
+ Category utility 0.000 when split C-7580{V8 RC211V 2S-PARALLEL-TWIN BOXER-SIX BOXER-FOUR IN-LINE-SIX IN-LINE-FOUR IN-LINE-TRIPLE} and put in NIL
+ Level 0: putting instance with C-7580{V8 RC211V 2S-PARALLEL-TWIN BOXER-SIX BOXER-FOUR IN-LINE-SIX IN-LINE-FOUR IN-LINE-TRIPLE}
+   Category utility 0.478 when put with C-7607{2S-PARALLEL-TWIN}
+   Category utility 0.460 when put with C-7585{BOXER-SIX IN-LINE-SIX}
+   Category utility 0.455 when put with C-7583{V8 RC211V IN-LINE-TRIPLE}
+   Category utility 0.451 when put with C-7582{BOXER-FOUR IN-LINE-FOUR}
+   Category utility 0.472 when by itself
+   Category utility 0.000 when merge C-7607{2S-PARALLEL-TWIN} and C-7585{BOXER-SIX IN-LINE-SIX}
+   Level 1: putting instance with C-7607{2S-PARALLEL-TWIN}
+     Level 2: Growing leaf category
+
+ C-7556{TURBINE ROTARY WANKEL V8 RC211V 2S-PARALLEL-TWIN 2S-SINGLE BOXER-SIX BOXER-FOUR BOXER-TWO V-TWIN-FOUR V-TWIN IN-LINE-SIX IN-LINE-FOUR IN-LINE-TRIPLE IN-LINE-PARALLEL SINGLE-CYLINDER}
+   C-7580{TURBINE V8 RC211V 2S-PARALLEL-TWIN BOXER-SIX BOXER-FOUR IN-LINE-SIX IN-LINE-FOUR IN-LINE-TRIPLE}
+     C-7607{TURBINE 2S-PARALLEL-TWIN}
+       C-7621{TURBINE}
+       C-7622{2S-PARALLEL-TWIN}
+     C-7585{BOXER-SIX IN-LINE-SIX}
+       C-7601{BOXER-SIX}
+       C-7602{IN-LINE-SIX}
+     C-7582{BOXER-FOUR IN-LINE-FOUR}
+       C-7597{BOXER-FOUR}
+       C-7598{IN-LINE-FOUR}
+     C-7583{V8 RC211V IN-LINE-TRIPLE}
+       C-7614{V8}
+       C-7610{RC211V}
+       C-7611{IN-LINE-TRIPLE}
+   C-7578{BOXER-TWO V-TWIN-FOUR V-TWIN IN-LINE-PARALLEL}
+     C-7594{BOXER-TWO}
+     C-7587{V-TWIN-FOUR V-TWIN}
+       C-7591{V-TWIN-FOUR}
+       C-7592{V-TWIN}
+     C-7588{IN-LINE-PARALLEL}
+   C-7579{ROTARY WANKEL 2S-SINGLE SINGLE-CYLINDER}
+     C-7618{ROTARY}
+     C-7616{WANKEL}
+     C-7604{2S-SINGLE}
+     C-7605{SINGLE-CYLINDER}
+
+
+Incorporating instance: DIESEL
+ Category utility 0.446 when put with C-7578{BOXER-TWO V-TWIN-FOUR V-TWIN IN-LINE-PARALLEL}
+ Category utility 0.409 when put with C-7579{ROTARY WANKEL 2S-SINGLE SINGLE-CYLINDER}
+ Category utility 0.401 when put with C-7580{TURBINE V8 RC211V 2S-PARALLEL-TWIN BOXER-SIX BOXER-FOUR IN-LINE-SIX IN-LINE-FOUR IN-LINE-TRIPLE}
+ Category utility 0.400 when by itself
+ Category utility 0.000 when merge C-7578{BOXER-TWO V-TWIN-FOUR V-TWIN IN-LINE-PARALLEL} and C-7579{ROTARY WANKEL 2S-SINGLE SINGLE-CYLINDER}
+ Category utility 0.000 when split C-7578{BOXER-TWO V-TWIN-FOUR V-TWIN IN-LINE-PARALLEL} and put in NIL
+ Level 0: putting instance with C-7578{BOXER-TWO V-TWIN-FOUR V-TWIN IN-LINE-PARALLEL}
+   Category utility 0.613 when put with C-7587{V-TWIN-FOUR V-TWIN}
+   Category utility 0.547 when put with C-7594{BOXER-TWO}
+   Category utility 0.547 when put with C-7588{IN-LINE-PARALLEL}
+   Category utility 0.660 when by itself
+   Level 1: putting instance by itself
+
+ C-7556{DIESEL TURBINE ROTARY WANKEL V8 RC211V 2S-PARALLEL-TWIN 2S-SINGLE BOXER-SIX BOXER-FOUR BOXER-TWO V-TWIN-FOUR V-TWIN IN-LINE-SIX IN-LINE-FOUR IN-LINE-TRIPLE IN-LINE-PARALLEL SINGLE-CYLINDER}
+   C-7580{TURBINE V8 RC211V 2S-PARALLEL-TWIN BOXER-SIX BOXER-FOUR IN-LINE-SIX IN-LINE-FOUR IN-LINE-TRIPLE}
+     C-7607{TURBINE 2S-PARALLEL-TWIN}
+       C-7621{TURBINE}
+       C-7622{2S-PARALLEL-TWIN}
+     C-7585{BOXER-SIX IN-LINE-SIX}
+       C-7601{BOXER-SIX}
+       C-7602{IN-LINE-SIX}
+     C-7582{BOXER-FOUR IN-LINE-FOUR}
+       C-7597{BOXER-FOUR}
+       C-7598{IN-LINE-FOUR}
+     C-7583{V8 RC211V IN-LINE-TRIPLE}
+       C-7614{V8}
+       C-7610{RC211V}
+       C-7611{IN-LINE-TRIPLE}
+   C-7578{DIESEL BOXER-TWO V-TWIN-FOUR V-TWIN IN-LINE-PARALLEL}
+     C-7624{DIESEL}
+     C-7594{BOXER-TWO}
+     C-7587{V-TWIN-FOUR V-TWIN}
+       C-7591{V-TWIN-FOUR}
+       C-7592{V-TWIN}
+     C-7588{IN-LINE-PARALLEL}
+   C-7579{ROTARY WANKEL 2S-SINGLE SINGLE-CYLINDER}
+     C-7618{ROTARY}
+     C-7616{WANKEL}
+     C-7604{2S-SINGLE}
+     C-7605{SINGLE-CYLINDER}
+
+C-7556{DIESEL TURBINE ROTARY WANKEL V8 RC211V 2S-PARALLEL-TWIN 2S-SINGLE BOXER-SIX BOXER-FOUR BOXER-TWO V-TWIN-FOUR V-TWIN IN-LINE-SIX IN-LINE-FOUR IN-LINE-TRIPLE IN-LINE-PARALLEL SINGLE-CYLINDER}
+CL-USER> 

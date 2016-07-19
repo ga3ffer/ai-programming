@@ -1,0 +1,296 @@
+
+% -*- Mode: Prolog;   -*-
+% Kevin Barroga, 2014 Nov 17
+% ICS361, Assignment #5
+% File: results.txt
+
+% -----------------------------------------------------------------------------
+                NUMBER OF SOLUTIONS FOR COLOR BALLS PROBLEM                   
+% -----------------------------------------------------------------------------
+
+Situation #1 
+You have six colored balls: 2 green, 2 blue and 2 yellow 
+
+    30 solutions
+
+Situation #2
+You have six colored balls: 4 black, 1 red and 1 blue.
+
+    8 solutions
+
+Situation #3
+You have eight colored balls: 1 black, 2 white, 2 red and 3 green.
+
+    3 solutions
+
+% -----------------------------------------------------------------------------
+                         TRANSCRIPT OF PROBLEMS BELOW                          
+% -----------------------------------------------------------------------------
+
+b.roge@broge-PC ~
+$ swipl
+Welcome to SWI-Prolog (Multi-threaded, 64 bits, Version 6.6.6)
+Copyright (c) 1990-2013 University of Amsterdam, VU Amsterdam
+SWI-Prolog comes with ABSOLUTELY NO WARRANTY. This is free software,
+and you are welcome to redistribute it under certain conditions.
+Please visit http://www.swi-prolog.org for details.
+
+For help, use ?- help(Topic). or ?- apropos(Word).
+
+?- consult(['/cygdrive/d/Dropbox/FALL2014/ICS361/assignment_5/assign5.pro']).
+% /cygdrive/d/Dropbox/FALL2014/ICS361/assignment_5/assign5.pro compiled 0.02 sec, 16 clauses
+true.
+
+?- listlength([9, 5, 6, 4], L).
+L = 4.
+
+?- listlength([], 0).
+true.
+
+?- listlength([List], 0).
+false.
+
+?- listlength(List, 0).
+List = [] .
+
+?- listlength([5, [6, 7, 8]], L).
+L = 2.
+
+% -----------------------------------------------------------------------------
+
+?- myfac(0, X).
+X = 1.
+
+?- myfac(-1, X).
+false.
+
+?- myfac(-1.4, X).
+false.
+
+?- myfac(3.4, X).
+false.
+
+?- myfac(3, Z).
+Z = 6.
+
+?- myfac(6, X).
+X = 720.
+
+% -----------------------------------------------------------------------------
+
+?- go1.
+
+The order of balls from left to right is:
+blue green blue yellow green yellow
+true ;
+
+The order of balls from left to right is:
+blue green yellow blue green yellow
+true ;
+
+The order of balls from left to right is:
+blue green yellow blue yellow green
+true ;
+
+The order of balls from left to right is:
+blue green yellow green blue yellow
+true ;
+
+The order of balls from left to right is:
+blue green yellow green yellow blue
+true ;
+
+The order of balls from left to right is:
+blue yellow blue green yellow green
+true ;
+
+The order of balls from left to right is:
+blue yellow green blue green yellow
+true ;
+
+The order of balls from left to right is:
+blue yellow green blue yellow green
+true ;
+
+The order of balls from left to right is:
+blue yellow green yellow blue green
+true ;
+
+The order of balls from left to right is:
+blue yellow green yellow green blue
+true ;
+
+The order of balls from left to right is:
+green blue green yellow blue yellow
+true ;
+
+The order of balls from left to right is:
+green blue yellow blue green yellow
+true ;
+
+The order of balls from left to right is:
+green blue yellow blue yellow green
+true ;
+
+The order of balls from left to right is:
+green blue yellow green blue yellow
+true ;
+
+The order of balls from left to right is:
+green blue yellow green yellow blue
+true ;
+
+The order of balls from left to right is:
+green yellow blue green blue yellow
+true ;
+
+The order of balls from left to right is:
+green yellow blue green yellow blue
+true ;
+
+The order of balls from left to right is:
+green yellow blue yellow blue green
+true ;
+
+The order of balls from left to right is:
+green yellow blue yellow green blue
+true ;
+
+The order of balls from left to right is:
+green yellow green blue yellow blue
+true ;
+
+The order of balls from left to right is:
+yellow blue green blue green yellow
+true ;
+
+The order of balls from left to right is:
+yellow blue green blue yellow green
+true ;
+
+The order of balls from left to right is:
+yellow blue green yellow blue green
+true ;
+
+The order of balls from left to right is:
+yellow blue green yellow green blue
+true ;
+
+The order of balls from left to right is:
+yellow blue yellow green blue green
+true ;
+
+The order of balls from left to right is:
+yellow green blue green blue yellow
+true ;
+
+The order of balls from left to right is:
+yellow green blue green yellow blue
+true ;
+
+The order of balls from left to right is:
+yellow green blue yellow blue green
+true ;
+
+The order of balls from left to right is:
+yellow green blue yellow green blue
+true ;
+
+The order of balls from left to right is:
+yellow green yellow blue green blue
+true ;
+false.
+
+% -----------------------------------------------------------------------------
+
+?- go2.
+
+The order of balls from left to right is:
+black black blue black black red
+true ;
+
+The order of balls from left to right is:
+black black blue red black black
+true ;
+
+The order of balls from left to right is:
+black black red black black blue
+true ;
+
+The order of balls from left to right is:
+black black red blue black black
+true ;
+
+The order of balls from left to right is:
+black blue black black red black
+true ;
+
+The order of balls from left to right is:
+black red black black blue black
+true ;
+
+The order of balls from left to right is:
+blue black black red black black
+true ;
+
+The order of balls from left to right is:
+red black black blue black black
+true ;
+false.
+
+% -----------------------------------------------------------------------------
+
+?- go3.
+
+The order of balls from left to right is:
+green red black green red white white green
+true ;
+
+The order of balls from left to right is:
+green red white green red black white green
+true ;
+
+The order of balls from left to right is:
+green red white green red white black green
+true ;
+false.
+
+?-
+
+% -----------------------------------------------------------------------------
+
+My solution to the extra credit problem does not pass all the examples seen in 
+the Assignment #5 page. It returns true if it finds a subset that is less than or equal to 'N'.
+
+?- split3(5,[]).
+false.
+
+?- split3(6,[5,5,12]).
+false.
+
+?- split3(14,[6,5,10,1,1,1,14]).
+true .
+
+?- split3(5,[3,1,4,1,2]).
+true .
+
+?- split3(6,[4,3,5,2,1]).
+true ;
+true ;
+true ;
+false.
+
+?- split3(3,[1,2,2,2,1,1]).
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+false.
+
+?-
